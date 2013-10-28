@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F269ACD7-8B89-4353-94B5-EEF785458381}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRHH</RootNamespace>
+    <AssemblyName>RRHH</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\CargoControl.cs" />
+    <Compile Include="Control\DepartamentoControl.cs" />
+    <Compile Include="Control\Login.cs" />
+    <Compile Include="Control\RequisitosControl.cs" />
+    <Compile Include="Control\RolControl.cs" />
+    <Compile Include="Control\SolicitudPersonalControl.cs" />
+    <Compile Include="Entidades\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Aguinaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Aguinaldo.Designer.cs">
+      <DependentUpon>Aguinaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Beneficios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Beneficios.Designer.cs">
+      <DependentUpon>Beneficios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Cargo.Designer.cs">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Departamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Departamento.Designer.cs">
+      <DependentUpon>Departamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Descuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Descuento.Designer.cs">
+      <DependentUpon>Descuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Empresa.Designer.cs">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Horario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Horario.Designer.cs">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\CrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\CrearUsuario.Designer.cs">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\DatosUsuairo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\DatosUsuairo.Designer.cs">
+      <DependentUpon>DatosUsuairo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ListadoPostulantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ListadoPostulantes.Designer.cs">
+      <DependentUpon>ListadoPostulantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Memrandum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Memrandum.Designer.cs">
+      <DependentUpon>Memrandum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\OtorgarVacacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\OtorgarVacacion.Designer.cs">
+      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\PlanillaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\PlanillaEmpleados.Designer.cs">
+      <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegistroPostulantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RegistroPostulantes.Designer.cs">
+      <DependentUpon>RegistroPostulantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegsitroHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RegsitroHorario.Designer.cs">
+      <DependentUpon>RegsitroHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Requisito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Requisito.Designer.cs">
+      <DependentUpon>Requisito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Rol.Designer.cs">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SolicitudPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\SolicitudPersonal.Designer.cs">
+      <DependentUpon>SolicitudPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Sueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Sueldos.Designer.cs">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\TipoDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\TipoDescuento.Designer.cs">
+      <DependentUpon>TipoDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vacaciones.Designer.cs">
+      <DependentUpon>Vacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\UsuarioControl.cs" />
+    <Compile Include="RecursosHumanosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSetListaReqCargo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetListaReqCargo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSetVistas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetVistas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSetVistas2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetVistas2.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Presentacion\Aguinaldo.resx">
+      <DependentUpon>Aguinaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Beneficios.resx">
+      <DependentUpon>Beneficios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\CrearUsuario.resx">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\DatosUsuairo.resx">
+      <DependentUpon>DatosUsuairo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Departamento.resx">
+      <DependentUpon>Departamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Descuento.resx">
+      <DependentUpon>Descuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Empresa.resx">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Horario.resx">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ListadoPostulantes.resx">
+      <DependentUpon>ListadoPostulantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Memrandum.resx">
+      <DependentUpon>Memrandum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\OtorgarVacacion.resx">
+      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\PlanillaEmpleados.resx">
+      <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\RegistroPostulantes.resx">
+      <DependentUpon>RegistroPostulantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\RegsitroHorario.resx">
+      <DependentUpon>RegsitroHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Requisito.resx">
+      <DependentUpon>Requisito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Rol.resx">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SolicitudPersonal.resx">
+      <DependentUpon>SolicitudPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Sueldos.resx">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\TipoDescuento.resx">
+      <DependentUpon>TipoDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vacaciones.resx">
+      <DependentUpon>Vacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Entidades\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\DataSources\RRHH.Entidades.RecursosHumanosEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RecursosHumanosDataSet.xsc">
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet.xss">
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xsc">
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xss">
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet2.xsc">
+      <DependentUpon>RecursosHumanosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet2.xss">
+      <DependentUpon>RecursosHumanosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetListaReqCargo.xsc">
+      <DependentUpon>RecursosHumanosDataSetListaReqCargo.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetListaReqCargo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetListaReqCargo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetListaReqCargo.xss">
+      <DependentUpon>RecursosHumanosDataSetListaReqCargo.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas.xsc">
+      <DependentUpon>RecursosHumanosDataSetVistas.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetVistas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas.xss">
+      <DependentUpon>RecursosHumanosDataSetVistas.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas2.xsc">
+      <DependentUpon>RecursosHumanosDataSetVistas2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetVistas2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetVistas2.xss">
+      <DependentUpon>RecursosHumanosDataSetVistas2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

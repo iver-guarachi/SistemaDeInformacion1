@@ -1,0 +1,4 @@
+Para que funcione y ejecute el programa  adjutar esta  base de datos al
+Sql-SERVER 2008 y para conectar con el servidor establecer estos
+paramentros iniciar secion con "sa"y password  "sa".
+Por ultimo en Visual studio hay que limpiar solucion y generar de nuevo

@@ -53,7 +53,7 @@ namespace RRHH.Presentacion
         {
             
             rols.eliminarRol(textBoxNombre.Text);
-            
+            this.rolTableAdapter1.Fill(this.recursosHumanosDataSet1.Rol);
 
         }
 

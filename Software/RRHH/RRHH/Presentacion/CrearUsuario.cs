@@ -23,7 +23,7 @@ namespace RRHH.Presentacion
         {
             usuarios.insertarUsuairo(textBoxNombre.Text, textBoxNuevoPassword.Text, textBoxConfirmarPassword.Text, textBoxSecreta.Text, comboBox1.Text);
             textBoxNombre.Text = textBoxNuevoPassword.Text = textBoxConfirmarPassword.Text = textBoxSecreta.Text = "";
-            //this.usuarioTableAdapter1.Fill(this.recursosHumanosDataSet2.Usuario);
+            this.usuarioTableAdapter1.Fill(this.recursosHumanosDataSet2.Usuario);
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -47,18 +47,26 @@ namespace RRHH.Presentacion
           // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet2.Usuario' Puede moverla o quitarla según sea necesario.
           this.usuarioTableAdapter1.Fill(this.recursosHumanosDataSet2.Usuario);    
           /*ok*/
-                
-           
+
+          
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             usuarios.eliminarUsuairo(textBoxNombre.Text);
+            cargarLista();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxNombre.Text = listBox1.Text;
+        }
+
+        private void cargarLista()
+        {
+
+            this.usuarioTableAdapter1.Fill(this.recursosHumanosDataSet2.Usuario); 
+
         }
        
     }

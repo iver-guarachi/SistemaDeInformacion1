@@ -506,7 +506,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(173, 394);
             this.listBox1.TabIndex = 53;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            
             // 
             // empleadosNombreCompletoBindingSource
             // 
@@ -598,7 +598,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Empleado";
             this.Text = "RegistrarEmpleado";
-            this.Load += new System.EventHandler(this.Empleado_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();

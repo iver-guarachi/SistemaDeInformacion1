@@ -44,13 +44,13 @@ namespace RRHH.Control
             }
         }
 
-        public void modificarCargo(String Nombre, String Min, String Max, String Departamento, List<String> requisitos)
+        public void modificarCargo(String vNombre, String nNombre, String Min, String Max, String Departamento, List<String> requisitos)
         {
 
             Departamento dep = new Departamento();
             dep = rrhh.Departamentoes.FirstOrDefault(a => a.Nombre == Departamento);
-            cargo = rrhh.Cargoes.FirstOrDefault(a => a.Nombre == Nombre);
-            cargo.Nombre = Nombre;
+            cargo = rrhh.Cargoes.FirstOrDefault(a => a.Nombre == vNombre);
+            cargo.Nombre = nNombre;
             cargo.sueldoMinimo = Convert.ToInt32(Min);
             cargo.sueldoMaximo = Convert.ToInt32(Max);
             cargo.Id_Departamento = dep.Id_Departamento;
@@ -64,7 +64,7 @@ namespace RRHH.Control
             foreach (var r in requisito)
             {
                 //Req_Cargo rc = rrhh.Req_Cargo.FirstOrDefault(a => a.Id_Cargo == cargo.Id_Cargo);
-                rrhh.Req_Cargo.DeleteObject(rrhh.Req_Cargo.FirstOrDefault( a => a.Id_Cargo==cargo.Id_Cargo));
+                rrhh.Req_Cargo.DeleteObject(rrhh.Req_Cargo.FirstOrDefault( a => a.Id==r.Id));
                 //rrhh.SaveChanges();
             }
             rrhh.SaveChanges();

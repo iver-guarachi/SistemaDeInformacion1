@@ -8507,7 +8507,7 @@ SELECT Id_Solicitud, NroVacantes, Fecha_creacion, Fecha_Expiracion, Id_Cargo FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_Solicitud, NroVacantes, Fecha_creacion, Fecha_Expiracion, Id_Cargo FROM" +
@@ -8518,6 +8518,19 @@ SELECT Id_Solicitud, NroVacantes, Fecha_creacion, Fecha_Expiracion, Id_Cargo FRO
             this._commandCollection[1].CommandText = "SELECT Id_Solicitud, NroVacantes, Fecha_creacion, Fecha_Expiracion, Id_Cargo FROM" +
                 " dbo.SolicitudPersonal WHERE Fecha_Expiracion < GETDATE()";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT DISTINCT 
+                         RegistroPostulantes.Nombre, RegistroPostulantes.Apellidos, RegistroPostulantes.CI, RegistroPostulantes.Genero, RegistroPostulantes.Nacionalidad, 
+                         RegistroPostulantes.Mail, RegistroPostulantes.Telefono, RegistroPostulantes.Edad, RegistroPostulantes.FechaNacimiento, COUNT(Req_Post.Id_Post) 
+                         AS [total de requisitos cumplidos]
+FROM            RegistroPostulantes INNER JOIN
+                         Req_Post ON RegistroPostulantes.Id_Postulante = Req_Post.Id_Post
+WHERE        (RegistroPostulantes.Id_Solicitud = @idSolicitud)
+GROUP BY RegistroPostulantes.Nombre, RegistroPostulantes.Apellidos, RegistroPostulantes.CI, RegistroPostulantes.Genero, RegistroPostulantes.Nacionalidad, 
+                         RegistroPostulantes.Mail, RegistroPostulantes.Telefono, RegistroPostulantes.Edad, RegistroPostulantes.FechaNacimiento";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSolicitud", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Solicitud", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8555,6 +8568,32 @@ SELECT Id_Solicitud, NroVacantes, Fecha_creacion, Fecha_Expiracion, Id_Cargo FRO
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(RecursosHumanosDataSet1.SolicitudPersonalDataTable dataTable, int idSolicitud) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idSolicitud));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual RecursosHumanosDataSet1.SolicitudPersonalDataTable ListadoDePostulantes(int idSolicitud) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idSolicitud));
+            RecursosHumanosDataSet1.SolicitudPersonalDataTable dataTable = new RecursosHumanosDataSet1.SolicitudPersonalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

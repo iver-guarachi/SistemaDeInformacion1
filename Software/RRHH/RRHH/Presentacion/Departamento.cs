@@ -13,6 +13,7 @@ namespace RRHH.Presentacion
     public partial class Departamento : Form
     {
         DepartamentoControl dep = new DepartamentoControl();
+        ValidacionesControl valida = new ValidacionesControl();
         public Departamento()
         {
             InitializeComponent();
@@ -20,33 +21,9 @@ namespace RRHH.Presentacion
 
         private void Departamento_Load(object sender, EventArgs e)
         {
-          
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet1.Departamento' Puede moverla o quitarla según sea necesario.
             this.departamentoTableAdapter.Fill(this.recursosHumanosDataSet1.Departamento);
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dep.insertarDepartamento(textBox2.Text);
-            cargarLista();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {           
-            dep.modificarDepartamento(listBox1.GetItemText(listBox1.SelectedItem), textBox2.Text);
-            cargarLista();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            dep.eliminar(listBox1.GetItemText(listBox1.SelectedItem));
-            cargarLista();
-            textBox2.Text = "";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void cargarLista()
@@ -56,7 +33,93 @@ namespace RRHH.Presentacion
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox2.Text = listBox1.GetItemText(listBox1.SelectedItem);
+            textBoxNombre.Text = listBox1.GetItemText(listBox1.SelectedItem);
+        }
+
+        private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBoxNombre.MaxLength = 20;
+
+            if (!valida.SoloLetras(e.KeyChar))
+            {
+                MessageBox.Show("Digite solo Letras");
+                e.Handled = true;
+            }
+        }
+        
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxNombre.Text == "")
+                {
+                    MessageBox.Show("Ingrese un Nombre de Departamento ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBoxNombre.Focus();
+                }
+                else
+                {
+                    dep.insertarDepartamento(textBoxNombre.Text);
+                    textBoxNombre.Text = "";
+                    cargarLista();
+                }
+
+            }
+            catch
+            {
+
+            }
+
+          
+           
+        }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxNombre.Text == "")
+                {
+                    MessageBox.Show("Seleccione un Departamento ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBoxNombre.Focus();
+                }
+                else
+                {
+                    dep.modificarDepartamento(listBox1.GetItemText(listBox1.SelectedItem), textBoxNombre.Text);
+                    textBoxNombre.Text = "";
+                    cargarLista();
+                }
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(textBoxNombre.Text=="")
+                {
+                    MessageBox.Show("Seleccione un Departamento  ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBoxNombre.Focus();
+                }
+                else
+                {
+                 dep.eliminar(listBox1.GetItemText(listBox1.SelectedItem));
+                 cargarLista();
+                 textBoxNombre.Text = "";
+                }
+            }
+            catch{
+            }
+            
         }
     }
 }

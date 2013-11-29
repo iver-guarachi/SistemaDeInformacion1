@@ -81,6 +81,9 @@ namespace RRHH.Presentacion
                 numericUpDownVacantes.Value = c.NroVacantes;
                 dateTimePickerInicio.Value = c.Fecha_creacion;
                 dateTimePickerFin.Value = c.Fecha_Expiracion;
+                Entidades.Cargo cargo = new Entidades.Cargo();
+                cargo = rrhh.Cargoes.FirstOrDefault(a => a.Id_Cargo == c.Id_Cargo);
+                comboBoxCargo.SelectedIndex = comboBoxCargo.FindStringExact(cargo.Nombre);
 
                 RRHH.Entidades.Cargo d = new Entidades.Cargo();
                 d = rrhh.Cargoes.FirstOrDefault(a => a.Id_Departamento == c.Id_Cargo);

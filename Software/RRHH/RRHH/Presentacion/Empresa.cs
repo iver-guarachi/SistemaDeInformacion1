@@ -17,10 +17,10 @@ namespace RRHH.Presentacion
         {
             InitializeComponent();
         }
-        //string direccion;
+        string direccion;
 
         private void buttonLogo_Click(object sender, EventArgs e)
-        {   /*
+        {
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
@@ -38,7 +38,7 @@ namespace RRHH.Presentacion
                         using (myStream)
                         {
                             direccion = openFileDialog1.FileName;
-                            pictureBox1.ImageLocation = direccion;
+                            //pictureBox1.ImageLocation = direccion;
                         }
                     }
                 }
@@ -47,14 +47,12 @@ namespace RRHH.Presentacion
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
-             */
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {  /*
+        {
             EmpresaControl emp = new EmpresaControl();
             emp.guardarEmpresa(textBoxNombre.Text, textBoxDireccion.Text, direccion);
-            */
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

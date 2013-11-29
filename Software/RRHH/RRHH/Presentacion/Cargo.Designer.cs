@@ -40,6 +40,8 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cargoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
             this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recursosHumanosDataSet1 = new RRHH.RecursosHumanosDataSet1();
             this.buttonCrearRequisitos = new System.Windows.Forms.Button();
@@ -47,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxDept = new System.Windows.Forms.ComboBox();
+            this.departamentoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSet2 = new RRHH.RecursosHumanosDataSet2();
             this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departamentoTableAdapter = new RRHH.RecursosHumanosDataSet1TableAdapters.DepartamentoTableAdapter();
             this.bindingSourceReq = new System.Windows.Forms.BindingSource(this.components);
@@ -55,17 +59,18 @@
             this.recursosHumanosDataSetListaReqCargo = new RRHH.RecursosHumanosDataSetListaReqCargo();
             this.listaReqCargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lista_Req_CargoTableAdapter = new RRHH.RecursosHumanosDataSetListaReqCargoTableAdapters.Lista_Req_CargoTableAdapter();
-            this.recursosHumanosDataSet2 = new RRHH.RecursosHumanosDataSet2();
-            this.departamentoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.departamentoTableAdapter1 = new RRHH.RecursosHumanosDataSet2TableAdapters.DepartamentoTableAdapter();
+            this.cargoTableAdapter1 = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.CargoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetListaReqCargo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaReqCargoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +106,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(167, 20);
             this.textBoxNombre.TabIndex = 3;
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
             // 
             // textBoxMin
             // 
@@ -160,7 +166,7 @@
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.cargoBindingSource;
+            this.listBox1.DataSource = this.cargoBindingSource1;
             this.listBox1.DisplayMember = "Nombre";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(16, 23);
@@ -168,6 +174,16 @@
             this.listBox1.Size = new System.Drawing.Size(143, 407);
             this.listBox1.TabIndex = 11;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // cargoBindingSource1
+            // 
+            this.cargoBindingSource1.DataMember = "Cargo";
+            this.cargoBindingSource1.DataSource = this.recursosHumanosDataSet_HastaDescuento;
+            // 
+            // recursosHumanosDataSet_HastaDescuento
+            // 
+            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
+            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cargoBindingSource
             // 
@@ -226,6 +242,16 @@
             this.comboBoxDept.TabIndex = 16;
             this.comboBoxDept.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // departamentoBindingSource1
+            // 
+            this.departamentoBindingSource1.DataMember = "Departamento";
+            this.departamentoBindingSource1.DataSource = this.recursosHumanosDataSet2;
+            // 
+            // recursosHumanosDataSet2
+            // 
+            this.recursosHumanosDataSet2.DataSetName = "RecursosHumanosDataSet2";
+            this.recursosHumanosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // departamentoBindingSource
             // 
             this.departamentoBindingSource.DataMember = "Departamento";
@@ -262,19 +288,13 @@
             // 
             this.lista_Req_CargoTableAdapter.ClearBeforeFill = true;
             // 
-            // recursosHumanosDataSet2
-            // 
-            this.recursosHumanosDataSet2.DataSetName = "RecursosHumanosDataSet2";
-            this.recursosHumanosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departamentoBindingSource1
-            // 
-            this.departamentoBindingSource1.DataMember = "Departamento";
-            this.departamentoBindingSource1.DataSource = this.recursosHumanosDataSet2;
-            // 
             // departamentoTableAdapter1
             // 
             this.departamentoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cargoTableAdapter1
+            // 
+            this.cargoTableAdapter1.ClearBeforeFill = true;
             // 
             // Cargo
             // 
@@ -301,14 +321,16 @@
             this.Text = "Cargo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cargo_FormClosed);
             this.Load += new System.EventHandler(this.Cargo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceReq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetListaReqCargo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaReqCargoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +367,8 @@
         private RecursosHumanosDataSet2 recursosHumanosDataSet2;
         private System.Windows.Forms.BindingSource departamentoBindingSource1;
         private RecursosHumanosDataSet2TableAdapters.DepartamentoTableAdapter departamentoTableAdapter1;
+        private RecursosHumanosDataSet_HastaDescuento recursosHumanosDataSet_HastaDescuento;
+        private System.Windows.Forms.BindingSource cargoBindingSource1;
+        private RecursosHumanosDataSet_HastaDescuentoTableAdapters.CargoTableAdapter cargoTableAdapter1;
     }
 }

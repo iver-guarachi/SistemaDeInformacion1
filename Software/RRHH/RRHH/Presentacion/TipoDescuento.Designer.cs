@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -35,6 +36,11 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
+            this.tipoDescuentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoDescuentoTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.TipoDescuentoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -45,6 +51,7 @@
             this.button4.TabIndex = 22;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -54,6 +61,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Eiminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -63,6 +71,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -72,14 +81,18 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.tipoDescuentoBindingSource;
+            this.listBox1.DisplayMember = "Descripcion";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 225);
             this.listBox1.TabIndex = 17;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -97,6 +110,20 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Nombre:";
             // 
+            // recursosHumanosDataSet_HastaDescuento
+            // 
+            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
+            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoDescuentoBindingSource
+            // 
+            this.tipoDescuentoBindingSource.DataMember = "TipoDescuento";
+            this.tipoDescuentoBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
+            // 
+            // tipoDescuentoTableAdapter
+            // 
+            this.tipoDescuentoTableAdapter.ClearBeforeFill = true;
+            // 
             // TipoDescuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +138,9 @@
             this.Controls.Add(this.label3);
             this.Name = "TipoDescuento";
             this.Text = "TipoDescuento";
+            this.Load += new System.EventHandler(this.TipoDescuento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +155,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private RecursosHumanosDataSet_HastaDescuento recursosHumanosDataSet_HastaDescuento;
+        private System.Windows.Forms.BindingSource tipoDescuentoBindingSource;
+        private RecursosHumanosDataSet_HastaDescuentoTableAdapters.TipoDescuentoTableAdapter tipoDescuentoTableAdapter;
     }
 }

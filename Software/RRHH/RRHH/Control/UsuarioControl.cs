@@ -13,7 +13,7 @@ namespace RRHH
         RecursosHumanosEntities rrhh = new RecursosHumanosEntities();
         Usuario usuario;
 
-        public void insertarUsuairo(String Nombre, String Password, String Confirmar, String Secreta, String rol)
+        public void insertarUsuairo(String Nombre, String Password, String Confirmar, String Secreta, String rol, int empleado)
         {
             usuario = new Usuario();
             usuario = rrhh.Usuarios.FirstOrDefault(a => a.NombreUsuario == usuario.NombreUsuario);
@@ -25,12 +25,13 @@ namespace RRHH
                     r = rrhh.Rols.FirstOrDefault(a => a.Nombre == rol);
                     usuario = new Usuario();
                     usuario.NombreUsuario = Nombre;
-                  
-                    usuario.Password = Password;
+                    usuario.Password = Encrypt(Password);
                     usuario.PalabraSecreta = Secreta;
                     usuario.IDRol = r.ID;
+                    usuario.ID_Empleado = empleado;
                     rrhh.Usuarios.AddObject(usuario);
                     rrhh.SaveChanges();
+                    MessageBox.Show("Se guardo el usuario: "+ Nombre);            
                 }
             }
             else
@@ -43,14 +44,14 @@ namespace RRHH
             r = rrhh.Rols.FirstOrDefault(a => a.Nombre == rol);
             usuario = new Usuario();
             usuario = rrhh.Usuarios.FirstOrDefault(a => a.NombreUsuario == usuario.NombreUsuario);
-            
-                if (usuario.Password == Password && Password == Confirmar && Password.Length > 7)
+            if (Decrypt(usuario.Password) == Password && Password == Confirmar && Password.Length > 7)
             {
                 usuario.NombreUsuario = Nombre;
                 usuario.Password = Password;
                 usuario.PalabraSecreta = Secreta;
                 usuario.IDRol = r.ID;
                 rrhh.SaveChanges();
+                MessageBox.Show("Se Modifico el usuario: " + Nombre);
             }
             else
                 MessageBox.Show("Datos erroneos. Verifique e intente nuevamente");
@@ -58,18 +59,50 @@ namespace RRHH
         }
 
 
-       
+        //metodos de encriptacion para la contraseña DES
+        static byte[] bytes = ASCIIEncoding.ASCII.GetBytes("ZeroCool");
+
+        public static string Encrypt(string originalString)
+        {
+            if (String.IsNullOrEmpty(originalString))
+            {
+                throw new ArgumentNullException
+                       ("The string which needs to be encrypted can not be null.");
+            }
+            DESCryptoServiceProvider cryptoProvider = new DESCryptoServiceProvider();
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                cryptoProvider.CreateEncryptor(bytes, bytes), CryptoStreamMode.Write);
+            StreamWriter writer = new StreamWriter(cryptoStream);
+            writer.Write(originalString);
+            writer.Flush();
+            cryptoStream.FlushFinalBlock();
+            writer.Flush();
+            return Convert.ToBase64String(memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
+        }
+
+
+        public static string Decrypt(string cryptedString)
+        {
+            if (String.IsNullOrEmpty(cryptedString))
+            {
+                throw new ArgumentNullException
+                   ("The string which needs to be decrypted can not be null.");
+            }
+            DESCryptoServiceProvider cryptoProvider = new DESCryptoServiceProvider();
+            MemoryStream memoryStream = new MemoryStream
+                    (Convert.FromBase64String(cryptedString));
+            CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                cryptoProvider.CreateDecryptor(bytes, bytes), CryptoStreamMode.Read);
+            StreamReader reader = new StreamReader(cryptoStream);
+            return reader.ReadToEnd();
+        }
 
         public void eliminarUsuairo(string nombre)
-        {
-            try
-            {
-                usuario = new Usuario();
-                usuario = rrhh.Usuarios.FirstOrDefault(a => a.NombreUsuario == nombre);
-                rrhh.Usuarios.DeleteObject(usuario);
-                rrhh.SaveChanges();
-            }
-            catch { }
+        {            
+            rrhh.Usuarios.DeleteObject(rrhh.Usuarios.FirstOrDefault(a => a.NombreUsuario == nombre));
+            rrhh.SaveChanges();
+            MessageBox.Show("Se Elimino el usuario: " + nombre);
         }
     }
 }

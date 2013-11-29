@@ -39,8 +39,13 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rolTableAdapter1 = new RRHH.RecursosHumanosDataSetTableAdapters.RolTableAdapter();
+            this.recursosHumanosDataSet2 = new RRHH.RecursosHumanosDataSet2();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.RolTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancelar
@@ -85,7 +90,7 @@
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.rolBindingSource1;
+            this.listBox1.DataSource = this.rolBindingSource;
             this.listBox1.DisplayMember = "Nombre";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
@@ -124,6 +129,20 @@
             // 
             this.rolTableAdapter1.ClearBeforeFill = true;
             // 
+            // recursosHumanosDataSet2
+            // 
+            this.recursosHumanosDataSet2.DataSetName = "RecursosHumanosDataSet2";
+            this.recursosHumanosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "Rol";
+            this.rolBindingSource.DataSource = this.recursosHumanosDataSet2;
+            // 
+            // rolTableAdapter
+            // 
+            this.rolTableAdapter.ClearBeforeFill = true;
+            // 
             // Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +160,8 @@
             this.Load += new System.EventHandler(this.Rol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +179,8 @@
         private RecursosHumanosDataSet recursosHumanosDataSet1;
         private System.Windows.Forms.BindingSource rolBindingSource1;
         private RecursosHumanosDataSetTableAdapters.RolTableAdapter rolTableAdapter1;
+        private RecursosHumanosDataSet2 recursosHumanosDataSet2;
+        private System.Windows.Forms.BindingSource rolBindingSource;
+        private RecursosHumanosDataSet2TableAdapters.RolTableAdapter rolTableAdapter;
     }
 }

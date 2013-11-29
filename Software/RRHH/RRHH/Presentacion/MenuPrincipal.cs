@@ -14,11 +14,92 @@ namespace RRHH
     public partial class MenuPrincipal : Form
     {
         Usuario usuario = new Usuario();
+        RecursosHumanosEntities rrhh = new RecursosHumanosEntities();
 
         public MenuPrincipal(Usuario usuarioLog)
         {
             InitializeComponent();
-            usuario=usuarioLog;
+            usuario = usuarioLog;
+            var privilegios = from d in rrhh.Privilegios
+                              where d.Id_Rol == usuario.IDRol
+                              orderby d.ID
+                              select d;
+            List<String> privilegio = new List<String>();
+            foreach (var p in privilegios)
+            {
+                if (crearUsuarioToolStripMenuItem.Text == p.nombre)
+                    crearUsuarioToolStripMenuItem.Enabled = true;
+
+                if (modificarDatosToolStripMenuItem.Text == p.nombre)
+                    modificarDatosToolStripMenuItem.Enabled = true;
+
+                if (rolToolStripMenuItem.Text == p.nombre)
+                    rolToolStripMenuItem.Enabled = true;
+
+                if (privilegiosToolStripMenuItem.Text == p.nombre)
+                    privilegiosToolStripMenuItem.Enabled = true;
+
+                if (empresaToolStripMenuItem.Text == p.nombre)
+                    empresaToolStripMenuItem.Enabled = true;
+
+                if (departamentosToolStripMenuItem.Text == p.nombre)
+                    departamentosToolStripMenuItem.Enabled = true;
+
+                if (cargosToolStripMenuItem.Text == p.nombre)
+                    cargosToolStripMenuItem.Enabled = true;
+
+                if (horariosToolStripMenuItem.Text == p.nombre)
+                    horariosToolStripMenuItem.Enabled = true;
+
+                if (registroDeSueldosToolStripMenuItem.Text == p.nombre)
+                    registroDeSueldosToolStripMenuItem.Enabled = true;
+
+                if (tipoDeDescuentoToolStripMenuItem.Text == p.nombre)
+                    tipoDeDescuentoToolStripMenuItem.Enabled = true;
+
+                if (descuentosToolStripMenuItem.Text == p.nombre)
+                    descuentosToolStripMenuItem.Enabled = true;
+
+                if (beneficiosToolStripMenuItem.Text == p.nombre)
+                    beneficiosToolStripMenuItem.Enabled = true;
+
+                if (requisistosToolStripMenuItem.Text == p.nombre)
+                    requisistosToolStripMenuItem.Enabled = true;
+
+                if (solicitudDePersonalToolStripMenuItem.Text == p.nombre)
+                    solicitudDePersonalToolStripMenuItem.Enabled = true;
+
+                if (postulantesToolStripMenuItem.Text == p.nombre)
+                    postulantesToolStripMenuItem.Enabled = true;
+
+                if (listaDePostulantesToolStripMenuItem.Text == p.nombre)
+                    listaDePostulantesToolStripMenuItem.Enabled = true;
+
+                if (registroDeAsistenciaToolStripMenuItem.Text == p.nombre)
+                    registroDeAsistenciaToolStripMenuItem.Enabled = true;
+
+                if (registrarEmpleadosToolStripMenuItem.Text == p.nombre)
+                    registrarEmpleadosToolStripMenuItem.Enabled = true;
+
+                if (vacacionesToolStripMenuItem.Text == p.nombre)
+                    vacacionesToolStripMenuItem.Enabled = true;
+
+                if (otorgarVacacionToolStripMenuItem.Text == p.nombre)
+                    otorgarVacacionToolStripMenuItem.Enabled = true;
+
+                if (memorandumToolStripMenuItem.Text == p.nombre)
+                    memorandumToolStripMenuItem.Enabled = true;
+
+                if (contenidoToolStripMenuItem.Text == p.nombre)
+                    contenidoToolStripMenuItem.Enabled = true;
+
+                if (índiceToolStripMenuItem.Text == p.nombre)
+                    índiceToolStripMenuItem.Enabled = true;
+
+                if (buscarToolStripMenuItem.Text == p.nombre)
+                    buscarToolStripMenuItem.Enabled = true;
+            }
+            
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -92,7 +173,47 @@ namespace RRHH
             pos.Show();
         }
 
-       
+        private void listaDePostulantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RRHH.Presentacion.ListadoPostulantes listpos = new ListadoPostulantes();
+            listpos.Show();
+        }
+
+        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Horario hora = new Presentacion.Horario();
+            hora.Show();
+        }
+
+        private void privilegiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Privilegios pri = new Privilegios();
+            pri.Show();
+        }
+
+        private void registroDeAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroAsistencia asistencia = new RegistroAsistencia();
+            asistencia.Show();
+        }
+
+        private void tipoDeDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.TipoDescuento tdes = new Presentacion.TipoDescuento();
+            tdes.Show();
+        }
+
+        private void descuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Descuento des = new Presentacion.Descuento();
+            des.Show();
+        }
+
+        private void memorandumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Memrandum memo = new Presentacion.Memrandum();
+            memo.Show();
+        }
 
  
     }

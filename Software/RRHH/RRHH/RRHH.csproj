@@ -11,7 +11,8 @@
     <RootNamespace>RRHH</RootNamespace>
     <AssemblyName>RRHH</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -49,12 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="completoContratacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>completoContratacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Control\CargoControl.cs" />
     <Compile Include="Control\DepartamentoControl.cs" />
+    <Compile Include="Control\DescuentoControl.cs" />
+    <Compile Include="Control\EmpleadoControl.cs" />
+    <Compile Include="Control\EmpresaControl.cs" />
+    <Compile Include="Control\Horario.cs" />
     <Compile Include="Control\Login.cs" />
+    <Compile Include="Control\MemorandumControl.cs" />
+    <Compile Include="Control\PrivilegioControl.cs" />
+    <Compile Include="Control\RegistroAsistencia.cs" />
+    <Compile Include="Control\RegistroPostulantesControl.cs" />
     <Compile Include="Control\RequisitosControl.cs" />
+    <Compile Include="Control\RetrasoControl.cs" />
     <Compile Include="Control\RolControl.cs" />
     <Compile Include="Control\SolicitudPersonalControl.cs" />
+    <Compile Include="Control\TipoDescuentoControl.cs" />
+    <Compile Include="Control\ValidacionesControl.cs" />
     <Compile Include="Entidades\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,11 +113,17 @@
     <Compile Include="Presentacion\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Horario.cs">
+    <Compile Include="Presentacion\Falta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Horario.Designer.cs">
-      <DependentUpon>Horario.cs</DependentUpon>
+    <Compile Include="Presentacion\Falta.Designer.cs">
+      <DependentUpon>Falta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RegistroAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RegistroAsistencia.Designer.cs">
+      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\CrearUsuario.cs">
       <SubType>Form</SubType>
@@ -156,23 +179,35 @@
     <Compile Include="Presentacion\PlanillaEmpleados.Designer.cs">
       <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Privilegios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Privilegios.Designer.cs">
+      <DependentUpon>Privilegios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\RegistroPostulantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\RegistroPostulantes.Designer.cs">
       <DependentUpon>RegistroPostulantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\RegsitroHorario.cs">
+    <Compile Include="Presentacion\Horario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\RegsitroHorario.Designer.cs">
-      <DependentUpon>RegsitroHorario.cs</DependentUpon>
+    <Compile Include="Presentacion\Horario.Designer.cs">
+      <DependentUpon>Horario.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Requisito.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Requisito.Designer.cs">
       <DependentUpon>Requisito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\RequisitosCumplidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\RequisitosCumplidos.Designer.cs">
+      <DependentUpon>RequisitosCumplidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Rol.cs">
       <SubType>Form</SubType>
@@ -212,6 +247,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecursosHumanosDataSet1.cs">
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RecursosHumanosDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,6 +275,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSetVistas2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSetVistasFinal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetVistasFinal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSet_HastaDescuento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vistas.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Presentacion\Aguinaldo.resx">
       <DependentUpon>Aguinaldo.cs</DependentUpon>
@@ -264,11 +318,14 @@
     <EmbeddedResource Include="Presentacion\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Falta.resx">
+      <DependentUpon>Falta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Horario.resx">
-      <DependentUpon>Horario.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\RegistroAsistencia.resx">
+      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ListadoPostulantes.resx">
       <DependentUpon>ListadoPostulantes.cs</DependentUpon>
@@ -285,14 +342,20 @@
     <EmbeddedResource Include="Presentacion\PlanillaEmpleados.resx">
       <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Privilegios.resx">
+      <DependentUpon>Privilegios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\RegistroPostulantes.resx">
       <DependentUpon>RegistroPostulantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\RegsitroHorario.resx">
-      <DependentUpon>RegsitroHorario.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Horario.resx">
+      <DependentUpon>Horario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Requisito.resx">
       <DependentUpon>Requisito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\RequisitosCumplidos.resx">
+      <DependentUpon>RequisitosCumplidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>
@@ -317,12 +380,24 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.Config" />
     <EntityDeploy Include="Entidades\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="completoContratacion.xsc">
+      <DependentUpon>completoContratacion.xsd</DependentUpon>
+    </None>
+    <None Include="completoContratacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>completoContratacion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="completoContratacion.xss">
+      <DependentUpon>completoContratacion.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\RRHH.Entidades.RecursosHumanosEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -398,6 +473,39 @@
     </None>
     <None Include="RecursosHumanosDataSetVistas2.xss">
       <DependentUpon>RecursosHumanosDataSetVistas2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistasFinal.xsc">
+      <DependentUpon>RecursosHumanosDataSetVistasFinal.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetVistasFinal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetVistasFinal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetVistasFinal.xss">
+      <DependentUpon>RecursosHumanosDataSetVistasFinal.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet_HastaDescuento.xsc">
+      <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet_HastaDescuento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet_HastaDescuento.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet_HastaDescuento.xss">
+      <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
+    </None>
+    <None Include="Vistas.xsc">
+      <DependentUpon>Vistas.xsd</DependentUpon>
+    </None>
+    <None Include="Vistas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vistas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Vistas.xss">
+      <DependentUpon>Vistas.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,7 +20,8 @@ namespace RRHH.Control
                 dep.Nombre = nombre;
                 rrhh.Departamentoes.AddObject(dep);
                 rrhh.SaveChanges();
-                //MessageBox.Show("se ha registrado el departamento " + nombre);
+                MessageBox.Show("se ha Agregado el departamento " + nombre);
+             
             }
             catch { }
         }
@@ -37,6 +38,7 @@ namespace RRHH.Control
         {
             rrhh.Departamentoes.DeleteObject(rrhh.Departamentoes.FirstOrDefault(a => a.Nombre == Nombre));
             rrhh.SaveChanges();
+            MessageBox.Show("Se a Eliminado exitosamente "+ Nombre);
         }
     }
 }

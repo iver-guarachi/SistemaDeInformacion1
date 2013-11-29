@@ -55,12 +55,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.radioButtonFem = new System.Windows.Forms.RadioButton();
             this.radioButtonMas = new System.Windows.Forms.RadioButton();
-            this.textBoxNacionalidad = new System.Windows.Forms.TextBox();
             this.textBoxCI = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.solicitudPersonalTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter();
+            this.comboBoxNacionalidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
@@ -71,9 +71,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo de Solicitud:";
+            this.label1.Text = "Solicitud:";
             // 
             // label3
             // 
@@ -135,6 +135,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(334, 20);
             this.textBoxNombre.TabIndex = 8;
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
             // 
             // textBoxApellido
             // 
@@ -142,6 +143,7 @@
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(334, 20);
             this.textBoxApellido.TabIndex = 9;
+            this.textBoxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxApellido_KeyPress);
             // 
             // textBoxTelefono
             // 
@@ -149,6 +151,7 @@
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(334, 20);
             this.textBoxTelefono.TabIndex = 10;
+            this.textBoxTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelefono_KeyPress);
             // 
             // textBoxMail
             // 
@@ -198,9 +201,9 @@
             this.comboBox1.DataSource = this.solicitudPersonalBindingSource;
             this.comboBox1.DisplayMember = "NombreSolicitud";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 12);
+            this.comboBox1.Location = new System.Drawing.Point(95, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(298, 21);
+            this.comboBox1.Size = new System.Drawing.Size(334, 21);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -237,6 +240,7 @@
             this.dateTimePickerNaciomiento.Name = "dateTimePickerNaciomiento";
             this.dateTimePickerNaciomiento.Size = new System.Drawing.Size(221, 20);
             this.dateTimePickerNaciomiento.TabIndex = 52;
+            this.dateTimePickerNaciomiento.ValueChanged += new System.EventHandler(this.dateTimePickerNaciomiento_ValueChanged);
             // 
             // numericUpDownEdad
             // 
@@ -286,19 +290,13 @@
             this.radioButtonMas.Text = "Masculino";
             this.radioButtonMas.UseVisualStyleBackColor = true;
             // 
-            // textBoxNacionalidad
-            // 
-            this.textBoxNacionalidad.Location = new System.Drawing.Point(561, 41);
-            this.textBoxNacionalidad.Name = "textBoxNacionalidad";
-            this.textBoxNacionalidad.Size = new System.Drawing.Size(231, 20);
-            this.textBoxNacionalidad.TabIndex = 46;
-            // 
             // textBoxCI
             // 
             this.textBoxCI.Location = new System.Drawing.Point(561, 15);
             this.textBoxCI.Name = "textBoxCI";
             this.textBoxCI.Size = new System.Drawing.Size(294, 20);
             this.textBoxCI.TabIndex = 45;
+            this.textBoxCI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCI_KeyPress);
             // 
             // label9
             // 
@@ -312,7 +310,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(451, 41);
+            this.label10.Location = new System.Drawing.Point(451, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 13);
             this.label10.TabIndex = 43;
@@ -331,18 +329,283 @@
             // 
             this.solicitudPersonalTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBoxNacionalidad
+            // 
+            this.comboBoxNacionalidad.FormattingEnabled = true;
+            this.comboBoxNacionalidad.Items.AddRange(new object[] {
+            "Afganistán",
+            "Akrotiri",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Anguila",
+            "Antártida",
+            "Antigua y Barbuda",
+            "Antillas Neerlandesas",
+            "Arabia Saudí",
+            "Arctic Ocean",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Aruba",
+            "Ashmore and Cartier Islands",
+            "Atlantic Ocean",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bahráin",
+            "Bangladesh",
+            "Barbados",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bermudas",
+            "Bielorrusia",
+            "Birmania; Myanmar",
+            "Bolivia",
+            "Bosnia y Hercegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Clipperton Island",
+            "Colombia",
+            "Comoras",
+            "Congo",
+            "Coral Sea Islands",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dhekelia",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "El Vaticano",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Gaza Strip",
+            "Georgia",
+            "Ghana",
+            "Gibraltar",
+            "Granada",
+            "Grecia",
+            "Groenlandia",
+            "Guam",
+            "Guatemala",
+            "Guernsey",
+            "Guinea",
+            "Guinea Ecuatorial",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haití",
+            "Honduras",
+            "Hong Kong",
+            "Hungría",
+            "India",
+            "Indian Ocean",
+            "Indonesia",
+            "Irán",
+            "Iraq",
+            "Irlanda",
+            "Isla Bouvet",
+            "Isla Christmas",
+            "Isla Norfolk",
+            "Islandia",
+            "Islas Caimán",
+            "Islas Cocos",
+            "Islas Cook",
+            "Islas Feroe",
+            "Islas Georgia del Sur y Sandwich del Sur",
+            "Islas Heard y McDonald",
+            "Islas Malvinas",
+            "Islas Marianas del Norte",
+            "Islas Marshall",
+            "Islas Pitcairn",
+            "Islas Salomón",
+            "Islas Turcas y Caicos",
+            "Islas Vírgenes Americanas",
+            "Islas Vírgenes Británicas",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Jan Mayen",
+            "Japón",
+            "Jersey",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguizistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Macao",
+            "Macedonia",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Malí",
+            "Malta",
+            "Man, Isle of",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "Mayotte",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montenegro",
+            "Montserrat",
+            "Mozambique",
+            "Mundo",
+            "Namibia",
+            "Nauru",
+            "Navassa Island",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Niue",
+            "Noruega",
+            "Nueva Caledonia",
+            "Nueva Zelanda",
+            "Omán",
+            "Pacific Ocean",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa-Nueva Guinea",
+            "Paracel Islands",
+            "Paraguay",
+            "Perú",
+            "Polinesia Francesa",
+            "Polonia",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "Ruanda",
+            "Rumania",
+            "Rusia",
+            "Sáhara Occidental",
+            "Samoa",
+            "Samoa Americana",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Pedro y Miquelón",
+            "San Vicente y las Granadinas",
+            "Santa Helena",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Southern Ocean",
+            "Spratly Islands",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudáfrica",
+            "Sudán",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Svalbard y Jan Mayen",
+            "Tailandia",
+            "Taiwán",
+            "Tanzania",
+            "Tayikistán",
+            "Territorio Británico del Océano Indico",
+            "Territorios Australes Franceses",
+            "Timor Oriental",
+            "Togo",
+            "Tokelau",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Unión Europea",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Wake Island",
+            "Wallis y Futuna",
+            "West Bank",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue"});
+            this.comboBoxNacionalidad.Location = new System.Drawing.Point(561, 41);
+            this.comboBoxNacionalidad.Name = "comboBoxNacionalidad";
+            this.comboBoxNacionalidad.Size = new System.Drawing.Size(294, 21);
+            this.comboBoxNacionalidad.TabIndex = 53;
+            // 
             // RegistroPostulantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 482);
+            this.Controls.Add(this.comboBoxNacionalidad);
             this.Controls.Add(this.dateTimePickerNaciomiento);
             this.Controls.Add(this.numericUpDownEdad);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.radioButtonFem);
             this.Controls.Add(this.radioButtonMas);
-            this.Controls.Add(this.textBoxNacionalidad);
             this.Controls.Add(this.textBoxCI);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -402,7 +665,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton radioButtonFem;
         private System.Windows.Forms.RadioButton radioButtonMas;
-        private System.Windows.Forms.TextBox textBoxNacionalidad;
         private System.Windows.Forms.TextBox textBoxCI;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -410,5 +672,6 @@
         private RecursosHumanosDataSet2 recursosHumanosDataSet2;
         private System.Windows.Forms.BindingSource solicitudPersonalBindingSource;
         private RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter solicitudPersonalTableAdapter;
+        private System.Windows.Forms.ComboBox comboBoxNacionalidad;
     }
 }

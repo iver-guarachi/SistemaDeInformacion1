@@ -33,6 +33,7 @@
             this.crearUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.privilegiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,9 @@
             this.requisistosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudDePersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postulantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDePostulantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otorgarVacacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,13 +80,15 @@
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearUsuarioToolStripMenuItem,
             this.modificarDatosToolStripMenuItem,
-            this.rolToolStripMenuItem});
+            this.rolToolStripMenuItem,
+            this.privilegiosToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // crearUsuarioToolStripMenuItem
             // 
+            this.crearUsuarioToolStripMenuItem.Enabled = false;
             this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
             this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.crearUsuarioToolStripMenuItem.Text = "Crear Usuario";
@@ -91,6 +96,7 @@
             // 
             // modificarDatosToolStripMenuItem
             // 
+            this.modificarDatosToolStripMenuItem.Enabled = false;
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
             this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.modificarDatosToolStripMenuItem.Text = "Modificar Datos";
@@ -98,10 +104,19 @@
             // 
             // rolToolStripMenuItem
             // 
+            this.rolToolStripMenuItem.Enabled = false;
             this.rolToolStripMenuItem.Name = "rolToolStripMenuItem";
             this.rolToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.rolToolStripMenuItem.Text = "Rol";
             this.rolToolStripMenuItem.Click += new System.EventHandler(this.rolToolStripMenuItem_Click);
+            // 
+            // privilegiosToolStripMenuItem
+            // 
+            this.privilegiosToolStripMenuItem.Enabled = false;
+            this.privilegiosToolStripMenuItem.Name = "privilegiosToolStripMenuItem";
+            this.privilegiosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.privilegiosToolStripMenuItem.Text = "Privilegios";
+            this.privilegiosToolStripMenuItem.Click += new System.EventHandler(this.privilegiosToolStripMenuItem_Click);
             // 
             // organizacionToolStripMenuItem
             // 
@@ -128,6 +143,7 @@
             // 
             // departamentosToolStripMenuItem
             // 
+            this.departamentosToolStripMenuItem.Enabled = false;
             this.departamentosToolStripMenuItem.Name = "departamentosToolStripMenuItem";
             this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.departamentosToolStripMenuItem.Text = "Departamentos";
@@ -135,6 +151,7 @@
             // 
             // cargosToolStripMenuItem
             // 
+            this.cargosToolStripMenuItem.Enabled = false;
             this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
             this.cargosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.cargosToolStripMenuItem.Text = "Cargos";
@@ -146,6 +163,7 @@
             this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
             this.horariosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.horariosToolStripMenuItem.Text = "Registro de Horarios";
+            this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
             // 
             // registroDeSueldosToolStripMenuItem
             // 
@@ -160,6 +178,7 @@
             this.tipoDeDescuentoToolStripMenuItem.Name = "tipoDeDescuentoToolStripMenuItem";
             this.tipoDeDescuentoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.tipoDeDescuentoToolStripMenuItem.Text = "Tipo de Descuento";
+            this.tipoDeDescuentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDescuentoToolStripMenuItem_Click);
             // 
             // descuentosToolStripMenuItem
             // 
@@ -167,6 +186,7 @@
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
             this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.descuentosToolStripMenuItem.Text = "Descuentos";
+            this.descuentosToolStripMenuItem.Click += new System.EventHandler(this.descuentosToolStripMenuItem_Click);
             // 
             // beneficiosToolStripMenuItem
             // 
@@ -180,23 +200,25 @@
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.requisistosToolStripMenuItem,
             this.solicitudDePersonalToolStripMenuItem,
-            this.postulantesToolStripMenuItem});
+            this.postulantesToolStripMenuItem,
+            this.listaDePostulantesToolStripMenuItem});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.empleadosToolStripMenuItem.Text = "Contratacion";
             // 
             // requisistosToolStripMenuItem
             // 
+            this.requisistosToolStripMenuItem.Enabled = false;
             this.requisistosToolStripMenuItem.Name = "requisistosToolStripMenuItem";
-            this.requisistosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.requisistosToolStripMenuItem.Text = "Requisistos";
+            this.requisistosToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.requisistosToolStripMenuItem.Text = "Requisitos";
             this.requisistosToolStripMenuItem.Click += new System.EventHandler(this.requisistosToolStripMenuItem_Click);
             // 
             // solicitudDePersonalToolStripMenuItem
             // 
             this.solicitudDePersonalToolStripMenuItem.Enabled = false;
             this.solicitudDePersonalToolStripMenuItem.Name = "solicitudDePersonalToolStripMenuItem";
-            this.solicitudDePersonalToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.solicitudDePersonalToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.solicitudDePersonalToolStripMenuItem.Text = "Solicitud de Personal";
             this.solicitudDePersonalToolStripMenuItem.Click += new System.EventHandler(this.solicitudDePersonalToolStripMenuItem_Click);
             // 
@@ -204,13 +226,22 @@
             // 
             this.postulantesToolStripMenuItem.Enabled = false;
             this.postulantesToolStripMenuItem.Name = "postulantesToolStripMenuItem";
-            this.postulantesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.postulantesToolStripMenuItem.Text = "Postulantes";
+            this.postulantesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.postulantesToolStripMenuItem.Text = "Registro de Postulantes";
             this.postulantesToolStripMenuItem.Click += new System.EventHandler(this.postulantesToolStripMenuItem_Click);
+            // 
+            // listaDePostulantesToolStripMenuItem
+            // 
+            this.listaDePostulantesToolStripMenuItem.Enabled = false;
+            this.listaDePostulantesToolStripMenuItem.Name = "listaDePostulantesToolStripMenuItem";
+            this.listaDePostulantesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.listaDePostulantesToolStripMenuItem.Text = "Lista de Postulantes";
+            this.listaDePostulantesToolStripMenuItem.Click += new System.EventHandler(this.listaDePostulantesToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem1
             // 
             this.empleadosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroDeAsistenciaToolStripMenuItem,
             this.registrarEmpleadosToolStripMenuItem,
             this.vacacionesToolStripMenuItem,
             this.otorgarVacacionToolStripMenuItem,
@@ -219,11 +250,19 @@
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
+            // registroDeAsistenciaToolStripMenuItem
+            // 
+            this.registroDeAsistenciaToolStripMenuItem.Enabled = false;
+            this.registroDeAsistenciaToolStripMenuItem.Name = "registroDeAsistenciaToolStripMenuItem";
+            this.registroDeAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.registroDeAsistenciaToolStripMenuItem.Text = "Registro de Asistencia";
+            this.registroDeAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.registroDeAsistenciaToolStripMenuItem_Click);
+            // 
             // registrarEmpleadosToolStripMenuItem
             // 
             this.registrarEmpleadosToolStripMenuItem.Enabled = false;
             this.registrarEmpleadosToolStripMenuItem.Name = "registrarEmpleadosToolStripMenuItem";
-            this.registrarEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registrarEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.registrarEmpleadosToolStripMenuItem.Text = "Registrar Empleados";
             this.registrarEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpleadosToolStripMenuItem_Click);
             // 
@@ -231,22 +270,23 @@
             // 
             this.vacacionesToolStripMenuItem.Enabled = false;
             this.vacacionesToolStripMenuItem.Name = "vacacionesToolStripMenuItem";
-            this.vacacionesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.vacacionesToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.vacacionesToolStripMenuItem.Text = "Vacaciones";
             // 
             // otorgarVacacionToolStripMenuItem
             // 
             this.otorgarVacacionToolStripMenuItem.Enabled = false;
             this.otorgarVacacionToolStripMenuItem.Name = "otorgarVacacionToolStripMenuItem";
-            this.otorgarVacacionToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.otorgarVacacionToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.otorgarVacacionToolStripMenuItem.Text = "Otorgar Vacacion";
             // 
             // memorandumToolStripMenuItem
             // 
             this.memorandumToolStripMenuItem.Enabled = false;
             this.memorandumToolStripMenuItem.Name = "memorandumToolStripMenuItem";
-            this.memorandumToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.memorandumToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.memorandumToolStripMenuItem.Text = "Memorandum";
+            this.memorandumToolStripMenuItem.Click += new System.EventHandler(this.memorandumToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -325,6 +365,9 @@
         private System.Windows.Forms.ToolStripMenuItem índiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beneficiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDePostulantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem privilegiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeAsistenciaToolStripMenuItem;
 
     }
 }

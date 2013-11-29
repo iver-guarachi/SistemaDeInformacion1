@@ -14,6 +14,7 @@ namespace RRHH.Presentacion
     {
 
         CargoControl cc = new CargoControl();
+        ValidacionesControl valida = new ValidacionesControl();
         private SolicitudPersonal solicitudPersonal;
 
         public Cargo()
@@ -41,6 +42,8 @@ namespace RRHH.Presentacion
 
         private void Cargo_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet_HastaDescuento.Cargo' Puede moverla o quitarla según sea necesario.
+            this.cargoTableAdapter1.Fill(this.recursosHumanosDataSet_HastaDescuento.Cargo);
             // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet2.Departamento' Puede moverla o quitarla según sea necesario.
             this.departamentoTableAdapter1.Fill(this.recursosHumanosDataSet2.Departamento);
             // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet1.Cargo' Puede moverla o quitarla según sea necesario.
@@ -76,37 +79,29 @@ namespace RRHH.Presentacion
                 req.Add(item.ToString());
             }
             if (Convert.ToInt32(textBoxMin.Text) < Convert.ToInt32(textBoxMax.Text))
+            {
                 cc.insertarCargo(textBoxNombre.Text, textBoxMin.Text, textBoxMax.Text, comboBoxDept.Text, req);
+                this.cargoTableAdapter1.Fill(this.recursosHumanosDataSet_HastaDescuento.Cargo);
+            }
             else
                 MessageBox.Show("El salario Minimo debe ser menor que el Salario Maximo");
             ActualizarCampos();
         }
 
-
-
-        public bool isCaracterValido(Char c)
-        {
-            if ((c >= '0' && c <= '9') || c=='\b')
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void textBoxMax_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!isCaracterValido(e.KeyChar))
+            if (!valida.SoloNumeros (e.KeyChar))
             {
-                MessageBox.Show("El campo Salario Maximo es solo para valores numericos");
+                MessageBox.Show("Digite solo valores numericos");
                 e.Handled = true;
             }
         }
 
         private void textBoxMin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!isCaracterValido(e.KeyChar))
+            if (!valida.SoloNumeros(e.KeyChar))
             {
-                MessageBox.Show("El campo Salario Minimo es solo para valores numericos");
+                MessageBox.Show("Digite solo valores numericos");
                 e.Handled = true;
             }
         }
@@ -119,7 +114,10 @@ namespace RRHH.Presentacion
                 req.Add(item.ToString());
             }
             if (Convert.ToInt32(textBoxMin.Text) < Convert.ToInt32(textBoxMax.Text))
-                cc.modificarCargo(textBoxNombre.Text, textBoxMin.Text, textBoxMax.Text, comboBoxDept.Text, req);
+               {
+                cc.modificarCargo(listBox1.Text, textBoxNombre.Text, textBoxMin.Text, textBoxMax.Text, comboBoxDept.Text, req);
+                this.cargoTableAdapter1.Fill(this.recursosHumanosDataSet_HastaDescuento.Cargo);
+               }
             else
                 MessageBox.Show("El salario Minimo debe ser menor que el Salario Maximo");
             ActualizarCampos();
@@ -139,8 +137,7 @@ namespace RRHH.Presentacion
 
                 RRHH.Entidades.Departamento d = new Entidades.Departamento();
                 d = rrhh.Departamentoes.FirstOrDefault(a => a.Id_Departamento == c.Id_Departamento);
-                //int aux = comboBoxDept.Items.IndexOf(d.Nombre);
-                comboBoxDept.SelectedItem = comboBoxDept.Items.IndexOf(d.Nombre);
+                comboBoxDept.SelectedIndex = comboBoxDept.FindStringExact(d.Nombre);
 
                 cargarReq();
                 checkReq(textBoxNombre.Text);
@@ -154,8 +151,11 @@ namespace RRHH.Presentacion
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             DialogResult boton = MessageBox.Show("Realmente desea Eliminar " + textBoxNombre.Text +"?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (boton == DialogResult.OK)            
-                 cc.eliminarCargo(textBoxNombre.Text);
+            if (boton == DialogResult.OK)
+            {
+                cc.eliminarCargo(textBoxNombre.Text);
+                this.cargoTableAdapter1.Fill(this.recursosHumanosDataSet_HastaDescuento.Cargo);
+            }
             ActualizarCampos();
                       
         }
@@ -199,6 +199,17 @@ namespace RRHH.Presentacion
                 solicitudPersonal.refresh();
             }
             catch { }
+        }
+
+        private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBoxNombre.MaxLength = 20;
+            if (!valida.SoloLetras(e.KeyChar))
+            {
+                MessageBox.Show("Digite solo Letras");
+                e.Handled = true;
+            }
+            
         }
 
         

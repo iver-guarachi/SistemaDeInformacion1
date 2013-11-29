@@ -14,7 +14,7 @@ namespace RRHH.Control
         Rol rol;
 
         public void insertarRol(string Nombre)
-        {
+        {   
             rol = new Rol();
             rol.Nombre = Nombre;
             rrhh.Rols.AddObject(rol);
@@ -25,7 +25,7 @@ namespace RRHH.Control
         public void modificarRol(String NombreNuevo, String Nombre)
         {
             rol = new Rol();
-            rol = rrhh.Rols.FirstOrDefault(a => a.Nombre == Nombre); //busqueda
+            rol = rrhh.Rols.FirstOrDefault(a => a.Nombre == Nombre);
             rol.Nombre = NombreNuevo;
             rrhh.SaveChanges();
             MessageBox.Show("Se ha modificado exitosamente el Rol " + Nombre + "con el nombre: " + NombreNuevo);
@@ -36,6 +36,7 @@ namespace RRHH.Control
             rol = new Rol();
             rrhh.Rols.DeleteObject(rrhh.Rols.FirstOrDefault(a => a.Nombre == nombre));
             rrhh.SaveChanges();
+            MessageBox.Show("Se ha eliminado " + nombre);
         }
 
     }

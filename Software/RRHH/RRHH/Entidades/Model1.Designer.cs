@@ -29,6 +29,16 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Req_Cargo_Requisitos", "Requisito", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RRHH.Entidades.Requisito), "Req_Cargo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Req_Cargo), true)]
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Req_Post_RegistroPostulantes", "RegistroPostulante", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RRHH.Entidades.RegistroPostulante), "Req_Post", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Req_Post), true)]
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Req_Post_Requisitos", "Requisito", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RRHH.Entidades.Requisito), "Req_Post", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Req_Post), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Privilegio_Rol", "Rol", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Rol), "Privilegio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Privilegio), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_RegistroHorario_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "RegistroHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.RegistroHorario), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_RegistroHorario_Horario", "Horario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Horario), "RegistroHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.RegistroHorario), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_RegistroHorario_tipoHorario", "tipoHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.tipoHorario), "RegistroHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.RegistroHorario), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Descuento_TipoDescuento", "TipoDescuento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.TipoDescuento), "Descuento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Descuento), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Falta_RegistroHorario", "RegistroHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.RegistroHorario), "Falta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Falta), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Retraso_RegistroHorario", "RegistroHorario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.RegistroHorario), "Retraso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Retraso), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Falta_tipoFalta", "tipoFalta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.tipoFalta), "Falta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Falta), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Descuento_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "Descuento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Descuento), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Memorandum_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "Memorandum", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Memorandum), true)]
 
 #endregion
 
@@ -303,6 +313,198 @@ namespace RRHH.Entidades
             }
         }
         private ObjectSet<Empleados_NombreCompleto> _Empleados_NombreCompleto;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Descuento> Descuentoes
+        {
+            get
+            {
+                if ((_Descuentoes == null))
+                {
+                    _Descuentoes = base.CreateObjectSet<Descuento>("Descuentoes");
+                }
+                return _Descuentoes;
+            }
+        }
+        private ObjectSet<Descuento> _Descuentoes;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Falta> Faltas
+        {
+            get
+            {
+                if ((_Faltas == null))
+                {
+                    _Faltas = base.CreateObjectSet<Falta>("Faltas");
+                }
+                return _Faltas;
+            }
+        }
+        private ObjectSet<Falta> _Faltas;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Horario> Horarios
+        {
+            get
+            {
+                if ((_Horarios == null))
+                {
+                    _Horarios = base.CreateObjectSet<Horario>("Horarios");
+                }
+                return _Horarios;
+            }
+        }
+        private ObjectSet<Horario> _Horarios;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Memorandum> Memoranda
+        {
+            get
+            {
+                if ((_Memoranda == null))
+                {
+                    _Memoranda = base.CreateObjectSet<Memorandum>("Memoranda");
+                }
+                return _Memoranda;
+            }
+        }
+        private ObjectSet<Memorandum> _Memoranda;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<RegistroHorario> RegistroHorarios
+        {
+            get
+            {
+                if ((_RegistroHorarios == null))
+                {
+                    _RegistroHorarios = base.CreateObjectSet<RegistroHorario>("RegistroHorarios");
+                }
+                return _RegistroHorarios;
+            }
+        }
+        private ObjectSet<RegistroHorario> _RegistroHorarios;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Retraso> Retrasoes
+        {
+            get
+            {
+                if ((_Retrasoes == null))
+                {
+                    _Retrasoes = base.CreateObjectSet<Retraso>("Retrasoes");
+                }
+                return _Retrasoes;
+            }
+        }
+        private ObjectSet<Retraso> _Retrasoes;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<TipoDescuento> TipoDescuentoes
+        {
+            get
+            {
+                if ((_TipoDescuentoes == null))
+                {
+                    _TipoDescuentoes = base.CreateObjectSet<TipoDescuento>("TipoDescuentoes");
+                }
+                return _TipoDescuentoes;
+            }
+        }
+        private ObjectSet<TipoDescuento> _TipoDescuentoes;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Vacacione> Vacaciones
+        {
+            get
+            {
+                if ((_Vacaciones == null))
+                {
+                    _Vacaciones = base.CreateObjectSet<Vacacione>("Vacaciones");
+                }
+                return _Vacaciones;
+            }
+        }
+        private ObjectSet<Vacacione> _Vacaciones;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<ListaPostulante> ListaPostulantes
+        {
+            get
+            {
+                if ((_ListaPostulantes == null))
+                {
+                    _ListaPostulantes = base.CreateObjectSet<ListaPostulante>("ListaPostulantes");
+                }
+                return _ListaPostulantes;
+            }
+        }
+        private ObjectSet<ListaPostulante> _ListaPostulantes;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Privilegio> Privilegios
+        {
+            get
+            {
+                if ((_Privilegios == null))
+                {
+                    _Privilegios = base.CreateObjectSet<Privilegio>("Privilegios");
+                }
+                return _Privilegios;
+            }
+        }
+        private ObjectSet<Privilegio> _Privilegios;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<tipoHorario> tipoHorarios
+        {
+            get
+            {
+                if ((_tipoHorarios == null))
+                {
+                    _tipoHorarios = base.CreateObjectSet<tipoHorario>("tipoHorarios");
+                }
+                return _tipoHorarios;
+            }
+        }
+        private ObjectSet<tipoHorario> _tipoHorarios;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<tipoFalta> tipoFaltas
+        {
+            get
+            {
+                if ((_tipoFaltas == null))
+                {
+                    _tipoFaltas = base.CreateObjectSet<tipoFalta>("tipoFaltas");
+                }
+                return _tipoFaltas;
+            }
+        }
+        private ObjectSet<tipoFalta> _tipoFaltas;
 
         #endregion
 
@@ -418,6 +620,182 @@ namespace RRHH.Entidades
         public void AddToEmpleados_NombreCompleto(Empleados_NombreCompleto empleados_NombreCompleto)
         {
             base.AddObject("Empleados_NombreCompleto", empleados_NombreCompleto);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Descuentoes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToDescuentoes(Descuento descuento)
+        {
+            base.AddObject("Descuentoes", descuento);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Faltas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToFaltas(Falta falta)
+        {
+            base.AddObject("Faltas", falta);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Horarios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToHorarios(Horario horario)
+        {
+            base.AddObject("Horarios", horario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Memoranda. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToMemoranda(Memorandum memorandum)
+        {
+            base.AddObject("Memoranda", memorandum);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet RegistroHorarios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToRegistroHorarios(RegistroHorario registroHorario)
+        {
+            base.AddObject("RegistroHorarios", registroHorario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Retrasoes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToRetrasoes(Retraso retraso)
+        {
+            base.AddObject("Retrasoes", retraso);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet TipoDescuentoes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToTipoDescuentoes(TipoDescuento tipoDescuento)
+        {
+            base.AddObject("TipoDescuentoes", tipoDescuento);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Vacaciones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToVacaciones(Vacacione vacacione)
+        {
+            base.AddObject("Vacaciones", vacacione);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet ListaPostulantes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToListaPostulantes(ListaPostulante listaPostulante)
+        {
+            base.AddObject("ListaPostulantes", listaPostulante);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Privilegios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToPrivilegios(Privilegio privilegio)
+        {
+            base.AddObject("Privilegios", privilegio);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet tipoHorarios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddTotipoHorarios(tipoHorario tipoHorario)
+        {
+            base.AddObject("tipoHorarios", tipoHorario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet tipoFaltas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddTotipoFaltas(tipoFalta tipoFalta)
+        {
+            base.AddObject("tipoFaltas", tipoFalta);
+        }
+
+        #endregion
+
+        #region Importaciones de funciones
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        /// <param name="idCargo">No hay documentación de metadatos disponible.</param>
+        public ObjectResult<ListaRequisitosCumplidos_Result> ListaRequisitosCumplidos(Nullable<global::System.Int32> idCargo)
+        {
+            ObjectParameter idCargoParameter;
+            if (idCargo.HasValue)
+            {
+                idCargoParameter = new ObjectParameter("idCargo", idCargo);
+            }
+            else
+            {
+                idCargoParameter = new ObjectParameter("idCargo", typeof(global::System.Int32));
+            }
+    
+            return base.ExecuteFunction<ListaRequisitosCumplidos_Result>("ListaRequisitosCumplidos", idCargoParameter);
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        /// <param name="idPost">No hay documentación de metadatos disponible.</param>
+        public ObjectResult<listadoRequisitoPostulante_Result> listadoRequisitoPostulante(Nullable<global::System.Int32> idPost)
+        {
+            ObjectParameter idPostParameter;
+            if (idPost.HasValue)
+            {
+                idPostParameter = new ObjectParameter("idPost", idPost);
+            }
+            else
+            {
+                idPostParameter = new ObjectParameter("idPost", typeof(global::System.Int32));
+            }
+    
+            return base.ExecuteFunction<listadoRequisitoPostulante_Result>("listadoRequisitoPostulante", idPostParameter);
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        /// <param name="idSolicitud">No hay documentación de metadatos disponible.</param>
+        public int ListaReg_Postulantes(Nullable<global::System.Int32> idSolicitud)
+        {
+            ObjectParameter idSolicitudParameter;
+            if (idSolicitud.HasValue)
+            {
+                idSolicitudParameter = new ObjectParameter("idSolicitud", idSolicitud);
+            }
+            else
+            {
+                idSolicitudParameter = new ObjectParameter("idSolicitud", typeof(global::System.Int32));
+            }
+    
+            return base.ExecuteFunction("ListaReg_Postulantes", idSolicitudParameter);
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        /// <param name="idSolicitud">No hay documentación de metadatos disponible.</param>
+        public ObjectResult<ListaPostulantes_Result> Lista_Postulantes(Nullable<global::System.Int32> idSolicitud)
+        {
+            ObjectParameter idSolicitudParameter;
+            if (idSolicitud.HasValue)
+            {
+                idSolicitudParameter = new ObjectParameter("idSolicitud", idSolicitud);
+            }
+            else
+            {
+                idSolicitudParameter = new ObjectParameter("idSolicitud", typeof(global::System.Int32));
+            }
+    
+            return base.ExecuteFunction<ListaPostulantes_Result>("Lista_Postulantes", idSolicitudParameter);
         }
 
         #endregion
@@ -798,6 +1176,269 @@ namespace RRHH.Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cargo>("RecursosHumanosModel.FK_Cargo_Departamento", "Cargo", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Descuento")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Descuento : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Descuento.
+        /// </summary>
+        /// <param name="id_Descuento">Valor inicial de la propiedad id_Descuento.</param>
+        /// <param name="idTpoDescuento">Valor inicial de la propiedad idTpoDescuento.</param>
+        /// <param name="motivo">Valor inicial de la propiedad motivo.</param>
+        /// <param name="id_Empleado">Valor inicial de la propiedad id_Empleado.</param>
+        public static Descuento CreateDescuento(global::System.Int32 id_Descuento, global::System.Int32 idTpoDescuento, global::System.String motivo, global::System.Int32 id_Empleado)
+        {
+            Descuento descuento = new Descuento();
+            descuento.id_Descuento = id_Descuento;
+            descuento.idTpoDescuento = idTpoDescuento;
+            descuento.motivo = motivo;
+            descuento.id_Empleado = id_Empleado;
+            return descuento;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Descuento
+        {
+            get
+            {
+                return _id_Descuento;
+            }
+            set
+            {
+                if (_id_Descuento != value)
+                {
+                    Onid_DescuentoChanging(value);
+                    ReportPropertyChanging("id_Descuento");
+                    _id_Descuento = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Descuento");
+                    Onid_DescuentoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Descuento;
+        partial void Onid_DescuentoChanging(global::System.Int32 value);
+        partial void Onid_DescuentoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idTpoDescuento
+        {
+            get
+            {
+                return _idTpoDescuento;
+            }
+            set
+            {
+                OnidTpoDescuentoChanging(value);
+                ReportPropertyChanging("idTpoDescuento");
+                _idTpoDescuento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idTpoDescuento");
+                OnidTpoDescuentoChanged();
+            }
+        }
+        private global::System.Int32 _idTpoDescuento;
+        partial void OnidTpoDescuentoChanging(global::System.Int32 value);
+        partial void OnidTpoDescuentoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String motivo
+        {
+            get
+            {
+                return _motivo;
+            }
+            set
+            {
+                OnmotivoChanging(value);
+                ReportPropertyChanging("motivo");
+                _motivo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("motivo");
+                OnmotivoChanged();
+            }
+        }
+        private global::System.String _motivo;
+        partial void OnmotivoChanging(global::System.String value);
+        partial void OnmotivoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> monto
+        {
+            get
+            {
+                return _monto;
+            }
+            set
+            {
+                OnmontoChanging(value);
+                ReportPropertyChanging("monto");
+                _monto = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("monto");
+                OnmontoChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _monto;
+        partial void OnmontoChanging(Nullable<global::System.Decimal> value);
+        partial void OnmontoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Empleado
+        {
+            get
+            {
+                return _id_Empleado;
+            }
+            set
+            {
+                Onid_EmpleadoChanging(value);
+                ReportPropertyChanging("id_Empleado");
+                _id_Empleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Empleado");
+                Onid_EmpleadoChanged();
+            }
+        }
+        private global::System.Int32 _id_Empleado;
+        partial void Onid_EmpleadoChanging(global::System.Int32 value);
+        partial void Onid_EmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> fecha
+        {
+            get
+            {
+                return _fecha;
+            }
+            set
+            {
+                OnfechaChanging(value);
+                ReportPropertyChanging("fecha");
+                _fecha = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha");
+                OnfechaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _fecha;
+        partial void OnfechaChanging(Nullable<global::System.DateTime> value);
+        partial void OnfechaChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Descuento_TipoDescuento", "TipoDescuento")]
+        public TipoDescuento TipoDescuento
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoDescuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "TipoDescuento").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoDescuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "TipoDescuento").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TipoDescuento> TipoDescuentoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoDescuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "TipoDescuento");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TipoDescuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "TipoDescuento", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Descuento_Empleado", "Empleado")]
+        public Empleado Empleado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Descuento_Empleado", "Empleado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Descuento_Empleado", "Empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Empleado> EmpleadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Descuento_Empleado", "Empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_Descuento_Empleado", "Empleado", value);
                 }
             }
         }
@@ -1447,6 +2088,30 @@ namespace RRHH.Entidades
         private global::System.Int32 _quincena;
         partial void OnquincenaChanging(global::System.Int32 value);
         partial void OnquincenaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> activo
+        {
+            get
+            {
+                return _activo;
+            }
+            set
+            {
+                OnactivoChanging(value);
+                ReportPropertyChanging("activo");
+                _activo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("activo");
+                OnactivoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _activo;
+        partial void OnactivoChanging(Nullable<global::System.Int32> value);
+        partial void OnactivoChanged();
 
         #endregion
 
@@ -1509,6 +2174,72 @@ namespace RRHH.Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("RecursosHumanosModel.FK_Usuario_Empleado", "Usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_Empleado", "RegistroHorario")]
+        public EntityCollection<RegistroHorario> RegistroHorarios
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "RegistroHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "RegistroHorario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Descuento_Empleado", "Descuento")]
+        public EntityCollection<Descuento> Descuentoes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Descuento>("RecursosHumanosModel.FK_Descuento_Empleado", "Descuento");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Descuento>("RecursosHumanosModel.FK_Descuento_Empleado", "Descuento", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Memorandum_Empleado", "Memorandum")]
+        public EntityCollection<Memorandum> Memoranda
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Memorandum>("RecursosHumanosModel.FK_Memorandum_Empleado", "Memorandum");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Memorandum>("RecursosHumanosModel.FK_Memorandum_Empleado", "Memorandum", value);
                 }
             }
         }
@@ -2310,6 +3041,1366 @@ namespace RRHH.Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Falta")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Falta : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Falta.
+        /// </summary>
+        /// <param name="id_Registro">Valor inicial de la propiedad id_Registro.</param>
+        /// <param name="motivo">Valor inicial de la propiedad Motivo.</param>
+        /// <param name="idFalta">Valor inicial de la propiedad idFalta.</param>
+        /// <param name="idTipoFalta">Valor inicial de la propiedad idTipoFalta.</param>
+        public static Falta CreateFalta(global::System.Int32 id_Registro, global::System.String motivo, global::System.Int32 idFalta, global::System.Int32 idTipoFalta)
+        {
+            Falta falta = new Falta();
+            falta.id_Registro = id_Registro;
+            falta.Motivo = motivo;
+            falta.idFalta = idFalta;
+            falta.idTipoFalta = idTipoFalta;
+            return falta;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Registro
+        {
+            get
+            {
+                return _id_Registro;
+            }
+            set
+            {
+                Onid_RegistroChanging(value);
+                ReportPropertyChanging("id_Registro");
+                _id_Registro = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Registro");
+                Onid_RegistroChanged();
+            }
+        }
+        private global::System.Int32 _id_Registro;
+        partial void Onid_RegistroChanging(global::System.Int32 value);
+        partial void Onid_RegistroChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+            set
+            {
+                OnMotivoChanging(value);
+                ReportPropertyChanging("Motivo");
+                _Motivo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Motivo");
+                OnMotivoChanged();
+            }
+        }
+        private global::System.String _Motivo;
+        partial void OnMotivoChanging(global::System.String value);
+        partial void OnMotivoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idFalta
+        {
+            get
+            {
+                return _idFalta;
+            }
+            set
+            {
+                if (_idFalta != value)
+                {
+                    OnidFaltaChanging(value);
+                    ReportPropertyChanging("idFalta");
+                    _idFalta = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("idFalta");
+                    OnidFaltaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _idFalta;
+        partial void OnidFaltaChanging(global::System.Int32 value);
+        partial void OnidFaltaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idTipoFalta
+        {
+            get
+            {
+                return _idTipoFalta;
+            }
+            set
+            {
+                OnidTipoFaltaChanging(value);
+                ReportPropertyChanging("idTipoFalta");
+                _idTipoFalta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idTipoFalta");
+                OnidTipoFaltaChanged();
+            }
+        }
+        private global::System.Int32 _idTipoFalta;
+        partial void OnidTipoFaltaChanging(global::System.Int32 value);
+        partial void OnidTipoFaltaChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Falta_RegistroHorario", "RegistroHorario")]
+        public RegistroHorario RegistroHorario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Falta_RegistroHorario", "RegistroHorario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Falta_RegistroHorario", "RegistroHorario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RegistroHorario> RegistroHorarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Falta_RegistroHorario", "RegistroHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Falta_RegistroHorario", "RegistroHorario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Falta_tipoFalta", "tipoFalta")]
+        public tipoFalta tipoFalta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoFalta>("RecursosHumanosModel.FK_Falta_tipoFalta", "tipoFalta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoFalta>("RecursosHumanosModel.FK_Falta_tipoFalta", "tipoFalta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tipoFalta> tipoFaltaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoFalta>("RecursosHumanosModel.FK_Falta_tipoFalta", "tipoFalta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tipoFalta>("RecursosHumanosModel.FK_Falta_tipoFalta", "tipoFalta", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Horario")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Horario : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Horario.
+        /// </summary>
+        /// <param name="id_Horario">Valor inicial de la propiedad id_Horario.</param>
+        /// <param name="nombreTurno">Valor inicial de la propiedad NombreTurno.</param>
+        /// <param name="hraIngreso">Valor inicial de la propiedad hraIngreso.</param>
+        /// <param name="hraSalida">Valor inicial de la propiedad hraSalida.</param>
+        public static Horario CreateHorario(global::System.Int32 id_Horario, global::System.String nombreTurno, global::System.TimeSpan hraIngreso, global::System.TimeSpan hraSalida)
+        {
+            Horario horario = new Horario();
+            horario.id_Horario = id_Horario;
+            horario.NombreTurno = nombreTurno;
+            horario.hraIngreso = hraIngreso;
+            horario.hraSalida = hraSalida;
+            return horario;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Horario
+        {
+            get
+            {
+                return _id_Horario;
+            }
+            set
+            {
+                if (_id_Horario != value)
+                {
+                    Onid_HorarioChanging(value);
+                    ReportPropertyChanging("id_Horario");
+                    _id_Horario = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Horario");
+                    Onid_HorarioChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Horario;
+        partial void Onid_HorarioChanging(global::System.Int32 value);
+        partial void Onid_HorarioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String NombreTurno
+        {
+            get
+            {
+                return _NombreTurno;
+            }
+            set
+            {
+                OnNombreTurnoChanging(value);
+                ReportPropertyChanging("NombreTurno");
+                _NombreTurno = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("NombreTurno");
+                OnNombreTurnoChanged();
+            }
+        }
+        private global::System.String _NombreTurno;
+        partial void OnNombreTurnoChanging(global::System.String value);
+        partial void OnNombreTurnoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.TimeSpan hraIngreso
+        {
+            get
+            {
+                return _hraIngreso;
+            }
+            set
+            {
+                OnhraIngresoChanging(value);
+                ReportPropertyChanging("hraIngreso");
+                _hraIngreso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("hraIngreso");
+                OnhraIngresoChanged();
+            }
+        }
+        private global::System.TimeSpan _hraIngreso;
+        partial void OnhraIngresoChanging(global::System.TimeSpan value);
+        partial void OnhraIngresoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.TimeSpan hraSalida
+        {
+            get
+            {
+                return _hraSalida;
+            }
+            set
+            {
+                OnhraSalidaChanging(value);
+                ReportPropertyChanging("hraSalida");
+                _hraSalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("hraSalida");
+                OnhraSalidaChanged();
+            }
+        }
+        private global::System.TimeSpan _hraSalida;
+        partial void OnhraSalidaChanging(global::System.TimeSpan value);
+        partial void OnhraSalidaChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_Horario", "RegistroHorario")]
+        public EntityCollection<RegistroHorario> RegistroHorarios
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "RegistroHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "RegistroHorario", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="ListaPostulante")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ListaPostulante : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto ListaPostulante.
+        /// </summary>
+        /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+        /// <param name="apellidos">Valor inicial de la propiedad Apellidos.</param>
+        /// <param name="cI">Valor inicial de la propiedad CI.</param>
+        /// <param name="genero">Valor inicial de la propiedad Genero.</param>
+        /// <param name="nacionalidad">Valor inicial de la propiedad Nacionalidad.</param>
+        /// <param name="mail">Valor inicial de la propiedad Mail.</param>
+        /// <param name="telefono">Valor inicial de la propiedad Telefono.</param>
+        /// <param name="edad">Valor inicial de la propiedad Edad.</param>
+        /// <param name="fechaNacimiento">Valor inicial de la propiedad FechaNacimiento.</param>
+        public static ListaPostulante CreateListaPostulante(global::System.String nombre, global::System.String apellidos, global::System.String cI, global::System.Int32 genero, global::System.String nacionalidad, global::System.String mail, global::System.String telefono, global::System.Int32 edad, global::System.DateTime fechaNacimiento)
+        {
+            ListaPostulante listaPostulante = new ListaPostulante();
+            listaPostulante.Nombre = nombre;
+            listaPostulante.Apellidos = apellidos;
+            listaPostulante.CI = cI;
+            listaPostulante.Genero = genero;
+            listaPostulante.Nacionalidad = nacionalidad;
+            listaPostulante.Mail = mail;
+            listaPostulante.Telefono = telefono;
+            listaPostulante.Edad = edad;
+            listaPostulante.FechaNacimiento = fechaNacimiento;
+            return listaPostulante;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                if (_Nombre != value)
+                {
+                    OnNombreChanging(value);
+                    ReportPropertyChanging("Nombre");
+                    _Nombre = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Nombre");
+                    OnNombreChanged();
+                }
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Apellidos
+        {
+            get
+            {
+                return _Apellidos;
+            }
+            set
+            {
+                if (_Apellidos != value)
+                {
+                    OnApellidosChanging(value);
+                    ReportPropertyChanging("Apellidos");
+                    _Apellidos = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Apellidos");
+                    OnApellidosChanged();
+                }
+            }
+        }
+        private global::System.String _Apellidos;
+        partial void OnApellidosChanging(global::System.String value);
+        partial void OnApellidosChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CI
+        {
+            get
+            {
+                return _CI;
+            }
+            set
+            {
+                if (_CI != value)
+                {
+                    OnCIChanging(value);
+                    ReportPropertyChanging("CI");
+                    _CI = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("CI");
+                    OnCIChanged();
+                }
+            }
+        }
+        private global::System.String _CI;
+        partial void OnCIChanging(global::System.String value);
+        partial void OnCIChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Genero
+        {
+            get
+            {
+                return _Genero;
+            }
+            set
+            {
+                if (_Genero != value)
+                {
+                    OnGeneroChanging(value);
+                    ReportPropertyChanging("Genero");
+                    _Genero = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Genero");
+                    OnGeneroChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Genero;
+        partial void OnGeneroChanging(global::System.Int32 value);
+        partial void OnGeneroChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nacionalidad
+        {
+            get
+            {
+                return _Nacionalidad;
+            }
+            set
+            {
+                if (_Nacionalidad != value)
+                {
+                    OnNacionalidadChanging(value);
+                    ReportPropertyChanging("Nacionalidad");
+                    _Nacionalidad = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Nacionalidad");
+                    OnNacionalidadChanged();
+                }
+            }
+        }
+        private global::System.String _Nacionalidad;
+        partial void OnNacionalidadChanging(global::System.String value);
+        partial void OnNacionalidadChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Mail
+        {
+            get
+            {
+                return _Mail;
+            }
+            set
+            {
+                if (_Mail != value)
+                {
+                    OnMailChanging(value);
+                    ReportPropertyChanging("Mail");
+                    _Mail = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Mail");
+                    OnMailChanged();
+                }
+            }
+        }
+        private global::System.String _Mail;
+        partial void OnMailChanging(global::System.String value);
+        partial void OnMailChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Telefono
+        {
+            get
+            {
+                return _Telefono;
+            }
+            set
+            {
+                if (_Telefono != value)
+                {
+                    OnTelefonoChanging(value);
+                    ReportPropertyChanging("Telefono");
+                    _Telefono = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Telefono");
+                    OnTelefonoChanged();
+                }
+            }
+        }
+        private global::System.String _Telefono;
+        partial void OnTelefonoChanging(global::System.String value);
+        partial void OnTelefonoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Edad
+        {
+            get
+            {
+                return _Edad;
+            }
+            set
+            {
+                if (_Edad != value)
+                {
+                    OnEdadChanging(value);
+                    ReportPropertyChanging("Edad");
+                    _Edad = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Edad");
+                    OnEdadChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Edad;
+        partial void OnEdadChanging(global::System.Int32 value);
+        partial void OnEdadChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FechaNacimiento
+        {
+            get
+            {
+                return _FechaNacimiento;
+            }
+            set
+            {
+                if (_FechaNacimiento != value)
+                {
+                    OnFechaNacimientoChanging(value);
+                    ReportPropertyChanging("FechaNacimiento");
+                    _FechaNacimiento = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("FechaNacimiento");
+                    OnFechaNacimientoChanged();
+                }
+            }
+        }
+        private global::System.DateTime _FechaNacimiento;
+        partial void OnFechaNacimientoChanging(global::System.DateTime value);
+        partial void OnFechaNacimientoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> total
+        {
+            get
+            {
+                return _total;
+            }
+            set
+            {
+                OntotalChanging(value);
+                ReportPropertyChanging("total");
+                _total = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("total");
+                OntotalChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _total;
+        partial void OntotalChanging(Nullable<global::System.Int32> value);
+        partial void OntotalChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Memorandum")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Memorandum : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Memorandum.
+        /// </summary>
+        /// <param name="id_Memorandum">Valor inicial de la propiedad id_Memorandum.</param>
+        /// <param name="id_Empleado">Valor inicial de la propiedad id_Empleado.</param>
+        /// <param name="motivo">Valor inicial de la propiedad Motivo.</param>
+        /// <param name="fecha">Valor inicial de la propiedad Fecha.</param>
+        public static Memorandum CreateMemorandum(global::System.Int32 id_Memorandum, global::System.Int32 id_Empleado, global::System.String motivo, global::System.DateTime fecha)
+        {
+            Memorandum memorandum = new Memorandum();
+            memorandum.id_Memorandum = id_Memorandum;
+            memorandum.id_Empleado = id_Empleado;
+            memorandum.Motivo = motivo;
+            memorandum.Fecha = fecha;
+            return memorandum;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Memorandum
+        {
+            get
+            {
+                return _id_Memorandum;
+            }
+            set
+            {
+                if (_id_Memorandum != value)
+                {
+                    Onid_MemorandumChanging(value);
+                    ReportPropertyChanging("id_Memorandum");
+                    _id_Memorandum = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Memorandum");
+                    Onid_MemorandumChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Memorandum;
+        partial void Onid_MemorandumChanging(global::System.Int32 value);
+        partial void Onid_MemorandumChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Empleado
+        {
+            get
+            {
+                return _id_Empleado;
+            }
+            set
+            {
+                Onid_EmpleadoChanging(value);
+                ReportPropertyChanging("id_Empleado");
+                _id_Empleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Empleado");
+                Onid_EmpleadoChanged();
+            }
+        }
+        private global::System.Int32 _id_Empleado;
+        partial void Onid_EmpleadoChanging(global::System.Int32 value);
+        partial void Onid_EmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+            set
+            {
+                OnMotivoChanging(value);
+                ReportPropertyChanging("Motivo");
+                _Motivo = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Motivo");
+                OnMotivoChanged();
+            }
+        }
+        private global::System.String _Motivo;
+        partial void OnMotivoChanging(global::System.String value);
+        partial void OnMotivoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Fecha
+        {
+            get
+            {
+                return _Fecha;
+            }
+            set
+            {
+                OnFechaChanging(value);
+                ReportPropertyChanging("Fecha");
+                _Fecha = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fecha");
+                OnFechaChanged();
+            }
+        }
+        private global::System.DateTime _Fecha;
+        partial void OnFechaChanging(global::System.DateTime value);
+        partial void OnFechaChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Memorandum_Empleado", "Empleado")]
+        public Empleado Empleado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Memorandum_Empleado", "Empleado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Memorandum_Empleado", "Empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Empleado> EmpleadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Memorandum_Empleado", "Empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_Memorandum_Empleado", "Empleado", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Privilegio")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Privilegio : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Privilegio.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad ID.</param>
+        /// <param name="id_Rol">Valor inicial de la propiedad Id_Rol.</param>
+        public static Privilegio CreatePrivilegio(global::System.Int32 id, global::System.Int32 id_Rol)
+        {
+            Privilegio privilegio = new Privilegio();
+            privilegio.ID = id;
+            privilegio.Id_Rol = id_Rol;
+            return privilegio;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                OnnombreChanging(value);
+                ReportPropertyChanging("nombre");
+                _nombre = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nombre");
+                OnnombreChanged();
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id_Rol
+        {
+            get
+            {
+                return _Id_Rol;
+            }
+            set
+            {
+                OnId_RolChanging(value);
+                ReportPropertyChanging("Id_Rol");
+                _Id_Rol = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Id_Rol");
+                OnId_RolChanged();
+            }
+        }
+        private global::System.Int32 _Id_Rol;
+        partial void OnId_RolChanging(global::System.Int32 value);
+        partial void OnId_RolChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Privilegio_Rol", "Rol")]
+        public Rol Rol
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rol>("RecursosHumanosModel.FK_Privilegio_Rol", "Rol").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rol>("RecursosHumanosModel.FK_Privilegio_Rol", "Rol").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Rol> RolReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rol>("RecursosHumanosModel.FK_Privilegio_Rol", "Rol");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Rol>("RecursosHumanosModel.FK_Privilegio_Rol", "Rol", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="RegistroHorario")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class RegistroHorario : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto RegistroHorario.
+        /// </summary>
+        /// <param name="id_Reg">Valor inicial de la propiedad id_Reg.</param>
+        /// <param name="id_Empleado">Valor inicial de la propiedad id_Empleado.</param>
+        /// <param name="id_Horario">Valor inicial de la propiedad id_Horario.</param>
+        /// <param name="id_Tipo">Valor inicial de la propiedad Id_Tipo.</param>
+        public static RegistroHorario CreateRegistroHorario(global::System.Int32 id_Reg, global::System.Int32 id_Empleado, global::System.Int32 id_Horario, global::System.Int32 id_Tipo)
+        {
+            RegistroHorario registroHorario = new RegistroHorario();
+            registroHorario.id_Reg = id_Reg;
+            registroHorario.id_Empleado = id_Empleado;
+            registroHorario.id_Horario = id_Horario;
+            registroHorario.Id_Tipo = id_Tipo;
+            return registroHorario;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Reg
+        {
+            get
+            {
+                return _id_Reg;
+            }
+            set
+            {
+                if (_id_Reg != value)
+                {
+                    Onid_RegChanging(value);
+                    ReportPropertyChanging("id_Reg");
+                    _id_Reg = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Reg");
+                    Onid_RegChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Reg;
+        partial void Onid_RegChanging(global::System.Int32 value);
+        partial void Onid_RegChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Empleado
+        {
+            get
+            {
+                return _id_Empleado;
+            }
+            set
+            {
+                Onid_EmpleadoChanging(value);
+                ReportPropertyChanging("id_Empleado");
+                _id_Empleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Empleado");
+                Onid_EmpleadoChanged();
+            }
+        }
+        private global::System.Int32 _id_Empleado;
+        partial void Onid_EmpleadoChanging(global::System.Int32 value);
+        partial void Onid_EmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Fecha
+        {
+            get
+            {
+                return _Fecha;
+            }
+            set
+            {
+                OnFechaChanging(value);
+                ReportPropertyChanging("Fecha");
+                _Fecha = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fecha");
+                OnFechaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Fecha;
+        partial void OnFechaChanging(Nullable<global::System.DateTime> value);
+        partial void OnFechaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Horario
+        {
+            get
+            {
+                return _id_Horario;
+            }
+            set
+            {
+                Onid_HorarioChanging(value);
+                ReportPropertyChanging("id_Horario");
+                _id_Horario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Horario");
+                Onid_HorarioChanged();
+            }
+        }
+        private global::System.Int32 _id_Horario;
+        partial void Onid_HorarioChanging(global::System.Int32 value);
+        partial void Onid_HorarioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.TimeSpan> hora
+        {
+            get
+            {
+                return _hora;
+            }
+            set
+            {
+                OnhoraChanging(value);
+                ReportPropertyChanging("hora");
+                _hora = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("hora");
+                OnhoraChanged();
+            }
+        }
+        private Nullable<global::System.TimeSpan> _hora;
+        partial void OnhoraChanging(Nullable<global::System.TimeSpan> value);
+        partial void OnhoraChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id_Tipo
+        {
+            get
+            {
+                return _Id_Tipo;
+            }
+            set
+            {
+                OnId_TipoChanging(value);
+                ReportPropertyChanging("Id_Tipo");
+                _Id_Tipo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Id_Tipo");
+                OnId_TipoChanged();
+            }
+        }
+        private global::System.Int32 _Id_Tipo;
+        partial void OnId_TipoChanging(global::System.Int32 value);
+        partial void OnId_TipoChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_Empleado", "Empleado")]
+        public Empleado Empleado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "Empleado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "Empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Empleado> EmpleadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "Empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_RegistroHorario_Empleado", "Empleado", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_Horario", "Horario")]
+        public Horario Horario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Horario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "Horario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Horario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "Horario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Horario> HorarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Horario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "Horario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Horario>("RecursosHumanosModel.FK_RegistroHorario_Horario", "Horario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_tipoHorario", "tipoHorario")]
+        public tipoHorario tipoHorario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "tipoHorario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "tipoHorario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tipoHorario> tipoHorarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tipoHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "tipoHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tipoHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "tipoHorario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Falta_RegistroHorario", "Falta")]
+        public EntityCollection<Falta> Faltas
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Falta>("RecursosHumanosModel.FK_Falta_RegistroHorario", "Falta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Falta>("RecursosHumanosModel.FK_Falta_RegistroHorario", "Falta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Retraso_RegistroHorario", "Retraso")]
+        public EntityCollection<Retraso> Retrasoes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Retraso>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "Retraso");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Retraso>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "Retraso", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="RegistroPostulante")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2332,7 +4423,7 @@ namespace RRHH.Entidades
         /// <param name="edad">Valor inicial de la propiedad Edad.</param>
         /// <param name="formacioAcademica">Valor inicial de la propiedad FormacioAcademica.</param>
         /// <param name="id_Solicitud">Valor inicial de la propiedad Id_Solicitud.</param>
-        public static RegistroPostulante CreateRegistroPostulante(global::System.Int32 id_Postulante, global::System.String nombre, global::System.String apellidos, global::System.String telefono, global::System.String mail, global::System.String cI, global::System.String nacionalidad, global::System.Int32 genero, global::System.DateTime fechaNacimiento, global::System.Int32 edad, global::System.String formacioAcademica, global::System.Int32 id_Solicitud)
+        public static RegistroPostulante CreateRegistroPostulante(global::System.Int32 id_Postulante, global::System.String nombre, global::System.String apellidos, global::System.String telefono, global::System.String mail, global::System.String cI, global::System.String nacionalidad, global::System.String genero, global::System.DateTime fechaNacimiento, global::System.Int32 edad, global::System.String formacioAcademica, global::System.Int32 id_Solicitud)
         {
             RegistroPostulante registroPostulante = new RegistroPostulante();
             registroPostulante.Id_Postulante = id_Postulante;
@@ -2530,7 +4621,7 @@ namespace RRHH.Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 Genero
+        public global::System.String Genero
         {
             get
             {
@@ -2540,13 +4631,13 @@ namespace RRHH.Entidades
             {
                 OnGeneroChanging(value);
                 ReportPropertyChanging("Genero");
-                _Genero = StructuralObject.SetValidValue(value);
+                _Genero = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Genero");
                 OnGeneroChanged();
             }
         }
-        private global::System.Int32 _Genero;
-        partial void OnGeneroChanging(global::System.Int32 value);
+        private global::System.String _Genero;
+        partial void OnGeneroChanging(global::System.String value);
         partial void OnGeneroChanged();
     
         /// <summary>
@@ -3266,6 +5357,157 @@ namespace RRHH.Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Retraso")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Retraso : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Retraso.
+        /// </summary>
+        /// <param name="id_Retraso">Valor inicial de la propiedad id_Retraso.</param>
+        /// <param name="id_Reg">Valor inicial de la propiedad id_Reg.</param>
+        /// <param name="tiempoRetraso">Valor inicial de la propiedad tiempoRetraso.</param>
+        public static Retraso CreateRetraso(global::System.Int32 id_Retraso, global::System.Int32 id_Reg, global::System.Int32 tiempoRetraso)
+        {
+            Retraso retraso = new Retraso();
+            retraso.id_Retraso = id_Retraso;
+            retraso.id_Reg = id_Reg;
+            retraso.tiempoRetraso = tiempoRetraso;
+            return retraso;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Retraso
+        {
+            get
+            {
+                return _id_Retraso;
+            }
+            set
+            {
+                if (_id_Retraso != value)
+                {
+                    Onid_RetrasoChanging(value);
+                    ReportPropertyChanging("id_Retraso");
+                    _id_Retraso = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Retraso");
+                    Onid_RetrasoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Retraso;
+        partial void Onid_RetrasoChanging(global::System.Int32 value);
+        partial void Onid_RetrasoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Reg
+        {
+            get
+            {
+                return _id_Reg;
+            }
+            set
+            {
+                Onid_RegChanging(value);
+                ReportPropertyChanging("id_Reg");
+                _id_Reg = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Reg");
+                Onid_RegChanged();
+            }
+        }
+        private global::System.Int32 _id_Reg;
+        partial void Onid_RegChanging(global::System.Int32 value);
+        partial void Onid_RegChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 tiempoRetraso
+        {
+            get
+            {
+                return _tiempoRetraso;
+            }
+            set
+            {
+                OntiempoRetrasoChanging(value);
+                ReportPropertyChanging("tiempoRetraso");
+                _tiempoRetraso = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiempoRetraso");
+                OntiempoRetrasoChanged();
+            }
+        }
+        private global::System.Int32 _tiempoRetraso;
+        partial void OntiempoRetrasoChanging(global::System.Int32 value);
+        partial void OntiempoRetrasoChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Retraso_RegistroHorario", "RegistroHorario")]
+        public RegistroHorario RegistroHorario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "RegistroHorario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "RegistroHorario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RegistroHorario> RegistroHorarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "RegistroHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RegistroHorario>("RecursosHumanosModel.FK_Retraso_RegistroHorario", "RegistroHorario", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Rol")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3364,6 +5606,28 @@ namespace RRHH.Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("RecursosHumanosModel.FK_Usuario_Rol", "Usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Privilegio_Rol", "Privilegio")]
+        public EntityCollection<Privilegio> Privilegios
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Privilegio>("RecursosHumanosModel.FK_Privilegio_Rol", "Privilegio");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Privilegio>("RecursosHumanosModel.FK_Privilegio_Rol", "Privilegio", value);
                 }
             }
         }
@@ -3954,6 +6218,333 @@ namespace RRHH.Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="TipoDescuento")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TipoDescuento : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto TipoDescuento.
+        /// </summary>
+        /// <param name="id_tpoDescuento">Valor inicial de la propiedad id_tpoDescuento.</param>
+        /// <param name="descripcion">Valor inicial de la propiedad Descripcion.</param>
+        public static TipoDescuento CreateTipoDescuento(global::System.Int32 id_tpoDescuento, global::System.String descripcion)
+        {
+            TipoDescuento tipoDescuento = new TipoDescuento();
+            tipoDescuento.id_tpoDescuento = id_tpoDescuento;
+            tipoDescuento.Descripcion = descripcion;
+            return tipoDescuento;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_tpoDescuento
+        {
+            get
+            {
+                return _id_tpoDescuento;
+            }
+            set
+            {
+                if (_id_tpoDescuento != value)
+                {
+                    Onid_tpoDescuentoChanging(value);
+                    ReportPropertyChanging("id_tpoDescuento");
+                    _id_tpoDescuento = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_tpoDescuento");
+                    Onid_tpoDescuentoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_tpoDescuento;
+        partial void Onid_tpoDescuentoChanging(global::System.Int32 value);
+        partial void Onid_tpoDescuentoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Descripcion
+        {
+            get
+            {
+                return _Descripcion;
+            }
+            set
+            {
+                OnDescripcionChanging(value);
+                ReportPropertyChanging("Descripcion");
+                _Descripcion = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Descripcion");
+                OnDescripcionChanged();
+            }
+        }
+        private global::System.String _Descripcion;
+        partial void OnDescripcionChanging(global::System.String value);
+        partial void OnDescripcionChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Descuento_TipoDescuento", "Descuento")]
+        public EntityCollection<Descuento> Descuentoes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Descuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "Descuento");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Descuento>("RecursosHumanosModel.FK_Descuento_TipoDescuento", "Descuento", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="tipoFalta")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tipoFalta : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto tipoFalta.
+        /// </summary>
+        /// <param name="idTipoFalta">Valor inicial de la propiedad idTipoFalta.</param>
+        /// <param name="nombre">Valor inicial de la propiedad nombre.</param>
+        public static tipoFalta CreatetipoFalta(global::System.Int32 idTipoFalta, global::System.String nombre)
+        {
+            tipoFalta tipoFalta = new tipoFalta();
+            tipoFalta.idTipoFalta = idTipoFalta;
+            tipoFalta.nombre = nombre;
+            return tipoFalta;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idTipoFalta
+        {
+            get
+            {
+                return _idTipoFalta;
+            }
+            set
+            {
+                if (_idTipoFalta != value)
+                {
+                    OnidTipoFaltaChanging(value);
+                    ReportPropertyChanging("idTipoFalta");
+                    _idTipoFalta = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("idTipoFalta");
+                    OnidTipoFaltaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _idTipoFalta;
+        partial void OnidTipoFaltaChanging(global::System.Int32 value);
+        partial void OnidTipoFaltaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                OnnombreChanging(value);
+                ReportPropertyChanging("nombre");
+                _nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("nombre");
+                OnnombreChanged();
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Falta_tipoFalta", "Falta")]
+        public EntityCollection<Falta> Faltas
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Falta>("RecursosHumanosModel.FK_Falta_tipoFalta", "Falta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Falta>("RecursosHumanosModel.FK_Falta_tipoFalta", "Falta", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="tipoHorario")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tipoHorario : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto tipoHorario.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+        public static tipoHorario CreatetipoHorario(global::System.Int32 id, global::System.String nombre)
+        {
+            tipoHorario tipoHorario = new tipoHorario();
+            tipoHorario.Id = id;
+            tipoHorario.Nombre = nombre;
+            return tipoHorario;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_RegistroHorario_tipoHorario", "RegistroHorario")]
+        public EntityCollection<RegistroHorario> RegistroHorarios
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "RegistroHorario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RegistroHorario>("RecursosHumanosModel.FK_RegistroHorario_tipoHorario", "RegistroHorario", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Usuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -4209,6 +6800,562 @@ namespace RRHH.Entidades
                 }
             }
         }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Vacacione")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Vacacione : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Vacacione.
+        /// </summary>
+        /// <param name="id_Vacacion">Valor inicial de la propiedad id_Vacacion.</param>
+        /// <param name="id_Empleado">Valor inicial de la propiedad id_Empleado.</param>
+        /// <param name="fechaInicio">Valor inicial de la propiedad fechaInicio.</param>
+        /// <param name="fechaFin">Valor inicial de la propiedad fechaFin.</param>
+        public static Vacacione CreateVacacione(global::System.Int32 id_Vacacion, global::System.Int32 id_Empleado, global::System.DateTime fechaInicio, global::System.DateTime fechaFin)
+        {
+            Vacacione vacacione = new Vacacione();
+            vacacione.id_Vacacion = id_Vacacion;
+            vacacione.id_Empleado = id_Empleado;
+            vacacione.fechaInicio = fechaInicio;
+            vacacione.fechaFin = fechaFin;
+            return vacacione;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Vacacion
+        {
+            get
+            {
+                return _id_Vacacion;
+            }
+            set
+            {
+                if (_id_Vacacion != value)
+                {
+                    Onid_VacacionChanging(value);
+                    ReportPropertyChanging("id_Vacacion");
+                    _id_Vacacion = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_Vacacion");
+                    Onid_VacacionChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_Vacacion;
+        partial void Onid_VacacionChanging(global::System.Int32 value);
+        partial void Onid_VacacionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_Empleado
+        {
+            get
+            {
+                return _id_Empleado;
+            }
+            set
+            {
+                Onid_EmpleadoChanging(value);
+                ReportPropertyChanging("id_Empleado");
+                _id_Empleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id_Empleado");
+                Onid_EmpleadoChanged();
+            }
+        }
+        private global::System.Int32 _id_Empleado;
+        partial void Onid_EmpleadoChanging(global::System.Int32 value);
+        partial void Onid_EmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime fechaInicio
+        {
+            get
+            {
+                return _fechaInicio;
+            }
+            set
+            {
+                OnfechaInicioChanging(value);
+                ReportPropertyChanging("fechaInicio");
+                _fechaInicio = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fechaInicio");
+                OnfechaInicioChanged();
+            }
+        }
+        private global::System.DateTime _fechaInicio;
+        partial void OnfechaInicioChanging(global::System.DateTime value);
+        partial void OnfechaInicioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime fechaFin
+        {
+            get
+            {
+                return _fechaFin;
+            }
+            set
+            {
+                OnfechaFinChanging(value);
+                ReportPropertyChanging("fechaFin");
+                _fechaFin = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fechaFin");
+                OnfechaFinChanged();
+            }
+        }
+        private global::System.DateTime _fechaFin;
+        partial void OnfechaFinChanging(global::System.DateTime value);
+        partial void OnfechaFinChanged();
+
+        #endregion
+
+    
+    }
+
+    #endregion
+
+    #region ComplexTypes
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="RecursosHumanosModel", Name="listadoRequisitoPostulante_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class listadoRequisitoPostulante_Result : ComplexObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto listadoRequisitoPostulante_Result.
+        /// </summary>
+        /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+        public static listadoRequisitoPostulante_Result CreatelistadoRequisitoPostulante_Result(global::System.String nombre)
+        {
+            listadoRequisitoPostulante_Result listadoRequisitoPostulante_Result = new listadoRequisitoPostulante_Result();
+            listadoRequisitoPostulante_Result.Nombre = nombre;
+            return listadoRequisitoPostulante_Result;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="RecursosHumanosModel", Name="ListaPostulantes_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class ListaPostulantes_Result : ComplexObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto ListaPostulantes_Result.
+        /// </summary>
+        /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+        /// <param name="apellidos">Valor inicial de la propiedad Apellidos.</param>
+        /// <param name="cI">Valor inicial de la propiedad CI.</param>
+        /// <param name="genero">Valor inicial de la propiedad Genero.</param>
+        /// <param name="nacionalidad">Valor inicial de la propiedad Nacionalidad.</param>
+        /// <param name="mail">Valor inicial de la propiedad Mail.</param>
+        /// <param name="telefono">Valor inicial de la propiedad Telefono.</param>
+        /// <param name="edad">Valor inicial de la propiedad Edad.</param>
+        /// <param name="fechaNacimiento">Valor inicial de la propiedad FechaNacimiento.</param>
+        public static ListaPostulantes_Result CreateListaPostulantes_Result(global::System.String nombre, global::System.String apellidos, global::System.String cI, global::System.String genero, global::System.String nacionalidad, global::System.String mail, global::System.String telefono, global::System.Int32 edad, global::System.DateTime fechaNacimiento)
+        {
+            ListaPostulantes_Result listaPostulantes_Result = new ListaPostulantes_Result();
+            listaPostulantes_Result.Nombre = nombre;
+            listaPostulantes_Result.Apellidos = apellidos;
+            listaPostulantes_Result.CI = cI;
+            listaPostulantes_Result.Genero = genero;
+            listaPostulantes_Result.Nacionalidad = nacionalidad;
+            listaPostulantes_Result.Mail = mail;
+            listaPostulantes_Result.Telefono = telefono;
+            listaPostulantes_Result.Edad = edad;
+            listaPostulantes_Result.FechaNacimiento = fechaNacimiento;
+            return listaPostulantes_Result;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> total_de_requisitos_cumplidos
+        {
+            get
+            {
+                return _total_de_requisitos_cumplidos;
+            }
+            set
+            {
+                Ontotal_de_requisitos_cumplidosChanging(value);
+                ReportPropertyChanging("total_de_requisitos_cumplidos");
+                _total_de_requisitos_cumplidos = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("total_de_requisitos_cumplidos");
+                Ontotal_de_requisitos_cumplidosChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _total_de_requisitos_cumplidos;
+        partial void Ontotal_de_requisitos_cumplidosChanging(Nullable<global::System.Int32> value);
+        partial void Ontotal_de_requisitos_cumplidosChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Apellidos
+        {
+            get
+            {
+                return _Apellidos;
+            }
+            set
+            {
+                OnApellidosChanging(value);
+                ReportPropertyChanging("Apellidos");
+                _Apellidos = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Apellidos");
+                OnApellidosChanged();
+            }
+        }
+        private global::System.String _Apellidos;
+        partial void OnApellidosChanging(global::System.String value);
+        partial void OnApellidosChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CI
+        {
+            get
+            {
+                return _CI;
+            }
+            set
+            {
+                OnCIChanging(value);
+                ReportPropertyChanging("CI");
+                _CI = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CI");
+                OnCIChanged();
+            }
+        }
+        private global::System.String _CI;
+        partial void OnCIChanging(global::System.String value);
+        partial void OnCIChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Genero
+        {
+            get
+            {
+                return _Genero;
+            }
+            set
+            {
+                OnGeneroChanging(value);
+                ReportPropertyChanging("Genero");
+                _Genero = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Genero");
+                OnGeneroChanged();
+            }
+        }
+        private global::System.String _Genero;
+        partial void OnGeneroChanging(global::System.String value);
+        partial void OnGeneroChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nacionalidad
+        {
+            get
+            {
+                return _Nacionalidad;
+            }
+            set
+            {
+                OnNacionalidadChanging(value);
+                ReportPropertyChanging("Nacionalidad");
+                _Nacionalidad = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nacionalidad");
+                OnNacionalidadChanged();
+            }
+        }
+        private global::System.String _Nacionalidad;
+        partial void OnNacionalidadChanging(global::System.String value);
+        partial void OnNacionalidadChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Mail
+        {
+            get
+            {
+                return _Mail;
+            }
+            set
+            {
+                OnMailChanging(value);
+                ReportPropertyChanging("Mail");
+                _Mail = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Mail");
+                OnMailChanged();
+            }
+        }
+        private global::System.String _Mail;
+        partial void OnMailChanging(global::System.String value);
+        partial void OnMailChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Telefono
+        {
+            get
+            {
+                return _Telefono;
+            }
+            set
+            {
+                OnTelefonoChanging(value);
+                ReportPropertyChanging("Telefono");
+                _Telefono = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Telefono");
+                OnTelefonoChanged();
+            }
+        }
+        private global::System.String _Telefono;
+        partial void OnTelefonoChanging(global::System.String value);
+        partial void OnTelefonoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Edad
+        {
+            get
+            {
+                return _Edad;
+            }
+            set
+            {
+                OnEdadChanging(value);
+                ReportPropertyChanging("Edad");
+                _Edad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Edad");
+                OnEdadChanged();
+            }
+        }
+        private global::System.Int32 _Edad;
+        partial void OnEdadChanging(global::System.Int32 value);
+        partial void OnEdadChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FechaNacimiento
+        {
+            get
+            {
+                return _FechaNacimiento;
+            }
+            set
+            {
+                OnFechaNacimientoChanging(value);
+                ReportPropertyChanging("FechaNacimiento");
+                _FechaNacimiento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FechaNacimiento");
+                OnFechaNacimientoChanged();
+            }
+        }
+        private global::System.DateTime _FechaNacimiento;
+        partial void OnFechaNacimientoChanging(global::System.DateTime value);
+        partial void OnFechaNacimientoChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="RecursosHumanosModel", Name="ListaRequisitosCumplidos_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class ListaRequisitosCumplidos_Result : ComplexObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto ListaRequisitosCumplidos_Result.
+        /// </summary>
+        /// <param name="id_Requisito">Valor inicial de la propiedad Id_Requisito.</param>
+        /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
+        public static ListaRequisitosCumplidos_Result CreateListaRequisitosCumplidos_Result(global::System.Int32 id_Requisito, global::System.String nombre)
+        {
+            ListaRequisitosCumplidos_Result listaRequisitosCumplidos_Result = new ListaRequisitosCumplidos_Result();
+            listaRequisitosCumplidos_Result.Id_Requisito = id_Requisito;
+            listaRequisitosCumplidos_Result.Nombre = nombre;
+            return listaRequisitosCumplidos_Result;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id_Requisito
+        {
+            get
+            {
+                return _Id_Requisito;
+            }
+            set
+            {
+                OnId_RequisitoChanging(value);
+                ReportPropertyChanging("Id_Requisito");
+                _Id_Requisito = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Id_Requisito");
+                OnId_RequisitoChanged();
+            }
+        }
+        private global::System.Int32 _Id_Requisito;
+        partial void OnId_RequisitoChanging(global::System.Int32 value);
+        partial void OnId_RequisitoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nombre
+        {
+            get
+            {
+                return _Nombre;
+            }
+            set
+            {
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
+            }
+        }
+        private global::System.String _Nombre;
+        partial void OnNombreChanging(global::System.String value);
+        partial void OnNombreChanged();
 
         #endregion
 

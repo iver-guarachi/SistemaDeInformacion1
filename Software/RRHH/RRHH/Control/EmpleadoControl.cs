@@ -43,6 +43,7 @@ namespace RRHH.Control
                 emp.quincena = quincena;
                 emp.haberBasico = haberBasico;
                 emp.AFP = AFP;
+                emp.activo = 1;
 
                 rrhh.Empleadoes.AddObject(emp);
                 rrhh.SaveChanges();

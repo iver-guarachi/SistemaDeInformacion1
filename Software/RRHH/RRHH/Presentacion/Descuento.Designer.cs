@@ -40,6 +40,8 @@
             this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
             this.textBoxMotivo = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.empleadosNombreCompletoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vistaFinal3 = new RRHH.VistaFinal3();
             this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recursosHumanosDataSetVistas2 = new RRHH.RecursosHumanosDataSetVistas2();
             this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetVistas2TableAdapters.Empleados_NombreCompletoTableAdapter();
@@ -48,9 +50,12 @@
             this.tipoDescuentoTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.TipoDescuentoTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.empleados_NombreCompletoTableAdapter1 = new RRHH.VistaFinal3TableAdapters.Empleados_NombreCompletoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetHastaDescuentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).BeginInit();
             this.SuspendLayout();
@@ -135,11 +140,10 @@
             this.textBoxMotivo.Name = "textBoxMotivo";
             this.textBoxMotivo.Size = new System.Drawing.Size(327, 68);
             this.textBoxMotivo.TabIndex = 25;
-            
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.empleadosNombreCompletoBindingSource;
+            this.comboBox2.DataSource = this.empleadosNombreCompletoBindingSource1;
             this.comboBox2.DisplayMember = "NombreCompleto";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(158, 41);
@@ -147,6 +151,16 @@
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 26;
             this.comboBox2.ValueMember = "Id_Empleado";
+            // 
+            // empleadosNombreCompletoBindingSource1
+            // 
+            this.empleadosNombreCompletoBindingSource1.DataMember = "Empleados_NombreCompleto";
+            this.empleadosNombreCompletoBindingSource1.DataSource = this.vistaFinal3;
+            // 
+            // vistaFinal3
+            // 
+            this.vistaFinal3.DataSetName = "VistaFinal3";
+            this.vistaFinal3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // empleadosNombreCompletoBindingSource
             // 
@@ -199,6 +213,10 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Fecha:";
             // 
+            // empleados_NombreCompletoTableAdapter1
+            // 
+            this.empleados_NombreCompletoTableAdapter1.ClearBeforeFill = true;
+            // 
             // Descuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,11 +235,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Descuento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Descuento";
             this.Load += new System.EventHandler(this.Descuento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetHastaDescuentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).EndInit();
             this.ResumeLayout(false);
@@ -250,5 +271,8 @@
         private RecursosHumanosDataSet_HastaDescuentoTableAdapters.TipoDescuentoTableAdapter tipoDescuentoTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
+        private VistaFinal3 vistaFinal3;
+        private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource1;
+        private VistaFinal3TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter1;
     }
 }

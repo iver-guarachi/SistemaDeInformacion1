@@ -13,12 +13,13 @@ namespace RRHH.Control
 
 
         public void insertarRequisito(String Nombre, String Descripcion)
-        {
-            req.Nombre = Nombre;
-            req.Descripcion = Descripcion;
+        { 
+              req.Nombre = Nombre;
+              req.Descripcion = Descripcion;
 
-            rrhh.Requisitos.AddObject(req);
-            rrhh.SaveChanges();
+              rrhh.Requisitos.AddObject(req);
+              rrhh.SaveChanges();
+             
         }
 
         public void modificarRequisitos(String Nombre, String nNombre, String Descripcion)

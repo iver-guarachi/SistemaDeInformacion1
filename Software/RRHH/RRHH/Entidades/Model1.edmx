@@ -9,6 +9,7 @@
           <EntitySet Name="Cargo" EntityType="RecursosHumanosModel.Store.Cargo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Departamento" EntityType="RecursosHumanosModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Descuento" EntityType="RecursosHumanosModel.Store.Descuento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Despido" EntityType="RecursosHumanosModel.Store.Despido" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Empleado" EntityType="RecursosHumanosModel.Store.Empleado" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Empresa" EntityType="RecursosHumanosModel.Store.Empresa" store:Type="Tables" store:Schema="dbo" store:Name="Empresa">
             <DefiningQuery>SELECT 
@@ -20,6 +21,7 @@
           <EntitySet Name="Falta" EntityType="RecursosHumanosModel.Store.Falta" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Horario" EntityType="RecursosHumanosModel.Store.Horario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Memorandum" EntityType="RecursosHumanosModel.Store.Memorandum" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OtorgarVacacion" EntityType="RecursosHumanosModel.Store.OtorgarVacacion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Privilegio" EntityType="RecursosHumanosModel.Store.Privilegio" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="RegistroHorario" EntityType="RecursosHumanosModel.Store.RegistroHorario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="RegistroPostulantes" EntityType="RecursosHumanosModel.Store.RegistroPostulantes" store:Type="Tables" Schema="dbo" />
@@ -59,7 +61,7 @@
       [Empleados_NombreCompleto].[haberBasico] AS [haberBasico], 
       [Empleados_NombreCompleto].[salarioBasico] AS [salarioBasico], 
       [Empleados_NombreCompleto].[quincena] AS [quincena], 
-      [Empleados_NombreCompleto].[idCargo] AS [idCargo]
+      [Empleados_NombreCompleto].[Cargo] AS [Cargo]
       FROM [dbo].[Empleados_NombreCompleto] AS [Empleados_NombreCompleto]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ListaPostulantes" EntityType="RecursosHumanosModel.Store.ListaPostulantes" store:Type="Views" store:Schema="dbo" store:Name="ListaPostulantes">
@@ -97,6 +99,10 @@
             <End Role="TipoDescuento" EntitySet="TipoDescuento" />
             <End Role="Descuento" EntitySet="Descuento" />
           </AssociationSet>
+          <AssociationSet Name="FK_Despido_Empleado" Association="RecursosHumanosModel.Store.FK_Despido_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Despido" EntitySet="Despido" />
+          </AssociationSet>
           <AssociationSet Name="FK_Empleado_Cargo" Association="RecursosHumanosModel.Store.FK_Empleado_Cargo">
             <End Role="Cargo" EntitySet="Cargo" />
             <End Role="Empleado" EntitySet="Empleado" />
@@ -112,6 +118,10 @@
           <AssociationSet Name="FK_Memorandum_Empleado" Association="RecursosHumanosModel.Store.FK_Memorandum_Empleado">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Memorandum" EntitySet="Memorandum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtorgarVacacion_Empleado" Association="RecursosHumanosModel.Store.FK_OtorgarVacacion_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="OtorgarVacacion" EntitySet="OtorgarVacacion" />
           </AssociationSet>
           <AssociationSet Name="FK_Privilegio_Rol" Association="RecursosHumanosModel.Store.FK_Privilegio_Rol">
             <End Role="Rol" EntitySet="Rol" />
@@ -194,6 +204,14 @@
           <Property Name="monto" Type="decimal" Scale="2" />
           <Property Name="motivo" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Despido">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idEmpleado" Type="int" />
+          <Property Name="Motivo" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="Id_Empleado" />
@@ -212,8 +230,8 @@
           <Property Name="direccion" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="8" />
           <Property Name="telefonoEmergencia" Type="varchar" Nullable="false" MaxLength="8" />
-          <Property Name="referenciaNombre1" Type="varchar" Nullable="false" MaxLength="80" />
-          <Property Name="referenciaTelefono1" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="referenciaNombre1" Type="varchar" MaxLength="80" />
+          <Property Name="referenciaTelefono1" Type="varchar" MaxLength="8" />
           <Property Name="referenciaNombre2" Type="varchar" MaxLength="8" />
           <Property Name="referenciaTelefono2" Type="varchar" MaxLength="8" />
           <Property Name="fechaIngreso" Type="date" Nullable="false" />
@@ -263,6 +281,15 @@
           <Property Name="id_Empleado" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Motivo" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="OtorgarVacacion">
+          <Key>
+            <PropertyRef Name="idOtorgarVacacion" />
+          </Key>
+          <Property Name="idOtorgarVacacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idEmpleado" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Privilegio">
           <Key>
@@ -424,10 +451,10 @@
             <PropertyRef Name="haberBasico" />
             <PropertyRef Name="salarioBasico" />
             <PropertyRef Name="quincena" />
-            <PropertyRef Name="idCargo" />
+            <PropertyRef Name="Cargo" />
             <PropertyRef Name="nombreEsposa" />
           </Key>
-          <Property Name="Id_Empleado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Empleado" Type="int" Nullable="false" />
           <Property Name="NombreCompleto" Type="varchar" Nullable="false" MaxLength="102" />
           <Property Name="CI" Type="int" />
           <Property Name="Nacionalidad" Type="varchar" Nullable="false" MaxLength="30" />
@@ -449,7 +476,7 @@
           <Property Name="haberBasico" Type="int" Nullable="false" />
           <Property Name="salarioBasico" Type="int" Nullable="false" />
           <Property Name="quincena" Type="int" Nullable="false" />
-          <Property Name="idCargo" Type="int" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <!--Se encontraron errores durante la generación:
       advertencia 6002: La tabla o vista 'RecursosHumanos.dbo.ListaPostulantes' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
@@ -530,6 +557,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Despido_Empleado">
+          <End Role="Empleado" Type="RecursosHumanosModel.Store.Empleado" Multiplicity="0..1" />
+          <End Role="Despido" Type="RecursosHumanosModel.Store.Despido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="Despido">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Empleado_Cargo">
           <End Role="Cargo" Type="RecursosHumanosModel.Store.Cargo" Multiplicity="1" />
           <End Role="Empleado" Type="RecursosHumanosModel.Store.Empleado" Multiplicity="*" />
@@ -575,6 +614,18 @@
             </Principal>
             <Dependent Role="Memorandum">
               <PropertyRef Name="id_Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtorgarVacacion_Empleado">
+          <End Role="Empleado" Type="RecursosHumanosModel.Store.Empleado" Multiplicity="1" />
+          <End Role="OtorgarVacacion" Type="RecursosHumanosModel.Store.OtorgarVacacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="OtorgarVacacion">
+              <PropertyRef Name="idEmpleado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -866,6 +917,16 @@
             <End Role="Empleado" EntitySet="Empleadoes" />
             <End Role="Memorandum" EntitySet="Memoranda" />
           </AssociationSet>
+          <EntitySet Name="Despidoes" EntityType="RecursosHumanosModel.Despido" />
+          <EntitySet Name="OtorgarVacacions" EntityType="RecursosHumanosModel.OtorgarVacacion" />
+          <AssociationSet Name="FK_Despido_Empleado" Association="RecursosHumanosModel.FK_Despido_Empleado">
+            <End Role="Empleado" EntitySet="Empleadoes" />
+            <End Role="Despido" EntitySet="Despidoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtorgarVacacion_Empleado" Association="RecursosHumanosModel.FK_OtorgarVacacion_Empleado">
+            <End Role="Empleado" EntitySet="Empleadoes" />
+            <End Role="OtorgarVacacion" EntitySet="OtorgarVacacions" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -969,6 +1030,8 @@
           <Property Type="Int32" Name="activo" />
           <NavigationProperty Name="Descuentoes" Relationship="RecursosHumanosModel.FK_Descuento_Empleado" FromRole="Empleado" ToRole="Descuento" />
           <NavigationProperty Name="Memoranda" Relationship="RecursosHumanosModel.FK_Memorandum_Empleado" FromRole="Empleado" ToRole="Memorandum" />
+          <NavigationProperty Name="Despidoes" Relationship="RecursosHumanosModel.FK_Despido_Empleado" FromRole="Empleado" ToRole="Despido" />
+          <NavigationProperty Name="OtorgarVacacions" Relationship="RecursosHumanosModel.FK_OtorgarVacacion_Empleado" FromRole="Empleado" ToRole="OtorgarVacacion" />
         </EntityType>
         <EntityType Name="RegistroPostulante">
           <Key>
@@ -1183,7 +1246,7 @@
             <PropertyRef Name="haberBasico" />
             <PropertyRef Name="salarioBasico" />
             <PropertyRef Name="quincena" />
-            <PropertyRef Name="idCargo" />
+            <PropertyRef Name="Cargo" />
           </Key>
           <Property Type="Int32" Name="Id_Empleado" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
@@ -1207,7 +1270,7 @@
           <Property Type="Int32" Name="haberBasico" Nullable="false" />
           <Property Type="Int32" Name="salarioBasico" Nullable="false" />
           <Property Type="Int32" Name="quincena" Nullable="false" />
-          <Property Type="Int32" Name="idCargo" Nullable="false" />
+          <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Descuento">
           <Key>
@@ -1482,6 +1545,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Despido">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="idEmpleado" />
+          <Property Type="String" Name="Motivo" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleado" Relationship="RecursosHumanosModel.FK_Despido_Empleado" FromRole="Despido" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="OtorgarVacacion">
+          <Key>
+            <PropertyRef Name="idOtorgarVacacion" />
+          </Key>
+          <Property Type="Int32" Name="idOtorgarVacacion" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="idEmpleado" Nullable="false" />
+          <Property Type="DateTime" Name="FechaInicio" Nullable="false" />
+          <Property Type="DateTime" Name="FechaFin" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="RecursosHumanosModel.FK_OtorgarVacacion_Empleado" FromRole="OtorgarVacacion" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="FK_Despido_Empleado">
+          <End Type="RecursosHumanosModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+          <End Type="RecursosHumanosModel.Despido" Role="Despido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="Despido">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtorgarVacacion_Empleado">
+          <End Type="RecursosHumanosModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="RecursosHumanosModel.OtorgarVacacion" Role="OtorgarVacacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Id_Empleado" />
+            </Principal>
+            <Dependent Role="OtorgarVacacion">
+              <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1650,7 +1756,7 @@
           <EntitySetMapping Name="Empleados_NombreCompleto">
             <EntityTypeMapping TypeName="RecursosHumanosModel.Empleados_NombreCompleto">
               <MappingFragment StoreEntitySet="Empleados_NombreCompleto">
-                <ScalarProperty Name="idCargo" ColumnName="idCargo" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
                 <ScalarProperty Name="quincena" ColumnName="quincena" />
                 <ScalarProperty Name="salarioBasico" ColumnName="salarioBasico" />
                 <ScalarProperty Name="haberBasico" ColumnName="haberBasico" />
@@ -1831,6 +1937,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Despidoes">
+            <EntityTypeMapping TypeName="RecursosHumanosModel.Despido">
+              <MappingFragment StoreEntitySet="Despido">
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtorgarVacacions">
+            <EntityTypeMapping TypeName="RecursosHumanosModel.OtorgarVacacion">
+              <MappingFragment StoreEntitySet="OtorgarVacacion">
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="idOtorgarVacacion" ColumnName="idOtorgarVacacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1851,7 +1976,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model1">
+      <Diagram Name="Model1" ZoomLevel="53">
         <EntityTypeShape EntityType="RecursosHumanosModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
         <EntityTypeShape EntityType="RecursosHumanosModel.Rol" Width="1.5" PointX="0.75" PointY="4" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="RecursosHumanosModel.sysdiagram" Width="1.5" PointX="2.625" PointY="0.5" Height="1.9802864583333326" />
@@ -1897,8 +2022,8 @@
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Req_Cargo_Requisitos">
           <ConnectorPoint PointX="8.75" PointY="6.625" />
-          <ConnectorPoint PointX="8.75" PointY="4.6200691145833321" />
-          <ConnectorPoint PointX="10" PointY="4.6200691145833321" />
+          <ConnectorPoint PointX="8.75" PointY="4.2450716145833338" />
+          <ConnectorPoint PointX="10" PointY="4.2450716145833338" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RecursosHumanosModel.Req_Post" Width="1.5" PointX="10.625" PointY="8.5" Height="1.9802864583333388" />
         <AssociationConnector Association="RecursosHumanosModel.FK_Req_Post_RegistroPostulantes">
@@ -1911,7 +2036,7 @@
           <ConnectorPoint PointX="11.375" PointY="8.5" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RecursosHumanosModel.SolicitudVigente" Width="1.5" PointX="15.5" PointY="1.125" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="RecursosHumanosModel.Empleados_NombreCompleto" Width="1.5" PointX="0.5" PointY="12.75" Height="5.4417122395833388" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Empleados_NombreCompleto" Width="1.5" PointX="0.5" PointY="12.75" Height="5.4417122395833353" />
         <EntityTypeShape EntityType="RecursosHumanosModel.Descuento" Width="1.5" PointX="3" PointY="17.5" Height="2.7494921875000031" />
         <EntityTypeShape EntityType="RecursosHumanosModel.Falta" Width="1.5" PointX="4.75" PointY="15.375" Height="2.1725878906249996" />
         <EntityTypeShape EntityType="RecursosHumanosModel.Horario" Width="1.5" PointX="3" PointY="15.375" Height="1.9802864583333317" />
@@ -1927,8 +2052,14 @@
           <ConnectorPoint PointX="1.375" PointY="6.875" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_RegistroHorario_Empleado">
-          <ConnectorPoint PointX="3.32031375" PointY="10.787822265624998" />
-          <ConnectorPoint PointX="3.32031375" PointY="11.125" />
+          <ConnectorPoint PointX="4.375" PointY="11.172425130208332" />
+          <ConnectorPoint PointX="4.3785744349011217" PointY="11.175999565109452" />
+          <ConnectorPoint PointX="4.4964255650988791" PointY="11.29385069530721" />
+          <ConnectorPoint PointX="4.75" PointY="11.547425130208332" />
+          <ConnectorPoint PointX="4.75" PointY="12.884497724302818" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="12.884497724302818" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="12.884497724302818" />
+          <ConnectorPoint PointX="4" PointY="12.884497724302818" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_RegistroHorario_Horario">
           <ConnectorPoint PointX="3.5" PointY="15.375" />
@@ -1937,8 +2068,12 @@
         <EntityTypeShape EntityType="RecursosHumanosModel.tipoHorario" Width="1.5" PointX="5.625" PointY="12.625" Height="1.4033821614583246" />
         <AssociationConnector Association="RecursosHumanosModel.FK_RegistroHorario_tipoHorario">
           <ConnectorPoint PointX="5.625" PointY="13.422841796875" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="13.422841796875" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="13.422841796875" />
           <ConnectorPoint PointX="5.114583333333333" PointY="13.422841796875" />
           <ConnectorPoint PointX="4.947916666666667" PointY="13.422841796875" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="13.422841796875" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="13.422841796875" />
           <ConnectorPoint PointX="4" PointY="13.422841796875" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Descuento_TipoDescuento" >
@@ -1948,15 +2083,25 @@
           <ConnectorPoint PointX="3" PointY="19.044284854166666" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Falta_RegistroHorario" >
-          <ConnectorPoint PointX="4" PointY="12.077875937928535" />
-          <ConnectorPoint PointX="5.03125" PointY="12.077875937928535" />
+          <ConnectorPoint PointX="4" PointY="12.067302303461283" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="12.067302303461283" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="12.067302303461283" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="12.067302303461283" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="12.067302303461283" />
+          <ConnectorPoint PointX="5.03125" PointY="12.067302303461283" />
           <ConnectorPoint PointX="5.03125" PointY="15.375" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Retraso_RegistroHorario" >
-          <ConnectorPoint PointX="4" PointY="12.348566120648725" />
-          <ConnectorPoint PointX="4.947916666666667" PointY="12.348566120648725" />
-          <ConnectorPoint PointX="5.114583333333333" PointY="12.348566120648725" />
-          <ConnectorPoint PointX="7.59375" PointY="12.348566120648725" />
+          <ConnectorPoint PointX="4" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="4.947916666666667" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="5.114583333333333" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="5.229166666666667" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="5.395833333333333" PointY="12.346153651730635" />
+          <ConnectorPoint PointX="7.59375" PointY="12.346153651730635" />
           <ConnectorPoint PointX="7.59375" PointY="15.375" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RecursosHumanosModel.tipoFalta" Width="1.5" PointX="4.75" PointY="18.75" Height="1.595683593749996" />
@@ -1965,11 +2110,13 @@
           <ConnectorPoint PointX="5.5" PointY="17.547587890625" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Descuento_Empleado" >
-          <ConnectorPoint PointX="3.8789088749999996" PointY="10.787822265624998" />
-          <ConnectorPoint PointX="3.8789088749999996" PointY="11.0625" />
-          <ConnectorPoint PointX="2.4375" PointY="11.0625" />
-          <ConnectorPoint PointX="2.4375" PointY="18.200783130208329" />
-          <ConnectorPoint PointX="3" PointY="18.200783130208329" />
+          <ConnectorPoint PointX="4.375" PointY="8.9610856119791649" />
+          <ConnectorPoint PointX="4.4375" PointY="8.9610856119791649" />
+          <ConnectorPoint PointX="4.4375" PointY="15.3125" />
+          <ConnectorPoint PointX="2.9375" PointY="15.3125" />
+          <ConnectorPoint PointX="2.9375" PointY="17.40625" />
+          <ConnectorPoint PointX="3.75" PointY="17.40625" />
+          <ConnectorPoint PointX="3.75" PointY="17.5" />
         </AssociationConnector>
         <AssociationConnector Association="RecursosHumanosModel.FK_Memorandum_Empleado" >
           <ConnectorPoint PointX="3.656252" PointY="4" />
@@ -1985,6 +2132,28 @@
           <ConnectorPoint PointX="12" PointY="5.9802864583333308" />
           <ConnectorPoint PointX="12" PointY="4.7401432291666667" />
           <ConnectorPoint PointX="12.375" PointY="4.7401432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RecursosHumanosModel.Despido" Width="1.5" PointX="5.125" PointY="21.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.OtorgarVacacion" Width="1.5" PointX="5.125" PointY="23.875" Height="1.9802864583333246" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Despido_Empleado" >
+          <ConnectorPoint PointX="4.375" PointY="10.066755371093748" />
+          <ConnectorPoint PointX="5.3125" PointY="10.066755371093748" />
+          <ConnectorPoint PointX="5.3125" PointY="15.312499999999998" />
+          <ConnectorPoint PointX="6.3125" PointY="15.312499999999998" />
+          <ConnectorPoint PointX="6.3125" PointY="21.28125" />
+          <ConnectorPoint PointX="5.875" PointY="21.28125" />
+          <ConnectorPoint PointX="5.875" PointY="21.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="RecursosHumanosModel.FK_OtorgarVacacion_Empleado" >
+          <ConnectorPoint PointX="4.375" PointY="7.8554158528645823" />
+          <ConnectorPoint PointX="5.3125" PointY="7.8554158528645823" />
+          <ConnectorPoint PointX="5.3125" PointY="15.312499999999998" />
+          <ConnectorPoint PointX="6.3125" PointY="15.312499999999998" />
+          <ConnectorPoint PointX="6.3125" PointY="21.1875" />
+          <ConnectorPoint PointX="5.0625" PointY="21.1875" />
+          <ConnectorPoint PointX="5.0625" PointY="23.78125" />
+          <ConnectorPoint PointX="5.875" PointY="23.78125" />
+          <ConnectorPoint PointX="5.875" PointY="23.875" />
         </AssociationConnector>
         </Diagram>
     </Diagrams>

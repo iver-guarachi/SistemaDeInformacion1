@@ -20,8 +20,8 @@ namespace RRHH.Presentacion
 
         private void Falta_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetVistas2.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
-            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetVistas2.Empleados_NombreCompleto);
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
+            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto);
             textBox1.Enabled = false;
         }
 

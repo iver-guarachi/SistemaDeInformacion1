@@ -41,7 +41,9 @@ namespace RRHH.Control
 
                 rrhh.Req_Cargo.AddObject(req_car);
                 rrhh.SaveChanges();
+               
             }
+            MessageBox.Show("se ha agregado el cargo: " + Nombre);
         }
 
         public void modificarCargo(String vNombre, String nNombre, String Min, String Max, String Departamento, List<String> requisitos)
@@ -81,6 +83,7 @@ namespace RRHH.Control
                 rrhh.Req_Cargo.AddObject(req_car);
                 rrhh.SaveChanges();
             }
+            MessageBox.Show("se ha Modificado Satisfactoriamente" );
         }
 
         public void eliminarCargo(String Nombre)
@@ -95,8 +98,10 @@ namespace RRHH.Control
                                 select d;
                 foreach (var r in requisito)
                 {
-                    rrhh.Req_Cargo.DeleteObject(rrhh.Req_Cargo.FirstOrDefault(a => a.Id_Cargo == id));                    
+                    rrhh.Req_Cargo.DeleteObject(rrhh.Req_Cargo.FirstOrDefault(a => a.Id_Cargo == id));
+                   
                 }
+                
             }
             catch
             {

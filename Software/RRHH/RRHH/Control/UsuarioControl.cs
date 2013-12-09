@@ -19,7 +19,7 @@ namespace RRHH
             usuario = rrhh.Usuarios.FirstOrDefault(a => a.NombreUsuario == usuario.NombreUsuario);
             if (usuario == null)
             {
-                if ( Password == Confirmar && Password.Length > 7)
+                if (Password == Confirmar && Password.Length > 7)
                 {
                     Rol r = new Rol();
                     r = rrhh.Rols.FirstOrDefault(a => a.Nombre == rol);
@@ -31,7 +31,11 @@ namespace RRHH
                     usuario.ID_Empleado = empleado;
                     rrhh.Usuarios.AddObject(usuario);
                     rrhh.SaveChanges();
-                    MessageBox.Show("Se guardo el usuario: "+ Nombre);            
+                    MessageBox.Show("Se guardo el usuario: " + Nombre);
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña debe tener mas de 7 digitos");
                 }
             }
             else

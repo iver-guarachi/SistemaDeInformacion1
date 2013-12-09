@@ -318,6 +318,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Cargo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cargo_FormClosed);
             this.Load += new System.EventHandler(this.Cargo_Load);

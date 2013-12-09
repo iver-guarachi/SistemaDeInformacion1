@@ -167,6 +167,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Horario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegsitroHorario";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoraEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinEntrada)).EndInit();

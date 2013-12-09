@@ -35,11 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,19 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="completoContratacion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>completoContratacion.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="completoContratacion.Designer.cs" />
     <Compile Include="Control\CargoControl.cs" />
     <Compile Include="Control\DepartamentoControl.cs" />
     <Compile Include="Control\DescuentoControl.cs" />
+    <Compile Include="Control\DespidoControl.cs" />
     <Compile Include="Control\EmpleadoControl.cs" />
     <Compile Include="Control\EmpresaControl.cs" />
     <Compile Include="Control\Horario.cs" />
     <Compile Include="Control\Login.cs" />
     <Compile Include="Control\MemorandumControl.cs" />
+    <Compile Include="Control\OtorgarVacacionControl.cs" />
     <Compile Include="Control\PrivilegioControl.cs" />
     <Compile Include="Control\RegistroAsistencia.cs" />
     <Compile Include="Control\RegistroPostulantesControl.cs" />
@@ -83,12 +84,6 @@
     <Compile Include="Presentacion\Aguinaldo.Designer.cs">
       <DependentUpon>Aguinaldo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Beneficios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Beneficios.Designer.cs">
-      <DependentUpon>Beneficios.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Cargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +101,12 @@
     </Compile>
     <Compile Include="Presentacion\Descuento.Designer.cs">
       <DependentUpon>Descuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Despidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Despidos.Designer.cs">
+      <DependentUpon>Despidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Empresa.cs">
       <SubType>Form</SubType>
@@ -261,6 +262,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecursosHumanosDataSetDatosFinal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetDatosFinal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSetFinalVsitas2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSetFinalVsitas2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RecursosHumanosDataSetListaReqCargo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,6 +297,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VistaFinal3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VistaFinal3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vistas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,9 +309,6 @@
     </Compile>
     <EmbeddedResource Include="Presentacion\Aguinaldo.resx">
       <DependentUpon>Aguinaldo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Beneficios.resx">
-      <DependentUpon>Beneficios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
@@ -311,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Descuento.resx">
       <DependentUpon>Descuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Despidos.resx">
+      <DependentUpon>Despidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleado.resx">
       <DependentUpon>Empleado.cs</DependentUpon>
@@ -382,22 +398,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteSueldo.rdlc" />
     <None Include="App.Config" />
     <EntityDeploy Include="Entidades\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="completoContratacion.xsc">
-      <DependentUpon>completoContratacion.xsd</DependentUpon>
-    </None>
-    <None Include="completoContratacion.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>completoContratacion.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="completoContratacion.xss">
-      <DependentUpon>completoContratacion.xsd</DependentUpon>
-    </None>
     <None Include="Properties\DataSources\RRHH.Entidades.RecursosHumanosEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -440,6 +447,28 @@
     </None>
     <None Include="RecursosHumanosDataSet2.xss">
       <DependentUpon>RecursosHumanosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetDatosFinal.xsc">
+      <DependentUpon>RecursosHumanosDataSetDatosFinal.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetDatosFinal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetDatosFinal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetDatosFinal.xss">
+      <DependentUpon>RecursosHumanosDataSetDatosFinal.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetFinalVsitas2.xsc">
+      <DependentUpon>RecursosHumanosDataSetFinalVsitas2.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSetFinalVsitas2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSetFinalVsitas2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSetFinalVsitas2.xss">
+      <DependentUpon>RecursosHumanosDataSetFinalVsitas2.xsd</DependentUpon>
     </None>
     <None Include="RecursosHumanosDataSetListaReqCargo.xsc">
       <DependentUpon>RecursosHumanosDataSetListaReqCargo.xsd</DependentUpon>
@@ -496,6 +525,17 @@
     <None Include="RecursosHumanosDataSet_HastaDescuento.xss">
       <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
     </None>
+    <None Include="VistaFinal3.xsc">
+      <DependentUpon>VistaFinal3.xsd</DependentUpon>
+    </None>
+    <None Include="VistaFinal3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VistaFinal3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VistaFinal3.xss">
+      <DependentUpon>VistaFinal3.xsd</DependentUpon>
+    </None>
     <None Include="Vistas.xsc">
       <DependentUpon>Vistas.xsd</DependentUpon>
     </None>
@@ -507,6 +547,10 @@
     <None Include="Vistas.xss">
       <DependentUpon>Vistas.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\home_rrhh.jpg" />
+    <Content Include="Imagenes\login_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

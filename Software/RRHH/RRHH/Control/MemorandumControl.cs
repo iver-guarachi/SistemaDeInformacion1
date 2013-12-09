@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using RRHH.Entidades;
+using System.Windows.Forms;
 
 namespace RRHH.Control
 {
@@ -17,6 +18,7 @@ namespace RRHH.Control
             memo.Motivo = motivo;
             rrhh.Memoranda.AddObject(memo);
             rrhh.SaveChanges();
+            MessageBox.Show("se ha Agregado el Memorandum");
         }
     }
 }

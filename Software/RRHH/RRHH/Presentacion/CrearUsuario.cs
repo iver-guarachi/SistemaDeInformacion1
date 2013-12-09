@@ -34,9 +34,9 @@ namespace RRHH.Presentacion
 
         private void CrearUsuario_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
+            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto);
             // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
-            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto);
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet_HastaDescuento.Rol' Puede moverla o quitarla según sea necesario.
             this.rolTableAdapter.Fill(this.recursosHumanosDataSet_HastaDescuento.Rol);
             // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet_HastaDescuento.Usuario' Puede moverla o quitarla según sea necesario.
             this.usuarioTableAdapter.Fill(this.recursosHumanosDataSet_HastaDescuento.Usuario);

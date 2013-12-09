@@ -32,21 +32,28 @@ namespace RRHH.Presentacion
 
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Empleado em = new Empleado(dataGridView1.SelectedCells[1].Value.ToString(), dataGridView1.SelectedCells[2].Value.ToString(), 
-                dataGridView1.SelectedCells[3].Value.ToString(), dataGridView1.SelectedCells[6].Value.ToString(), 
-                dataGridView1.SelectedCells[7].Value.ToString(), dataGridView1.SelectedCells[5].Value.ToString(), 
-                dataGridView1.SelectedCells[9].Value.ToString());
-            em.Show();
-        }
+       
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            String ci = dataGridView1.SelectedCells[3].Value.ToString();
-            RegistroPostulante post = rrhh.RegistroPostulantes.FirstOrDefault(a => a.CI == ci);
-            RequisitosCumplidos rc = new RequisitosCumplidos(post.Id_Postulante);
-            rc.Show();
+            if (e.Button == MouseButtons.Right)
+            {
+                Empleado em = new Empleado(dataGridView1.SelectedCells[1].Value.ToString(), dataGridView1.SelectedCells[2].Value.ToString(),
+                    dataGridView1.SelectedCells[3].Value.ToString(), dataGridView1.SelectedCells[6].Value.ToString(),
+                    dataGridView1.SelectedCells[7].Value.ToString(), dataGridView1.SelectedCells[5].Value.ToString(),
+                    dataGridView1.SelectedCells[9].Value.ToString());
+                em.Show();
+            }
+
+            if (e.Button == MouseButtons.Left)
+            {
+                String ci = dataGridView1.SelectedCells[3].Value.ToString();
+                RegistroPostulante post = rrhh.RegistroPostulantes.FirstOrDefault(a => a.CI == ci);
+                RequisitosCumplidos rc = new RequisitosCumplidos(post.Id_Postulante);
+                rc.Show();
+            }
         }
     }
 }

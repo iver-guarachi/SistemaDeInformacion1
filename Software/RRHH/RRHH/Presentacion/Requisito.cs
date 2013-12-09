@@ -27,8 +27,23 @@ namespace RRHH.Presentacion
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            req.insertarRequisito(textBoxNombre.Text, textBoxDescripcion.Text);
+            try
+            {
+                if(textBoxDescripcion.Text=="")
+                {
+                    MessageBox.Show("Ingrese un nombre al requisito  ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBoxNombre.Focus();
+                }
+                else{
+                    req.insertarRequisito(textBoxNombre.Text, textBoxDescripcion.Text);
             cargarList();
+                }
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void Requisito_Load(object sender, EventArgs e)

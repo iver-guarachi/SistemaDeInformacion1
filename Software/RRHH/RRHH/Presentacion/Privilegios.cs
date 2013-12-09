@@ -47,15 +47,18 @@ namespace RRHH.Presentacion
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PrivilegioControl pri = new PrivilegioControl();
-            List<String> formularios = pri.obtenerPrivilegios(Convert.ToInt32(comboBox1.SelectedValue));
-            for (int i = 0; i < checkedListBoxFormularios.Items.Count; i++) 
+            if (comboBox1.SelectedIndex != -1)
             {
-                checkedListBoxFormularios.SetItemChecked(i, false);
-            }
-            for (int i = 0; i < formularios.Count(); i++)
-            {
-                checkedListBoxFormularios.SetItemChecked(checkedListBoxFormularios.FindStringExact(formularios.ElementAt(i)),true);
+                PrivilegioControl pri = new PrivilegioControl();
+                List<String> formularios = pri.obtenerPrivilegios(Convert.ToInt32(comboBox1.SelectedValue));
+                for (int i = 0; i < checkedListBoxFormularios.Items.Count; i++)
+                {
+                    checkedListBoxFormularios.SetItemChecked(i, false);
+                }
+                for (int i = 0; i < formularios.Count(); i++)
+                {
+                    checkedListBoxFormularios.SetItemChecked(checkedListBoxFormularios.FindStringExact(formularios.ElementAt(i)), true);
+                }
             }
         }
     }

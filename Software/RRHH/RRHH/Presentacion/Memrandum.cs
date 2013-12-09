@@ -27,7 +27,7 @@ namespace RRHH.Presentacion
             Control.MemorandumControl memo = new Control.MemorandumControl();
             memo.insertarMemorandum(Convert.ToInt32(comboBox1.SelectedValue), dateTimePicker1.Value, textBox3.Text);
             textBox3.Text = "";
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

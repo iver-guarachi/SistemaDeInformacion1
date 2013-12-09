@@ -101,7 +101,6 @@
             "Registro de Sueldos",
             "Tipo de Descuento",
             "Descuentos",
-            "Beneficios",
             "Requisitos",
             "Solicitud de Personal",
             "Registro de Postulantes",
@@ -111,9 +110,9 @@
             "Vacaciones",
             "Otorgar Vacacion",
             "Memorandum",
+            "Retiro de Empleados",
             "Planilla de Empleados",
-            "Planilla de Sueldos",
-            "Planilla de Aguinaldos"});
+            "Planilla de Sueldos"});
             this.checkedListBoxFormularios.Location = new System.Drawing.Point(12, 54);
             this.checkedListBoxFormularios.Name = "checkedListBoxFormularios";
             this.checkedListBoxFormularios.Size = new System.Drawing.Size(240, 349);

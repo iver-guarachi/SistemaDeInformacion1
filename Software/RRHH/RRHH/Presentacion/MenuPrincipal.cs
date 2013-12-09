@@ -60,8 +60,8 @@ namespace RRHH
                 if (descuentosToolStripMenuItem.Text == p.nombre)
                     descuentosToolStripMenuItem.Enabled = true;
 
-                if (beneficiosToolStripMenuItem.Text == p.nombre)
-                    beneficiosToolStripMenuItem.Enabled = true;
+                if (retiroDeEmpleadosToolStripMenuItem.Text == p.nombre)
+                    retiroDeEmpleadosToolStripMenuItem.Enabled = true;
 
                 if (requisistosToolStripMenuItem.Text == p.nombre)
                     requisistosToolStripMenuItem.Enabled = true;
@@ -96,8 +96,8 @@ namespace RRHH
                 if (índiceToolStripMenuItem.Text == p.nombre)
                     índiceToolStripMenuItem.Enabled = true;
 
-                if (buscarToolStripMenuItem.Text == p.nombre)
-                    buscarToolStripMenuItem.Enabled = true;
+                //if (buscarToolStripMenuItem.Text == p.nombre)
+                //    buscarToolStripMenuItem.Enabled = true;
             }
             
         }
@@ -213,6 +213,24 @@ namespace RRHH
         {
             Presentacion.Memrandum memo = new Presentacion.Memrandum();
             memo.Show();
+        }
+
+        private void retiroDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Despidos des = new Despidos();
+            des.Show();
+        }
+
+        private void contenidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PlanillaEmpleados plaemp = new PlanillaEmpleados();
+            plaemp.Show();
+        }
+
+        private void índiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sueldos sueldo = new Sueldos();
+            sueldo.Show();
         }
 
  

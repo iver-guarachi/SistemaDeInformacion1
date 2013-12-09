@@ -32,9 +32,23 @@ namespace RRHH.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tpoDesc.insertarTipoDescuento(textBox1.Text);
+            try
+            {
+                if(textBox1.Text=="")
+                {
+                    MessageBox.Show("Ingrese un nombre al tipo de descuento  ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox1.Focus();
+                }
+                else
+                {tpoDesc.insertarTipoDescuento(textBox1.Text);
             this.tipoDescuentoTableAdapter.Fill(this.recursosHumanosDataSet_HastaDescuento.TipoDescuento);
             textBox1.Text = "";
+                }
+            }
+            catch
+            {
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

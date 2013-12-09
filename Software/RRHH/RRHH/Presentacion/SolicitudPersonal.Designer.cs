@@ -300,6 +300,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SolicitudPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SolicitudPersonal";
             this.Load += new System.EventHandler(this.SolicitudPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();

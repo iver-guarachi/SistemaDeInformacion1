@@ -41,23 +41,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.UsuarioTableAdapter();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.RolTableAdapter();
-            this.recursosHumanosDataSetVistasFinal = new RRHH.RecursosHumanosDataSetVistasFinal();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetVistasFinalTableAdapters.Empleados_NombreCompletoTableAdapter();
+            this.recursosHumanosDataSetFinalVsitas2 = new RRHH.RecursosHumanosDataSetFinalVsitas2();
+            this.label6 = new System.Windows.Forms.Label();
+            this.usuarioTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.UsuarioTableAdapter();
+            this.rolTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.RolTableAdapter();
+            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNuevoPassword
@@ -166,6 +166,16 @@
             this.comboBox1.Size = new System.Drawing.Size(215, 21);
             this.comboBox1.TabIndex = 41;
             // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "Rol";
+            this.rolBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
+            // 
+            // recursosHumanosDataSet_HastaDescuento
+            // 
+            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
+            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // buttonEliminar
             // 
             this.buttonEliminar.Location = new System.Drawing.Point(264, 280);
@@ -187,6 +197,11 @@
             this.listBox1.TabIndex = 46;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
+            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.empleadosNombreCompletoBindingSource;
@@ -198,6 +213,16 @@
             this.comboBox2.TabIndex = 48;
             this.comboBox2.ValueMember = "Id_Empleado";
             // 
+            // empleadosNombreCompletoBindingSource
+            // 
+            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
+            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetFinalVsitas2;
+            // 
+            // recursosHumanosDataSetFinalVsitas2
+            // 
+            this.recursosHumanosDataSetFinalVsitas2.DataSetName = "RecursosHumanosDataSetFinalVsitas2";
+            this.recursosHumanosDataSetFinalVsitas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -207,38 +232,13 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Empleado:";
             // 
-            // recursosHumanosDataSet_HastaDescuento
-            // 
-            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
-            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "Usuario";
-            this.usuarioBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
-            // 
             // usuarioTableAdapter
             // 
             this.usuarioTableAdapter.ClearBeforeFill = true;
             // 
-            // rolBindingSource
-            // 
-            this.rolBindingSource.DataMember = "Rol";
-            this.rolBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
-            // 
             // rolTableAdapter
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
-            // 
-            // recursosHumanosDataSetVistasFinal
-            // 
-            this.recursosHumanosDataSetVistasFinal.DataSetName = "RecursosHumanosDataSetVistasFinal";
-            this.recursosHumanosDataSetVistasFinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadosNombreCompletoBindingSource
-            // 
-            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
-            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetVistasFinal;
             // 
             // empleados_NombreCompletoTableAdapter
             // 
@@ -266,13 +266,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CrearUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearUsuario";
             this.Load += new System.EventHandler(this.CrearUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,8 +302,8 @@
         private RecursosHumanosDataSet_HastaDescuentoTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
         private System.Windows.Forms.BindingSource rolBindingSource;
         private RecursosHumanosDataSet_HastaDescuentoTableAdapters.RolTableAdapter rolTableAdapter;
-        private RecursosHumanosDataSetVistasFinal recursosHumanosDataSetVistasFinal;
+        private RecursosHumanosDataSetFinalVsitas2 recursosHumanosDataSetFinalVsitas2;
         private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource;
-        private RecursosHumanosDataSetVistasFinalTableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;        
+        private RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;        
     }
 }

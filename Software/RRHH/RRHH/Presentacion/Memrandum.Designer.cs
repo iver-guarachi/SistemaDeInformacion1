@@ -36,17 +36,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.empleadosNombreCompletoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSetVistasFinal = new RRHH.RecursosHumanosDataSetVistasFinal();
             this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recursosHumanosDataSetVistas2 = new RRHH.RecursosHumanosDataSetVistas2();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetVistas2TableAdapters.Empleados_NombreCompletoTableAdapter();
-            this.recursosHumanosDataSetVistasFinal = new RRHH.RecursosHumanosDataSetVistasFinal();
-            this.empleadosNombreCompletoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.empleados_NombreCompletoTableAdapter1 = new RRHH.RecursosHumanosDataSetVistasFinalTableAdapters.Empleados_NombreCompletoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,9 +63,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(91, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Apellidos:";
+            this.label2.Text = "Fecha:";
             // 
             // label3
             // 
@@ -115,6 +115,16 @@
             this.comboBox1.TabIndex = 10;
             this.comboBox1.ValueMember = "Id_Empleado";
             // 
+            // empleadosNombreCompletoBindingSource1
+            // 
+            this.empleadosNombreCompletoBindingSource1.DataMember = "Empleados_NombreCompleto";
+            this.empleadosNombreCompletoBindingSource1.DataSource = this.recursosHumanosDataSetVistasFinal;
+            // 
+            // recursosHumanosDataSetVistasFinal
+            // 
+            this.recursosHumanosDataSetVistasFinal.DataSetName = "RecursosHumanosDataSetVistasFinal";
+            this.recursosHumanosDataSetVistasFinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // empleadosNombreCompletoBindingSource
             // 
             this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
@@ -136,16 +146,6 @@
             // 
             this.empleados_NombreCompletoTableAdapter.ClearBeforeFill = true;
             // 
-            // recursosHumanosDataSetVistasFinal
-            // 
-            this.recursosHumanosDataSetVistasFinal.DataSetName = "RecursosHumanosDataSetVistasFinal";
-            this.recursosHumanosDataSetVistasFinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadosNombreCompletoBindingSource1
-            // 
-            this.empleadosNombreCompletoBindingSource1.DataMember = "Empleados_NombreCompleto";
-            this.empleadosNombreCompletoBindingSource1.DataSource = this.recursosHumanosDataSetVistasFinal;
-            // 
             // empleados_NombreCompletoTableAdapter1
             // 
             this.empleados_NombreCompletoTableAdapter1.ClearBeforeFill = true;
@@ -164,12 +164,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Memrandum";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memrandum";
             this.Load += new System.EventHandler(this.Memrandum_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

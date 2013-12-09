@@ -138,6 +138,7 @@
             this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.label2);
             this.Name = "Departamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Departamento";
             this.Load += new System.EventHandler(this.Departamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();

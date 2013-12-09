@@ -39,6 +39,8 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Falta_tipoFalta", "tipoFalta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.tipoFalta), "Falta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Falta), true)]
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Descuento_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "Descuento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Descuento), true)]
 [assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Memorandum_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "Memorandum", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Memorandum), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_Despido_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(RRHH.Entidades.Empleado), "Despido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.Despido), true)]
+[assembly: EdmRelationshipAttribute("RecursosHumanosModel", "FK_OtorgarVacacion_Empleado", "Empleado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RRHH.Entidades.Empleado), "OtorgarVacacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RRHH.Entidades.OtorgarVacacion), true)]
 
 #endregion
 
@@ -505,6 +507,38 @@ namespace RRHH.Entidades
             }
         }
         private ObjectSet<tipoFalta> _tipoFaltas;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Despido> Despidoes
+        {
+            get
+            {
+                if ((_Despidoes == null))
+                {
+                    _Despidoes = base.CreateObjectSet<Despido>("Despidoes");
+                }
+                return _Despidoes;
+            }
+        }
+        private ObjectSet<Despido> _Despidoes;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<OtorgarVacacion> OtorgarVacacions
+        {
+            get
+            {
+                if ((_OtorgarVacacions == null))
+                {
+                    _OtorgarVacacions = base.CreateObjectSet<OtorgarVacacion>("OtorgarVacacions");
+                }
+                return _OtorgarVacacions;
+            }
+        }
+        private ObjectSet<OtorgarVacacion> _OtorgarVacacions;
 
         #endregion
 
@@ -716,6 +750,22 @@ namespace RRHH.Entidades
         public void AddTotipoFaltas(tipoFalta tipoFalta)
         {
             base.AddObject("tipoFaltas", tipoFalta);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Despidoes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToDespidoes(Despido despido)
+        {
+            base.AddObject("Despidoes", despido);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet OtorgarVacacions. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToOtorgarVacacions(OtorgarVacacion otorgarVacacion)
+        {
+            base.AddObject("OtorgarVacacions", otorgarVacacion);
         }
 
         #endregion
@@ -1439,6 +1489,153 @@ namespace RRHH.Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_Descuento_Empleado", "Empleado", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="Despido")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Despido : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Despido.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        public static Despido CreateDespido(global::System.Int32 id)
+        {
+            Despido despido = new Despido();
+            despido.id = id;
+            return despido;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> idEmpleado
+        {
+            get
+            {
+                return _idEmpleado;
+            }
+            set
+            {
+                OnidEmpleadoChanging(value);
+                ReportPropertyChanging("idEmpleado");
+                _idEmpleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idEmpleado");
+                OnidEmpleadoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _idEmpleado;
+        partial void OnidEmpleadoChanging(Nullable<global::System.Int32> value);
+        partial void OnidEmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+            set
+            {
+                OnMotivoChanging(value);
+                ReportPropertyChanging("Motivo");
+                _Motivo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Motivo");
+                OnMotivoChanged();
+            }
+        }
+        private global::System.String _Motivo;
+        partial void OnMotivoChanging(global::System.String value);
+        partial void OnMotivoChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Despido_Empleado", "Empleado")]
+        public Empleado Empleado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Despido_Empleado", "Empleado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Despido_Empleado", "Empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Empleado> EmpleadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_Despido_Empleado", "Empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_Despido_Empleado", "Empleado", value);
                 }
             }
         }
@@ -2243,6 +2440,50 @@ namespace RRHH.Entidades
                 }
             }
         }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_Despido_Empleado", "Despido")]
+        public EntityCollection<Despido> Despidoes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Despido>("RecursosHumanosModel.FK_Despido_Empleado", "Despido");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Despido>("RecursosHumanosModel.FK_Despido_Empleado", "Despido", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_OtorgarVacacion_Empleado", "OtorgarVacacion")]
+        public EntityCollection<OtorgarVacacion> OtorgarVacacions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OtorgarVacacion>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "OtorgarVacacion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OtorgarVacacion>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "OtorgarVacacion", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -2279,8 +2520,8 @@ namespace RRHH.Entidades
         /// <param name="haberBasico">Valor inicial de la propiedad haberBasico.</param>
         /// <param name="salarioBasico">Valor inicial de la propiedad salarioBasico.</param>
         /// <param name="quincena">Valor inicial de la propiedad quincena.</param>
-        /// <param name="idCargo">Valor inicial de la propiedad idCargo.</param>
-        public static Empleados_NombreCompleto CreateEmpleados_NombreCompleto(global::System.Int32 id_Empleado, global::System.String nombreCompleto, global::System.String nacionalidad, global::System.Int32 genero, global::System.DateTime fechaNacimiento, global::System.Int32 edad, global::System.String estadoCivil, global::System.String nombreEsposa, global::System.String direccion, global::System.String telefono, global::System.String telefonoEmergencia, global::System.String referenciaNombre1, global::System.String referenciaTelefono1, global::System.DateTime fechaIngreso, global::System.Int32 aFP, global::System.Int32 haberBasico, global::System.Int32 salarioBasico, global::System.Int32 quincena, global::System.Int32 idCargo)
+        /// <param name="cargo">Valor inicial de la propiedad Cargo.</param>
+        public static Empleados_NombreCompleto CreateEmpleados_NombreCompleto(global::System.Int32 id_Empleado, global::System.String nombreCompleto, global::System.String nacionalidad, global::System.Int32 genero, global::System.DateTime fechaNacimiento, global::System.Int32 edad, global::System.String estadoCivil, global::System.String nombreEsposa, global::System.String direccion, global::System.String telefono, global::System.String telefonoEmergencia, global::System.String referenciaNombre1, global::System.String referenciaTelefono1, global::System.DateTime fechaIngreso, global::System.Int32 aFP, global::System.Int32 haberBasico, global::System.Int32 salarioBasico, global::System.Int32 quincena, global::System.String cargo)
         {
             Empleados_NombreCompleto empleados_NombreCompleto = new Empleados_NombreCompleto();
             empleados_NombreCompleto.Id_Empleado = id_Empleado;
@@ -2301,7 +2542,7 @@ namespace RRHH.Entidades
             empleados_NombreCompleto.haberBasico = haberBasico;
             empleados_NombreCompleto.salarioBasico = salarioBasico;
             empleados_NombreCompleto.quincena = quincena;
-            empleados_NombreCompleto.idCargo = idCargo;
+            empleados_NombreCompleto.Cargo = cargo;
             return empleados_NombreCompleto;
         }
 
@@ -2896,27 +3137,27 @@ namespace RRHH.Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 idCargo
+        public global::System.String Cargo
         {
             get
             {
-                return _idCargo;
+                return _Cargo;
             }
             set
             {
-                if (_idCargo != value)
+                if (_Cargo != value)
                 {
-                    OnidCargoChanging(value);
-                    ReportPropertyChanging("idCargo");
-                    _idCargo = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("idCargo");
-                    OnidCargoChanged();
+                    OnCargoChanging(value);
+                    ReportPropertyChanging("Cargo");
+                    _Cargo = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Cargo");
+                    OnCargoChanged();
                 }
             }
         }
-        private global::System.Int32 _idCargo;
-        partial void OnidCargoChanging(global::System.Int32 value);
-        partial void OnidCargoChanged();
+        private global::System.String _Cargo;
+        partial void OnCargoChanging(global::System.String value);
+        partial void OnCargoChanged();
 
         #endregion
 
@@ -3896,6 +4137,183 @@ namespace RRHH.Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_Memorandum_Empleado", "Empleado", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RecursosHumanosModel", Name="OtorgarVacacion")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OtorgarVacacion : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto OtorgarVacacion.
+        /// </summary>
+        /// <param name="idOtorgarVacacion">Valor inicial de la propiedad idOtorgarVacacion.</param>
+        /// <param name="idEmpleado">Valor inicial de la propiedad idEmpleado.</param>
+        /// <param name="fechaInicio">Valor inicial de la propiedad FechaInicio.</param>
+        /// <param name="fechaFin">Valor inicial de la propiedad FechaFin.</param>
+        public static OtorgarVacacion CreateOtorgarVacacion(global::System.Int32 idOtorgarVacacion, global::System.Int32 idEmpleado, global::System.DateTime fechaInicio, global::System.DateTime fechaFin)
+        {
+            OtorgarVacacion otorgarVacacion = new OtorgarVacacion();
+            otorgarVacacion.idOtorgarVacacion = idOtorgarVacacion;
+            otorgarVacacion.idEmpleado = idEmpleado;
+            otorgarVacacion.FechaInicio = fechaInicio;
+            otorgarVacacion.FechaFin = fechaFin;
+            return otorgarVacacion;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idOtorgarVacacion
+        {
+            get
+            {
+                return _idOtorgarVacacion;
+            }
+            set
+            {
+                if (_idOtorgarVacacion != value)
+                {
+                    OnidOtorgarVacacionChanging(value);
+                    ReportPropertyChanging("idOtorgarVacacion");
+                    _idOtorgarVacacion = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("idOtorgarVacacion");
+                    OnidOtorgarVacacionChanged();
+                }
+            }
+        }
+        private global::System.Int32 _idOtorgarVacacion;
+        partial void OnidOtorgarVacacionChanging(global::System.Int32 value);
+        partial void OnidOtorgarVacacionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idEmpleado
+        {
+            get
+            {
+                return _idEmpleado;
+            }
+            set
+            {
+                OnidEmpleadoChanging(value);
+                ReportPropertyChanging("idEmpleado");
+                _idEmpleado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idEmpleado");
+                OnidEmpleadoChanged();
+            }
+        }
+        private global::System.Int32 _idEmpleado;
+        partial void OnidEmpleadoChanging(global::System.Int32 value);
+        partial void OnidEmpleadoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FechaInicio
+        {
+            get
+            {
+                return _FechaInicio;
+            }
+            set
+            {
+                OnFechaInicioChanging(value);
+                ReportPropertyChanging("FechaInicio");
+                _FechaInicio = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FechaInicio");
+                OnFechaInicioChanged();
+            }
+        }
+        private global::System.DateTime _FechaInicio;
+        partial void OnFechaInicioChanging(global::System.DateTime value);
+        partial void OnFechaInicioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FechaFin
+        {
+            get
+            {
+                return _FechaFin;
+            }
+            set
+            {
+                OnFechaFinChanging(value);
+                ReportPropertyChanging("FechaFin");
+                _FechaFin = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("FechaFin");
+                OnFechaFinChanged();
+            }
+        }
+        private global::System.DateTime _FechaFin;
+        partial void OnFechaFinChanging(global::System.DateTime value);
+        partial void OnFechaFinChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RecursosHumanosModel", "FK_OtorgarVacacion_Empleado", "Empleado")]
+        public Empleado Empleado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "Empleado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "Empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Empleado> EmpleadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empleado>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "Empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empleado>("RecursosHumanosModel.FK_OtorgarVacacion_Empleado", "Empleado", value);
                 }
             }
         }

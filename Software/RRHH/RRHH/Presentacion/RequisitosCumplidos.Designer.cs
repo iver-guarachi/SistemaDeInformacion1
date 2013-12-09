@@ -59,6 +59,7 @@
             this.Controls.Add(this.buttonCerrar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "RequisitosCumplidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RequisitosCumplidos";
             this.Load += new System.EventHandler(this.RequisitosCumplidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

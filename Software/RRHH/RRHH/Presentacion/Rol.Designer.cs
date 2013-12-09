@@ -34,18 +34,18 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSet2 = new RRHH.RecursosHumanosDataSet2();
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.recursosHumanosDataSet1 = new RRHH.RecursosHumanosDataSet();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rolTableAdapter1 = new RRHH.RecursosHumanosDataSetTableAdapters.RolTableAdapter();
-            this.recursosHumanosDataSet2 = new RRHH.RecursosHumanosDataSet2();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.RolTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancelar
@@ -99,6 +99,16 @@
             this.listBox1.TabIndex = 25;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.SeleccionarRol);
             // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "Rol";
+            this.rolBindingSource.DataSource = this.recursosHumanosDataSet2;
+            // 
+            // recursosHumanosDataSet2
+            // 
+            this.recursosHumanosDataSet2.DataSetName = "RecursosHumanosDataSet2";
+            this.recursosHumanosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // rolBindingSource1
             // 
             this.rolBindingSource1.DataMember = "Rol";
@@ -129,16 +139,6 @@
             // 
             this.rolTableAdapter1.ClearBeforeFill = true;
             // 
-            // recursosHumanosDataSet2
-            // 
-            this.recursosHumanosDataSet2.DataSetName = "RecursosHumanosDataSet2";
-            this.recursosHumanosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolBindingSource
-            // 
-            this.rolBindingSource.DataMember = "Rol";
-            this.rolBindingSource.DataSource = this.recursosHumanosDataSet2;
-            // 
             // rolTableAdapter
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
@@ -156,12 +156,13 @@
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.label3);
             this.Name = "Rol";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rol";
             this.Load += new System.EventHandler(this.Rol_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

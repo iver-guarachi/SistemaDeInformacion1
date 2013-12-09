@@ -42,7 +42,6 @@
             this.registroDeSueldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeDescuentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.beneficiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requisistosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudDePersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,10 +53,10 @@
             this.vacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otorgarVacacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memorandumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.retiroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contenidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.índiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +70,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(681, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,8 +126,7 @@
             this.horariosToolStripMenuItem,
             this.registroDeSueldosToolStripMenuItem,
             this.tipoDeDescuentoToolStripMenuItem,
-            this.descuentosToolStripMenuItem,
-            this.beneficiosToolStripMenuItem});
+            this.descuentosToolStripMenuItem});
             this.organizacionToolStripMenuItem.Name = "organizacionToolStripMenuItem";
             this.organizacionToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.organizacionToolStripMenuItem.Text = "Organizacion";
@@ -188,13 +186,6 @@
             this.descuentosToolStripMenuItem.Text = "Descuentos";
             this.descuentosToolStripMenuItem.Click += new System.EventHandler(this.descuentosToolStripMenuItem_Click);
             // 
-            // beneficiosToolStripMenuItem
-            // 
-            this.beneficiosToolStripMenuItem.Enabled = false;
-            this.beneficiosToolStripMenuItem.Name = "beneficiosToolStripMenuItem";
-            this.beneficiosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.beneficiosToolStripMenuItem.Text = "Beneficios";
-            // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -245,7 +236,8 @@
             this.registrarEmpleadosToolStripMenuItem,
             this.vacacionesToolStripMenuItem,
             this.otorgarVacacionToolStripMenuItem,
-            this.memorandumToolStripMenuItem});
+            this.memorandumToolStripMenuItem,
+            this.retiroDeEmpleadosToolStripMenuItem});
             this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
             this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
@@ -288,12 +280,19 @@
             this.memorandumToolStripMenuItem.Text = "Memorandum";
             this.memorandumToolStripMenuItem.Click += new System.EventHandler(this.memorandumToolStripMenuItem_Click);
             // 
+            // retiroDeEmpleadosToolStripMenuItem
+            // 
+            this.retiroDeEmpleadosToolStripMenuItem.Enabled = false;
+            this.retiroDeEmpleadosToolStripMenuItem.Name = "retiroDeEmpleadosToolStripMenuItem";
+            this.retiroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.retiroDeEmpleadosToolStripMenuItem.Text = "Retiro de Empleados";
+            this.retiroDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.retiroDeEmpleadosToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contenidoToolStripMenuItem,
-            this.índiceToolStripMenuItem,
-            this.buscarToolStripMenuItem});
+            this.índiceToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.ayudaToolStripMenuItem.Text = "Planillas";
@@ -302,32 +301,29 @@
             // 
             this.contenidoToolStripMenuItem.Enabled = false;
             this.contenidoToolStripMenuItem.Name = "contenidoToolStripMenuItem";
-            this.contenidoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.contenidoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.contenidoToolStripMenuItem.Text = "Planilla de Empleados";
+            this.contenidoToolStripMenuItem.Click += new System.EventHandler(this.contenidoToolStripMenuItem_Click);
             // 
             // índiceToolStripMenuItem
             // 
             this.índiceToolStripMenuItem.Enabled = false;
             this.índiceToolStripMenuItem.Name = "índiceToolStripMenuItem";
-            this.índiceToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.índiceToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.índiceToolStripMenuItem.Text = "Planilla de Sueldos";
-            // 
-            // buscarToolStripMenuItem
-            // 
-            this.buscarToolStripMenuItem.Enabled = false;
-            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.buscarToolStripMenuItem.Text = "Planilla de Aguinaldos";
+            this.índiceToolStripMenuItem.Click += new System.EventHandler(this.índiceToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 295);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -363,11 +359,10 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contenidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem índiceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem beneficiosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDePostulantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem privilegiosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeAsistenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem retiroDeEmpleadosToolStripMenuItem;
 
     }
 }

@@ -34,13 +34,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tipoDescuentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.recursosHumanosDataSet_HastaDescuento = new RRHH.RecursosHumanosDataSet_HastaDescuento();
-            this.tipoDescuentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoDescuentoTableAdapter = new RRHH.RecursosHumanosDataSet_HastaDescuentoTableAdapters.TipoDescuentoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -94,6 +94,16 @@
             this.listBox1.TabIndex = 17;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // tipoDescuentoBindingSource
+            // 
+            this.tipoDescuentoBindingSource.DataMember = "TipoDescuento";
+            this.tipoDescuentoBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
+            // 
+            // recursosHumanosDataSet_HastaDescuento
+            // 
+            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
+            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(207, 21);
@@ -109,16 +119,6 @@
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "Nombre:";
-            // 
-            // recursosHumanosDataSet_HastaDescuento
-            // 
-            this.recursosHumanosDataSet_HastaDescuento.DataSetName = "RecursosHumanosDataSet_HastaDescuento";
-            this.recursosHumanosDataSet_HastaDescuento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoDescuentoBindingSource
-            // 
-            this.tipoDescuentoBindingSource.DataMember = "TipoDescuento";
-            this.tipoDescuentoBindingSource.DataSource = this.recursosHumanosDataSet_HastaDescuento;
             // 
             // tipoDescuentoTableAdapter
             // 
@@ -137,10 +137,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Name = "TipoDescuento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TipoDescuento";
             this.Load += new System.EventHandler(this.TipoDescuento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

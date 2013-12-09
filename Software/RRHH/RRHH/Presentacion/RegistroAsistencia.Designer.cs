@@ -38,18 +38,18 @@
             this.numericUpDownHora = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSetFinalVsitas2 = new RRHH.RecursosHumanosDataSetFinalVsitas2();
             this.checkBoxManana = new System.Windows.Forms.CheckBox();
             this.checkBoxTarde = new System.Windows.Forms.CheckBox();
             this.checkBoxSalida = new System.Windows.Forms.CheckBox();
             this.checkBoxEntrada = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.recursosHumanosDataSetVistasFinal = new RRHH.RecursosHumanosDataSetVistasFinal();
-            this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetVistasFinalTableAdapters.Empleados_NombreCompletoTableAdapter();
+            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHora)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,6 +142,16 @@
             this.comboBox1.TabIndex = 18;
             this.comboBox1.ValueMember = "Id_Empleado";
             // 
+            // empleadosNombreCompletoBindingSource
+            // 
+            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
+            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetFinalVsitas2;
+            // 
+            // recursosHumanosDataSetFinalVsitas2
+            // 
+            this.recursosHumanosDataSetFinalVsitas2.DataSetName = "RecursosHumanosDataSetFinalVsitas2";
+            this.recursosHumanosDataSetFinalVsitas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // checkBoxManana
             // 
             this.checkBoxManana.AutoSize = true;
@@ -196,16 +206,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // recursosHumanosDataSetVistasFinal
-            // 
-            this.recursosHumanosDataSetVistasFinal.DataSetName = "RecursosHumanosDataSetVistasFinal";
-            this.recursosHumanosDataSetVistasFinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadosNombreCompletoBindingSource
-            // 
-            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
-            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetVistasFinal;
-            // 
             // empleados_NombreCompletoTableAdapter
             // 
             this.empleados_NombreCompletoTableAdapter.ClearBeforeFill = true;
@@ -230,12 +230,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegistroAsistencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlHorario";
             this.Load += new System.EventHandler(this.RegistroAsistencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHora)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistasFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,8 +258,8 @@
         private System.Windows.Forms.CheckBox checkBoxSalida;
         private System.Windows.Forms.CheckBox checkBoxEntrada;
         private System.Windows.Forms.Button button3;
-        private RecursosHumanosDataSetVistasFinal recursosHumanosDataSetVistasFinal;
+        private RecursosHumanosDataSetFinalVsitas2 recursosHumanosDataSetFinalVsitas2;
         private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource;
-        private RecursosHumanosDataSetVistasFinalTableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;
+        private RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;
     }
 }

@@ -100,6 +100,7 @@
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.label1);
             this.Name = "Empresa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresa";
             this.ResumeLayout(false);
             this.PerformLayout();

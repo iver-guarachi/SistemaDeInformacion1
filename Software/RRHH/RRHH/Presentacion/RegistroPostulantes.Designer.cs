@@ -629,6 +629,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "RegistroPostulantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Postulantes";
             this.Load += new System.EventHandler(this.RegistroPostulantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource)).EndInit();

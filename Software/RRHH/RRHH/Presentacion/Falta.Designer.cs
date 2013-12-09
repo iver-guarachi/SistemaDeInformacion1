@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recursosHumanosDataSetFinalVsitas2 = new RRHH.RecursosHumanosDataSetFinalVsitas2();
             this.dateTimePickerFechaReg = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,11 +41,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.recursosHumanosDataSetVistas2 = new RRHH.RecursosHumanosDataSetVistas2();
-            this.empleadosNombreCompletoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetVistas2TableAdapters.Empleados_NombreCompletoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).BeginInit();
+            this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -56,6 +56,16 @@
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
             this.comboBox1.TabIndex = 22;
             this.comboBox1.ValueMember = "Id_Empleado";
+            // 
+            // empleadosNombreCompletoBindingSource
+            // 
+            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
+            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetFinalVsitas2;
+            // 
+            // recursosHumanosDataSetFinalVsitas2
+            // 
+            this.recursosHumanosDataSetFinalVsitas2.DataSetName = "RecursosHumanosDataSetFinalVsitas2";
+            this.recursosHumanosDataSetFinalVsitas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateTimePickerFechaReg
             // 
@@ -144,16 +154,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // recursosHumanosDataSetVistas2
-            // 
-            this.recursosHumanosDataSetVistas2.DataSetName = "RecursosHumanosDataSetVistas2";
-            this.recursosHumanosDataSetVistas2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadosNombreCompletoBindingSource
-            // 
-            this.empleadosNombreCompletoBindingSource.DataMember = "Empleados_NombreCompleto";
-            this.empleadosNombreCompletoBindingSource.DataSource = this.recursosHumanosDataSetVistas2;
-            // 
             // empleados_NombreCompletoTableAdapter
             // 
             this.empleados_NombreCompletoTableAdapter.ClearBeforeFill = true;
@@ -174,10 +174,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Falta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Falta";
             this.Load += new System.EventHandler(this.Falta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,8 +196,8 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private RecursosHumanosDataSetVistas2 recursosHumanosDataSetVistas2;
+        private RecursosHumanosDataSetFinalVsitas2 recursosHumanosDataSetFinalVsitas2;
         private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource;
-        private RecursosHumanosDataSetVistas2TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;
+        private RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;
     }
 }

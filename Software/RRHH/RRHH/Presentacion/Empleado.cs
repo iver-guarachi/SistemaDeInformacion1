@@ -33,10 +33,11 @@ namespace RRHH.Presentacion
 
         private void Empleado_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
-            this.empleados_NombreCompletoTableAdapter1.Fill(this.recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto);
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSet1.Cargo' Puede moverla o quitarla según sea necesario.
-            this.cargoTableAdapter.Fill(this.recursosHumanosDataSet1.Cargo);
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetDatosFinal.Cargo' Puede moverla o quitarla según sea necesario.
+            this.cargoTableAdapter.Fill(this.recursosHumanosDataSetDatosFinal.Cargo);
+            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
+            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto);
+     //       verificarChecked();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,8 +47,7 @@ namespace RRHH.Presentacion
                 String ca = listBox1.GetItemText(listBox1.SelectedItem);
                 RRHH.Entidades.Empleados_NombreCompleto empc = new Entidades.Empleados_NombreCompleto();
                 RRHH.Entidades.RecursosHumanosEntities rrhh = new RRHH.Entidades.RecursosHumanosEntities();
-                //empc = rrhh.Empleados_NombreCompleto.FirstOrDefault(a => a.NombreCompleto == ca);
-                empc = rrhh.Empleados_NombreCompleto.First(a => a.NombreCompleto == ca.Trim());
+                empc = rrhh.Empleados_NombreCompleto.FirstOrDefault(a => a.NombreCompleto == ca);
 
                 RRHH.Entidades.Empleado emp = new Entidades.Empleado();
                 emp = rrhh.Empleadoes.FirstOrDefault(a => a.Id_Empleado == empc.Id_Empleado);
@@ -74,16 +74,25 @@ namespace RRHH.Presentacion
                 textBoxTelf_Ref2.Text = emp.referenciaTelefono2;
                 dateTimePickerIngreso.Value = emp.fechaIngreso;
                 textBoxSalario.Text = Convert.ToString(emp.salarioBasico);
-                numericUpDownQuincena.Value = emp.quincena;
+                numericUpDownQuincena.Value = Convert.ToDecimal( emp.quincena * 100/emp.salarioBasico);
 
                 RRHH.Entidades.Cargo cc = new Entidades.Cargo();
                 cc = rrhh.Cargoes.FirstOrDefault(a => a.Id_Cargo == emp.idCargo);
+                float afp = (float) emp.AFP;
+                if (afp > 0)
+                {
+                    checkBox1.Checked = true;
+                    numericUpDownHaberBasico.Value = Convert.ToDecimal(afp * (100/12.71));
+                }
+                else
+                {
+                    checkBox1.Checked = false;
+                    numericUpDownHaberBasico.Value = 0;
+                }
                 String nom = cc.Nombre;
                 comboBoxCargo.SelectedIndex = comboBoxCargo.FindString(nom);
             }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
+            catch (Exception ex) { }
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
@@ -94,14 +103,25 @@ namespace RRHH.Presentacion
             else
                 gene =0;
 
-            ec.insertarEmpleado(textBoxNombre.Text, textBoxApellidos.Text, textBoxCI.Text, comboBoxNacionalidad.Text,
-                gene, dateTimePickerNacimiento.Value, Convert.ToInt32(numericUpDownEdad.Value), comboBoxCivil.Text,
-                textBoxEsposa.Text, Convert.ToInt32(numericUpDownHijos.Value), textBoxDireccion.Text, textBoxTelefono.Text,
-                textBoxEmergencia.Text, textBoxNomRef1.Text, textBoxTelf_Ref1.Text, textBoxNomRef2.Text, textBoxTelf_Ref2.Text,
-                dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(totalQuincena.Text),
-                Convert.ToInt32( numericUpDownHaberBasico.Value), Convert.ToInt32(labelAFP.Text));
+            if (labelAFP.Text != "")
+            {
+                Console.WriteLine(labelAFP.Text);
+                ec.insertarEmpleado(textBoxNombre.Text, textBoxApellidos.Text, textBoxCI.Text, comboBoxNacionalidad.Text,
+                    gene, dateTimePickerNacimiento.Value, Convert.ToInt32(numericUpDownEdad.Value), comboBoxCivil.Text,
+                    textBoxEsposa.Text, Convert.ToInt32(numericUpDownHijos.Value), textBoxDireccion.Text, textBoxTelefono.Text,
+                    textBoxEmergencia.Text, textBoxNomRef1.Text, textBoxTelf_Ref1.Text, textBoxNomRef2.Text, textBoxTelf_Ref2.Text,
+                    dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(totalQuincena.Text),
+                    Convert.ToInt32(numericUpDownHaberBasico.Value), Convert.ToInt32(Convert.ToDouble( labelAFP.Text)));
+            }
+            else
+                ec.insertarEmpleado(textBoxNombre.Text, textBoxApellidos.Text, textBoxCI.Text, comboBoxNacionalidad.Text,
+                    gene, dateTimePickerNacimiento.Value, Convert.ToInt32(numericUpDownEdad.Value), comboBoxCivil.Text,
+                    textBoxEsposa.Text, Convert.ToInt32(numericUpDownHijos.Value), textBoxDireccion.Text, textBoxTelefono.Text,
+                    textBoxEmergencia.Text, textBoxNomRef1.Text, textBoxTelf_Ref1.Text, textBoxNomRef2.Text, textBoxTelf_Ref2.Text,
+                    dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(totalQuincena.Text),
+                    Convert.ToInt32(numericUpDownHaberBasico.Value), 0);
             
-            this.empleados_NombreCompletoTableAdapter1.Fill(this.recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto);
+            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto);
 
             textBoxApellidos.Text = textBoxNombre.Text = textBoxCI.Text = comboBoxNacionalidad.Text = textBoxEsposa.Text = textBoxDireccion.Text =
                 textBoxTelefono.Text = textBoxNomRef1.Text = textBoxTelf_Ref1.Text = textBoxNomRef2.Text = textBoxTelf_Ref2.Text = textBoxSalario.Text = textBoxEmergencia.Text = "";
@@ -116,15 +136,22 @@ namespace RRHH.Presentacion
                 gene = 1;
             else
                 gene = 0;
-
+            if(labelAFP.Text != "")
             ec.modificarEmpleado(listBox1.Text, textBoxNombre.Text, textBoxApellidos.Text, textBoxCI.Text, comboBoxNacionalidad.Text,
                 gene, dateTimePickerNacimiento.Value, Convert.ToInt32(numericUpDownEdad.Value), comboBoxCivil.Text,
                 textBoxEsposa.Text, Convert.ToInt32(numericUpDownHijos.Value), textBoxDireccion.Text, textBoxTelefono.Text,
                 textBoxEmergencia.Text, textBoxNomRef1.Text, textBoxTelf_Ref1.Text, textBoxNomRef2.Text, textBoxTelf_Ref2.Text,
-               dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(numericUpDownQuincena.Value),
-               Convert.ToInt32( numericUpDownHaberBasico.Value), Convert.ToInt32(labelAFP.Text));
+               dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(totalQuincena.Text),
+               Convert.ToInt32( numericUpDownHaberBasico.Value), Convert.ToInt32(Convert.ToDouble( labelAFP.Text)));
+            else
+                ec.modificarEmpleado(listBox1.Text, textBoxNombre.Text, textBoxApellidos.Text, textBoxCI.Text, comboBoxNacionalidad.Text,
+                gene, dateTimePickerNacimiento.Value, Convert.ToInt32(numericUpDownEdad.Value), comboBoxCivil.Text,
+                textBoxEsposa.Text, Convert.ToInt32(numericUpDownHijos.Value), textBoxDireccion.Text, textBoxTelefono.Text,
+                textBoxEmergencia.Text, textBoxNomRef1.Text, textBoxTelf_Ref1.Text, textBoxNomRef2.Text, textBoxTelf_Ref2.Text,
+               dateTimePickerIngreso.Value, comboBoxCargo.Text, Convert.ToInt32(textBoxSalario.Text), Convert.ToInt32(totalQuincena.Text),
+               Convert.ToInt32(numericUpDownHaberBasico.Value), 0);
             //actualiza el listbox
-            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetVistas2.Empleados_NombreCompleto);
+            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetFinalVsitas2.Empleados_NombreCompleto);
             //limpia los campos
             textBoxApellidos.Text = textBoxNombre.Text = textBoxCI.Text = comboBoxNacionalidad.Text = textBoxEsposa.Text = textBoxDireccion.Text =
                 textBoxTelefono.Text = textBoxNomRef1.Text = textBoxTelf_Ref1.Text = textBoxNomRef2.Text = textBoxTelf_Ref2.Text = textBoxSalario.Text = textBoxEmergencia.Text="";
@@ -139,7 +166,8 @@ namespace RRHH.Presentacion
 
         private void numericUpDownQuincena_ValueChanged(object sender, EventArgs e)
         {
-            totalQuincena.Text = Convert.ToString(Convert.ToInt32(textBoxSalario.Text) * Convert.ToInt32(numericUpDownQuincena.Value) / 100);
+            if(textBoxSalario.Text != "")
+                totalQuincena.Text = Convert.ToString(Convert.ToInt32(textBoxSalario.Text) * Convert.ToInt32(numericUpDownQuincena.Value) / 100);
         }
 
 
@@ -161,7 +189,7 @@ namespace RRHH.Presentacion
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            labelAFP.Text = Convert.ToString(Convert.ToInt32(numericUpDownHaberBasico.Value) * 0.1271 );
+            labelAFP.Text = Convert.ToString(Convert.ToInt32(Convert.ToInt32(numericUpDownHaberBasico.Value) * 0.1271));
         }
 
         private void dateTimePickerNacimiento_ValueChanged(object sender, EventArgs e)
@@ -183,6 +211,13 @@ namespace RRHH.Presentacion
             }
             return edad;
         }
+
+        private void textBoxCI_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+    
 
        
         private void textBoxTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -297,6 +332,11 @@ namespace RRHH.Presentacion
                 MessageBox.Show("Digite solo valores numericos");
                 e.Handled = true;
             }
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

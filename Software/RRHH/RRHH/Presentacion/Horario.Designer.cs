@@ -38,10 +38,12 @@
             this.numericUpDownMinEntrada = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownHoraSalida = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMinSalida = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoraEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoraSalida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinSalida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,21 +75,27 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(99, 185);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::RRHH.Properties.Resources.aceptar_este_hecho_tan_bien_verde_con_exito_icono_8880_96;
+            this.button1.Location = new System.Drawing.Point(112, 149);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(117, 104);
             this.button1.TabIndex = 8;
             this.button1.Text = "Aceptar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(288, 185);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.button2.Location = new System.Drawing.Point(246, 149);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(123, 104);
             this.button2.TabIndex = 9;
             this.button2.Text = "Cancelar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -151,11 +159,22 @@
             this.numericUpDownMinSalida.Size = new System.Drawing.Size(43, 20);
             this.numericUpDownMinSalida.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 242);
+            this.ClientSize = new System.Drawing.Size(445, 282);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numericUpDownMinSalida);
             this.Controls.Add(this.numericUpDownHoraSalida);
             this.Controls.Add(this.numericUpDownMinEntrada);
@@ -166,6 +185,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(461, 321);
+            this.MinimumSize = new System.Drawing.Size(461, 321);
             this.Name = "Horario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegsitroHorario";
@@ -173,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoraSalida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinSalida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +212,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownMinEntrada;
         private System.Windows.Forms.NumericUpDown numericUpDownHoraSalida;
         private System.Windows.Forms.NumericUpDown numericUpDownMinSalida;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

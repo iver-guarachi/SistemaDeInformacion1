@@ -6,7 +6,8 @@ using System.IO;
 using System.Drawing; 
 using System.Net; 
 using System.Drawing.Imaging;
-using RRHH.Entidades; 
+using RRHH.Entidades;
+using System.Windows.Forms; 
 
 namespace RRHH.Control
 {
@@ -16,34 +17,21 @@ namespace RRHH.Control
         RecursosHumanosEntities rrhh = new RecursosHumanosEntities();
         Empresa emp;
 
-        public void guardarEmpresa(String nombre, String direccion, String ImagenDir)
+        public void guardarEmpresa(String nombre, String direccion)
         {
             emp = new Empresa();
             emp.Nombre = nombre;
             emp.Direccion = direccion;
-            System.Drawing.Image img = new Bitmap(ImagenDir);
-            emp.Logo = imageToByteArray(img);
 
             rrhh.Empresas.AddObject(emp);
             rrhh.SaveChanges();
+            MessageBox.Show("se ha Agregado la Empresa: " + nombre);
         }
         
 
         //Esta es la función que realiza la conversión
 
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
-
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
+       
     }
 
 	

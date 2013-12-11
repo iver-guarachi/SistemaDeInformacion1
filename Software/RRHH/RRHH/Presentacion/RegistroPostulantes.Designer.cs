@@ -61,15 +61,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.solicitudPersonalTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter();
             this.comboBoxNacionalidad = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 15);
+            this.label1.Location = new System.Drawing.Point(24, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
@@ -78,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 44);
+            this.label3.Location = new System.Drawing.Point(25, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -87,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 70);
+            this.label4.Location = new System.Drawing.Point(25, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 3;
@@ -114,7 +116,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 96);
+            this.label7.Location = new System.Drawing.Point(25, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 6;
@@ -123,7 +125,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 122);
+            this.label8.Location = new System.Drawing.Point(27, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 7;
@@ -131,7 +133,7 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(95, 41);
+            this.textBoxNombre.Location = new System.Drawing.Point(95, 48);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(334, 20);
             this.textBoxNombre.TabIndex = 8;
@@ -139,7 +141,7 @@
             // 
             // textBoxApellido
             // 
-            this.textBoxApellido.Location = new System.Drawing.Point(95, 67);
+            this.textBoxApellido.Location = new System.Drawing.Point(95, 74);
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(334, 20);
             this.textBoxApellido.TabIndex = 9;
@@ -147,7 +149,7 @@
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(95, 93);
+            this.textBoxTelefono.Location = new System.Drawing.Point(95, 100);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(334, 20);
             this.textBoxTelefono.TabIndex = 10;
@@ -155,7 +157,7 @@
             // 
             // textBoxMail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(95, 119);
+            this.textBoxMail.Location = new System.Drawing.Point(95, 126);
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(334, 20);
             this.textBoxMail.TabIndex = 11;
@@ -178,21 +180,27 @@
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(444, 328);
+            this.buttonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAceptar.Image = global::RRHH.Properties.Resources.agregar_editar_icono_6607_96;
+            this.buttonAceptar.Location = new System.Drawing.Point(454, 318);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.Size = new System.Drawing.Size(112, 95);
             this.buttonAceptar.TabIndex = 14;
-            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.Text = "Agregar";
+            this.buttonAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(768, 328);
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.buttonCancelar.Location = new System.Drawing.Point(585, 318);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(95, 95);
             this.buttonCancelar.TabIndex = 15;
             this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
@@ -201,7 +209,7 @@
             this.comboBox1.DataSource = this.solicitudPersonalBindingSource;
             this.comboBox1.DisplayMember = "NombreSolicitud";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 12);
+            this.comboBox1.Location = new System.Drawing.Point(95, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(334, 21);
             this.comboBox1.TabIndex = 16;
@@ -594,11 +602,22 @@
             this.comboBoxNacionalidad.Size = new System.Drawing.Size(294, 21);
             this.comboBoxNacionalidad.TabIndex = 53;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(871, -9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
+            // 
             // RegistroPostulantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 482);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxNacionalidad);
             this.Controls.Add(this.dateTimePickerNaciomiento);
             this.Controls.Add(this.numericUpDownEdad);
@@ -628,6 +647,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(965, 521);
+            this.MinimumSize = new System.Drawing.Size(965, 521);
             this.Name = "RegistroPostulantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Postulantes";
@@ -635,6 +656,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +696,6 @@
         private System.Windows.Forms.BindingSource solicitudPersonalBindingSource;
         private RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter solicitudPersonalTableAdapter;
         private System.Windows.Forms.ComboBox comboBoxNacionalidad;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

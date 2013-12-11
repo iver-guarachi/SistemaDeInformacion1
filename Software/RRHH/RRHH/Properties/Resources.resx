@@ -118,10 +118,109 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicio-inicio-icono-9184-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\inicio-inicio-icono-9184-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar-usuarios-icono-3782-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\agregar-usuarios-icono-3782-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_nodo_rac_11gr21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\agregar_nodo_rac_11gr2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar-editar-icono-6607-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\agregar-editar-icono-6607-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="login_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\login_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_rrhh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\home_rrhh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copia de logo-rifolgad[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Copia de logo-rifolgad[1].jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maletin-de-vacaciones-en-la-playa-de-verano-icono-4532-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\maletin-de-vacaciones-en-la-playa-de-verano-icono-4532-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\icono3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-rrhh-156844" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\logo-rrhh-156844.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roles_de_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\roles_de_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove_male_user_98400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\remove_male_user_98400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="64px-Knotes_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\64px-Knotes_128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="write" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\write.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconoEncuesta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\IconoEncuesta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rrhh-1024x912" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\rrhh-1024x912.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="catalogo-area-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\catalogo-area-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_nodo_rac_11gr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\agregar_nodo_rac_11gr2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="switchable-icon-finanzasPersonales_png_original" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\switchable-icon-finanzasPersonales_png_original.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cerca-de-la-cruz-eliminar-la-salida-de-error-icono-5953-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\cerca-de-la-cruz-eliminar-la-salida-de-error-icono-5953-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconoEntrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\iconoEntrada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="postulacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\postulacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rrifolgad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\rrifolgad.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancelar-icono-4824-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\cancelar-icono-4824-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_lis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\ic_lis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1295968606_preferences-contact-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\1295968606_preferences-contact-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Document" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconos-051" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\iconos-051.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nuevousuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\nuevousuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aceptar-este-hecho-tan-bien-verde-con-exito-icono-8880-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\aceptar-este-hecho-tan-bien-verde-con-exito-icono-8880-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

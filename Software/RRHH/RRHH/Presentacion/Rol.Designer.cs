@@ -42,49 +42,63 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rolTableAdapter1 = new RRHH.RecursosHumanosDataSetTableAdapters.RolTableAdapter();
             this.rolTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.RolTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(297, 175);
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.buttonCancelar.Location = new System.Drawing.Point(317, 189);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(93, 73);
             this.buttonCancelar.TabIndex = 29;
             this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(169, 175);
+            this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminar.Image = global::RRHH.Properties.Resources.cerca_de_la_cruz_eliminar_la_salida_de_error_icono_5953_128;
+            this.buttonEliminar.Location = new System.Drawing.Point(203, 189);
             this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminar.Size = new System.Drawing.Size(105, 73);
             this.buttonEliminar.TabIndex = 28;
             this.buttonEliminar.Text = "Eiminar";
+            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(297, 111);
+            this.buttonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModificar.Image = global::RRHH.Properties.Resources.write;
+            this.buttonModificar.Location = new System.Drawing.Point(314, 89);
             this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(75, 23);
+            this.buttonModificar.Size = new System.Drawing.Size(96, 94);
             this.buttonModificar.TabIndex = 27;
             this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonModificar.UseVisualStyleBackColor = true;
             this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(169, 111);
+            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.Image = global::RRHH.Properties.Resources.agregar_editar_icono_6607_96;
+            this.buttonAgregar.Location = new System.Drawing.Point(203, 89);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregar.Size = new System.Drawing.Size(105, 94);
             this.buttonAgregar.TabIndex = 26;
             this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAgregar.UseVisualStyleBackColor = true;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
@@ -93,9 +107,9 @@
             this.listBox1.DataSource = this.rolBindingSource;
             this.listBox1.DisplayMember = "Nombre";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.Location = new System.Drawing.Point(2, 63);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 225);
+            this.listBox1.Size = new System.Drawing.Size(154, 199);
             this.listBox1.TabIndex = 25;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.SeleccionarRol);
             // 
@@ -121,7 +135,7 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(207, 21);
+            this.textBoxNombre.Location = new System.Drawing.Point(228, 63);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(181, 20);
             this.textBoxNombre.TabIndex = 24;
@@ -129,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(144, 24);
+            this.label3.Location = new System.Drawing.Point(175, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 23;
@@ -143,11 +157,22 @@
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 262);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonModificar);
@@ -163,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +209,6 @@
         private RecursosHumanosDataSet2 recursosHumanosDataSet2;
         private System.Windows.Forms.BindingSource rolBindingSource;
         private RecursosHumanosDataSet2TableAdapters.RolTableAdapter rolTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

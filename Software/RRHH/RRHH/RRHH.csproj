@@ -120,6 +120,12 @@
     <Compile Include="Presentacion\Falta.Designer.cs">
       <DependentUpon>Falta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\OtorgarVacacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\OtorgarVacacion.Designer.cs">
+      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\RegistroAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,12 +173,6 @@
     </Compile>
     <Compile Include="Presentacion\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\OtorgarVacacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\OtorgarVacacion.Designer.cs">
-      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\PlanillaEmpleados.cs">
       <SubType>Form</SubType>
@@ -297,6 +297,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReporteSueldosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteSueldosDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VistaFinal3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,6 +311,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Vistas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vistas5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vistas5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VistasFinal4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VistasFinal4.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Presentacion\Aguinaldo.resx">
       <DependentUpon>Aguinaldo.cs</DependentUpon>
@@ -340,6 +355,9 @@
     <EmbeddedResource Include="Presentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\OtorgarVacacion.resx">
+      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\RegistroAsistencia.resx">
       <DependentUpon>RegistroAsistencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,9 +369,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\OtorgarVacacion.resx">
-      <DependentUpon>OtorgarVacacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\PlanillaEmpleados.resx">
       <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
@@ -399,7 +414,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
-    <EmbeddedResource Include="Reportes\ReporteSueldo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportSueldos1.rdlc" />
     <None Include="App.Config" />
     <EntityDeploy Include="Entidades\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -525,6 +540,17 @@
     <None Include="RecursosHumanosDataSet_HastaDescuento.xss">
       <DependentUpon>RecursosHumanosDataSet_HastaDescuento.xsd</DependentUpon>
     </None>
+    <None Include="ReporteSueldosDS.xsc">
+      <DependentUpon>ReporteSueldosDS.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteSueldosDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteSueldosDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteSueldosDS.xss">
+      <DependentUpon>ReporteSueldosDS.xsd</DependentUpon>
+    </None>
     <None Include="VistaFinal3.xsc">
       <DependentUpon>VistaFinal3.xsd</DependentUpon>
     </None>
@@ -547,10 +573,64 @@
     <None Include="Vistas.xss">
       <DependentUpon>Vistas.xsd</DependentUpon>
     </None>
+    <None Include="vistas5.xsc">
+      <DependentUpon>vistas5.xsd</DependentUpon>
+    </None>
+    <None Include="vistas5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vistas5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vistas5.xss">
+      <DependentUpon>vistas5.xsd</DependentUpon>
+    </None>
+    <None Include="VistasFinal4.xsc">
+      <DependentUpon>VistasFinal4.xsd</DependentUpon>
+    </None>
+    <None Include="VistasFinal4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VistasFinal4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VistasFinal4.xss">
+      <DependentUpon>VistasFinal4.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\1295968606_preferences-contact-list.png" />
+    <Content Include="Imagenes\211.png" />
+    <Content Include="Imagenes\64px-Knotes_128x128.png" />
+    <Content Include="Imagenes\aceptar-este-hecho-tan-bien-verde-con-exito-icono-8880-96.png" />
+    <Content Include="Imagenes\agregar-editar-icono-6607-96.png" />
+    <Content Include="Imagenes\agregar-usuarios-icono-3782-48.png" />
+    <Content Include="Imagenes\agregar_nodo_rac_11gr2.png" />
+    <Content Include="Imagenes\cancelar-icono-4824-96.png" />
+    <Content Include="Imagenes\catalogo-area-black.png" />
+    <Content Include="Imagenes\cerca-de-la-cruz-eliminar-la-salida-de-error-icono-5953-128.png" />
+    <Content Include="Imagenes\Copia de logo-rifolgad[1].jpg" />
+    <Content Include="Imagenes\Document.png" />
+    <Content Include="Imagenes\eliminar.png" />
     <Content Include="Imagenes\home_rrhh.jpg" />
+    <Content Include="Imagenes\icono3.png" />
+    <Content Include="Imagenes\IconoEncuesta.png" />
+    <Content Include="Imagenes\iconoEntrada.png" />
+    <Content Include="Imagenes\iconos-051.png" />
+    <Content Include="Imagenes\ic_lis.png" />
+    <Content Include="Imagenes\inicio-inicio-icono-9184-96.png" />
     <Content Include="Imagenes\login_icon.png" />
+    <Content Include="Imagenes\logo-rrhh-156844.jpg" />
+    <Content Include="Imagenes\maletin-de-vacaciones-en-la-playa-de-verano-icono-4532-96.png" />
+    <Content Include="Imagenes\nuevousuario.png" />
+    <Content Include="Imagenes\postulacion.png" />
+    <Content Include="Imagenes\remove_male_user_98400.jpg" />
+    <Content Include="Imagenes\reportes.png" />
+    <Content Include="Imagenes\roles_de_usuario.png" />
+    <Content Include="Imagenes\rrhh-1024x912.jpg" />
+    <Content Include="Imagenes\rrifolgad.jpg" />
+    <Content Include="Imagenes\switchable-icon-finanzasPersonales_png_original.png" />
+    <Content Include="Imagenes\untitled.png" />
+    <Content Include="Imagenes\usuario.png" />
+    <Content Include="Imagenes\write.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

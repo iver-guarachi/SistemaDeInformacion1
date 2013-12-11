@@ -36,8 +36,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteSueldosTableAdapter = new RRHH.VistaFinal3TableAdapters.ReporteSueldosTableAdapter();
+            this.reporteSueldosDS = new RRHH.ReporteSueldosDS();
+            this.reporteSueldosDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteSueldosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteSueldosTableAdapter1 = new RRHH.ReporteSueldosDSTableAdapters.ReporteSueldosTableAdapter();
+            this.reporteSueldosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteSueldosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // reporteSueldosBindingSource
@@ -70,11 +81,10 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ReporteSueldos";
-            reportDataSource1.Value = this.reporteSueldosBindingSource;
+            reportDataSource1.Name = "ReporteSueldos1";
+            reportDataSource1.Value = this.reporteSueldosBindingSource3;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "RRHH.Reportes.ReporteSueldo.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "RRHH.Reportes.ReportSueldos1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(956, 444);
@@ -83,6 +93,35 @@
             // reporteSueldosTableAdapter
             // 
             this.reporteSueldosTableAdapter.ClearBeforeFill = true;
+            // 
+            // reporteSueldosDS
+            // 
+            this.reporteSueldosDS.DataSetName = "ReporteSueldosDS";
+            this.reporteSueldosDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reporteSueldosDSBindingSource
+            // 
+            this.reporteSueldosDSBindingSource.DataSource = this.reporteSueldosDS;
+            this.reporteSueldosDSBindingSource.Position = 0;
+            // 
+            // reporteSueldosBindingSource1
+            // 
+            this.reporteSueldosBindingSource1.DataMember = "ReporteSueldos";
+            this.reporteSueldosBindingSource1.DataSource = this.reporteSueldosDSBindingSource;
+            // 
+            // reporteSueldosTableAdapter1
+            // 
+            this.reporteSueldosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // reporteSueldosBindingSource2
+            // 
+            this.reporteSueldosBindingSource2.DataMember = "ReporteSueldos";
+            this.reporteSueldosBindingSource2.DataSource = this.reporteSueldosDSBindingSource;
+            // 
+            // reporteSueldosBindingSource3
+            // 
+            this.reporteSueldosBindingSource3.DataMember = "ReporteSueldos";
+            this.reporteSueldosBindingSource3.DataSource = this.reporteSueldosDSBindingSource;
             // 
             // Sueldos
             // 
@@ -98,6 +137,11 @@
             this.Load += new System.EventHandler(this.Sueldos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteSueldosBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,5 +154,11 @@
         private VistaFinal3 vistaFinal3;
         private System.Windows.Forms.BindingSource reporteSueldosBindingSource;
         private VistaFinal3TableAdapters.ReporteSueldosTableAdapter reporteSueldosTableAdapter;
+        private ReporteSueldosDS reporteSueldosDS;
+        private System.Windows.Forms.BindingSource reporteSueldosDSBindingSource;
+        private System.Windows.Forms.BindingSource reporteSueldosBindingSource1;
+        private ReporteSueldosDSTableAdapters.ReporteSueldosTableAdapter reporteSueldosTableAdapter1;
+        private System.Windows.Forms.BindingSource reporteSueldosBindingSource2;
+        private System.Windows.Forms.BindingSource reporteSueldosBindingSource3;
     }
 }

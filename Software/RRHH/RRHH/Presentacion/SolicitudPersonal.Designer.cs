@@ -58,6 +58,7 @@
             this.lista_Req_CargoTableAdapter = new RRHH.RecursosHumanosDataSetListaReqCargoTableAdapters.Lista_Req_CargoTableAdapter();
             this.solicitudPersonalTableAdapter = new RRHH.RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVacantes)).BeginInit();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.solicitudVigenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetListaReqCargo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaReqCargoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,21 +130,27 @@
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(321, 429);
+            this.buttonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAceptar.Image = global::RRHH.Properties.Resources.agregar_editar_icono_6607_96;
+            this.buttonAceptar.Location = new System.Drawing.Point(321, 419);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.Size = new System.Drawing.Size(124, 122);
             this.buttonAceptar.TabIndex = 8;
-            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.Text = "Agregar";
+            this.buttonAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(610, 429);
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.buttonCancelar.Location = new System.Drawing.Point(584, 419);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(117, 122);
             this.buttonCancelar.TabIndex = 9;
             this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
@@ -208,9 +216,9 @@
             this.listBox2.DataSource = this.solicitudPersonalBindingSource;
             this.listBox2.DisplayMember = "NombreSolicitud";
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(18, 40);
+            this.listBox2.Location = new System.Drawing.Point(12, 52);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(235, 407);
+            this.listBox2.Size = new System.Drawing.Size(235, 394);
             this.listBox2.TabIndex = 18;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
@@ -226,11 +234,14 @@
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(463, 429);
+            this.buttonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModificar.Image = global::RRHH.Properties.Resources.write;
+            this.buttonModificar.Location = new System.Drawing.Point(451, 419);
             this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(75, 23);
+            this.buttonModificar.Size = new System.Drawing.Size(127, 122);
             this.buttonModificar.TabIndex = 19;
             this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonModificar.UseVisualStyleBackColor = true;
             this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
@@ -277,11 +288,22 @@
             this.textBoxNombre.Size = new System.Drawing.Size(161, 20);
             this.textBoxNombre.TabIndex = 20;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // SolicitudPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 469);
+            this.ClientSize = new System.Drawing.Size(726, 553);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.listBox2);
@@ -312,6 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.solicitudVigenteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetListaReqCargo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaReqCargoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +371,6 @@
         private System.Windows.Forms.BindingSource solicitudPersonalBindingSource;
         private RecursosHumanosDataSet2TableAdapters.SolicitudPersonalTableAdapter solicitudPersonalTableAdapter;
         private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

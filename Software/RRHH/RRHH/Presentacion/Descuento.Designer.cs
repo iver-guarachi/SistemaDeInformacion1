@@ -51,6 +51,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.empleados_NombreCompletoTableAdapter1 = new RRHH.VistaFinal3TableAdapters.Empleados_NombreCompletoTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDescuentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetHastaDescuentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSet_HastaDescuento)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -92,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 44);
+            this.label1.Location = new System.Drawing.Point(51, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 14;
@@ -101,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 84);
+            this.label3.Location = new System.Drawing.Point(51, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 23;
@@ -112,7 +114,7 @@
             this.comboBox1.DataSource = this.tipoDescuentoBindingSource;
             this.comboBox1.DisplayMember = "Descripcion";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 81);
+            this.comboBox1.Location = new System.Drawing.Point(158, 108);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(208, 21);
             this.comboBox1.TabIndex = 24;
@@ -146,7 +148,7 @@
             this.comboBox2.DataSource = this.empleadosNombreCompletoBindingSource1;
             this.comboBox2.DisplayMember = "NombreCompleto";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 41);
+            this.comboBox2.Location = new System.Drawing.Point(158, 68);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 26;
@@ -178,7 +180,7 @@
             // 
             // textBoxMonto
             // 
-            this.textBoxMonto.Location = new System.Drawing.Point(158, 178);
+            this.textBoxMonto.Location = new System.Drawing.Point(158, 190);
             this.textBoxMonto.Name = "textBoxMonto";
             this.textBoxMonto.Size = new System.Drawing.Size(327, 20);
             this.textBoxMonto.TabIndex = 28;
@@ -187,7 +189,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 181);
+            this.label4.Location = new System.Drawing.Point(51, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 27;
@@ -199,7 +201,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(158, 128);
+            this.dateTimePicker1.Location = new System.Drawing.Point(158, 155);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 29;
@@ -207,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 134);
+            this.label5.Location = new System.Drawing.Point(51, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 30;
@@ -217,11 +219,22 @@
             // 
             this.empleados_NombreCompletoTableAdapter1.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // Descuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 373);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBoxMonto);
@@ -245,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaFinal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetVistas2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +288,6 @@
         private VistaFinal3 vistaFinal3;
         private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource1;
         private VistaFinal3TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

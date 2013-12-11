@@ -54,8 +54,6 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxSalario = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -89,6 +87,7 @@
             this.labelAFP = new System.Windows.Forms.Label();
             this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter();
             this.cargoTableAdapter = new RRHH.RecursosHumanosDataSetDatosFinalTableAdapters.CargoTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetDatosFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).BeginInit();
@@ -97,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuincena)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHaberBasico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -271,31 +271,40 @@
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(320, 449);
+            this.buttonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAceptar.Image = global::RRHH.Properties.Resources.agregar_editar_icono_6607_96;
+            this.buttonAceptar.Location = new System.Drawing.Point(288, 438);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 24);
+            this.buttonAceptar.Size = new System.Drawing.Size(107, 63);
             this.buttonAceptar.TabIndex = 19;
             this.buttonAceptar.Text = "Guardar";
+            this.buttonAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(544, 450);
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.buttonCancelar.Location = new System.Drawing.Point(510, 438);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(90, 63);
             this.buttonCancelar.TabIndex = 20;
             this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonModificar
             // 
-            this.buttonModificar.Location = new System.Drawing.Point(434, 450);
+            this.buttonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModificar.Image = global::RRHH.Properties.Resources.write;
+            this.buttonModificar.Location = new System.Drawing.Point(401, 438);
             this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(70, 23);
+            this.buttonModificar.Size = new System.Drawing.Size(103, 63);
             this.buttonModificar.TabIndex = 23;
             this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonModificar.UseVisualStyleBackColor = true;
             this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
@@ -315,24 +324,6 @@
             this.textBoxSalario.Size = new System.Drawing.Size(214, 20);
             this.textBoxSalario.TabIndex = 27;
             this.textBoxSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSalario_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(587, 251);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 13);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Intervalo de sueldo";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(695, 251);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "1500 ~ 2000";
             // 
             // label17
             // 
@@ -503,9 +494,9 @@
             this.listBox1.DataSource = this.empleadosNombreCompletoBindingSource;
             this.listBox1.DisplayMember = "NombreCompleto";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 37);
+            this.listBox1.Location = new System.Drawing.Point(12, 63);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(173, 394);
+            this.listBox1.Size = new System.Drawing.Size(173, 368);
             this.listBox1.TabIndex = 53;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -881,11 +872,22 @@
             // 
             this.cargoTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 485);
+            this.ClientSize = new System.Drawing.Size(941, 500);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelAFP);
             this.Controls.Add(this.numericUpDownHaberBasico);
             this.Controls.Add(this.label26);
@@ -915,8 +917,6 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxSalario);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.buttonModificar);
@@ -940,6 +940,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(957, 539);
+            this.MinimumSize = new System.Drawing.Size(957, 539);
             this.Name = "Empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrarEmpleado";
@@ -952,6 +954,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuincena)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHaberBasico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -982,8 +985,6 @@
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSalario;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1019,5 +1020,6 @@
         private RecursosHumanosDataSetDatosFinal recursosHumanosDataSetDatosFinal;
         private System.Windows.Forms.BindingSource cargoBindingSource;
         private RecursosHumanosDataSetDatosFinalTableAdapters.CargoTableAdapter cargoTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

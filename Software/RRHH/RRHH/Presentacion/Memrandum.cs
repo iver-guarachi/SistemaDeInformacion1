@@ -18,8 +18,8 @@ namespace RRHH.Presentacion
 
         private void Memrandum_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
-            this.empleados_NombreCompletoTableAdapter1.Fill(this.recursosHumanosDataSetVistasFinal.Empleados_NombreCompleto);
+            // TODO: esta línea de código carga datos en la tabla 'vistaFinal3.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
+            this.empleados_NombreCompletoTableAdapter2.Fill(this.vistaFinal3.Empleados_NombreCompleto);
         }
 
         private void button1_Click(object sender, EventArgs e)

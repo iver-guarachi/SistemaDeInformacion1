@@ -13,6 +13,8 @@ namespace RRHH.Presentacion
     public partial class OtorgarVacacion : Form
     {
         OtorgarVacacionControl ovac = new OtorgarVacacionControl();
+
+       
         public OtorgarVacacion()
         {
             InitializeComponent();
@@ -20,9 +22,9 @@ namespace RRHH.Presentacion
 
         private void OtorgarVacacion_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'recursosHumanosDataSetVistas2.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
-            this.empleados_NombreCompletoTableAdapter.Fill(this.recursosHumanosDataSetVistas2.Empleados_NombreCompleto);
-
+            // TODO: esta línea de código carga datos en la tabla 'vistaFinal3.Empleados_NombreCompleto' Puede moverla o quitarla según sea necesario.
+            this.empleados_NombreCompletoTableAdapter1.Fill(this.vistaFinal3.Empleados_NombreCompleto);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -3179,13 +3179,13 @@ namespace RRHH.Entidades
         /// </summary>
         /// <param name="nombre">Valor inicial de la propiedad Nombre.</param>
         /// <param name="direccion">Valor inicial de la propiedad Direccion.</param>
-        /// <param name="logo">Valor inicial de la propiedad Logo.</param>
-        public static Empresa CreateEmpresa(global::System.String nombre, global::System.String direccion, global::System.Byte[] logo)
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        public static Empresa CreateEmpresa(global::System.String nombre, global::System.String direccion, global::System.Int32 id)
         {
             Empresa empresa = new Empresa();
             empresa.Nombre = nombre;
             empresa.Direccion = direccion;
-            empresa.Logo = logo;
+            empresa.id = id;
             return empresa;
         }
 
@@ -3196,7 +3196,7 @@ namespace RRHH.Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Nombre
         {
@@ -3206,14 +3206,11 @@ namespace RRHH.Entidades
             }
             set
             {
-                if (_Nombre != value)
-                {
-                    OnNombreChanging(value);
-                    ReportPropertyChanging("Nombre");
-                    _Nombre = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Nombre");
-                    OnNombreChanged();
-                }
+                OnNombreChanging(value);
+                ReportPropertyChanging("Nombre");
+                _Nombre = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nombre");
+                OnNombreChanged();
             }
         }
         private global::System.String _Nombre;
@@ -3223,7 +3220,7 @@ namespace RRHH.Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Direccion
         {
@@ -3233,14 +3230,11 @@ namespace RRHH.Entidades
             }
             set
             {
-                if (_Direccion != value)
-                {
-                    OnDireccionChanging(value);
-                    ReportPropertyChanging("Direccion");
-                    _Direccion = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Direccion");
-                    OnDireccionChanged();
-                }
+                OnDireccionChanging(value);
+                ReportPropertyChanging("Direccion");
+                _Direccion = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Direccion");
+                OnDireccionChanged();
             }
         }
         private global::System.String _Direccion;
@@ -3252,27 +3246,27 @@ namespace RRHH.Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Byte[] Logo
+        public global::System.Int32 id
         {
             get
             {
-                return StructuralObject.GetValidValue(_Logo);
+                return _id;
             }
             set
             {
-                if (!StructuralObject.BinaryEquals(_Logo, value))
+                if (_id != value)
                 {
-                    OnLogoChanging(value);
-                    ReportPropertyChanging("Logo");
-                    _Logo = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Logo");
-                    OnLogoChanged();
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
                 }
             }
         }
-        private global::System.Byte[] _Logo;
-        partial void OnLogoChanging(global::System.Byte[] value);
-        partial void OnLogoChanged();
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
 
         #endregion
 

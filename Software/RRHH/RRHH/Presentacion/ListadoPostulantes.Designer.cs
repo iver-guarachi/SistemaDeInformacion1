@@ -53,6 +53,7 @@
             this.solicitudPersonalBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.solicitudPersonalBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.solicitudPersonalTableAdapter2 = new RRHH.completoContratacionTableAdapters.SolicitudPersonalTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.completoContratacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource1)).BeginInit();
@@ -70,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -77,7 +79,7 @@
             this.comboBox1.DataSource = this.solicitudPersonalBindingSource7;
             this.comboBox1.DisplayMember = "NombreSolicitud";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 26);
+            this.comboBox1.Location = new System.Drawing.Point(105, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(364, 21);
             this.comboBox1.TabIndex = 0;
@@ -112,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 34);
+            this.label1.Location = new System.Drawing.Point(10, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 1;
@@ -197,11 +199,22 @@
             // 
             this.solicitudPersonalTableAdapter2.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            // 
             // ListadoPostulantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 443);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -226,6 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.solicitudPersonalBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +271,6 @@
         private completoContratacion completoContratacion;
         private System.Windows.Forms.BindingSource solicitudPersonalBindingSource7;
         private completoContratacionTableAdapters.SolicitudPersonalTableAdapter solicitudPersonalTableAdapter2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

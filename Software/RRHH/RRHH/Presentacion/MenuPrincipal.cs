@@ -51,9 +51,6 @@ namespace RRHH
                 if (horariosToolStripMenuItem.Text == p.nombre)
                     horariosToolStripMenuItem.Enabled = true;
 
-                if (registroDeSueldosToolStripMenuItem.Text == p.nombre)
-                    registroDeSueldosToolStripMenuItem.Enabled = true;
-
                 if (tipoDeDescuentoToolStripMenuItem.Text == p.nombre)
                     tipoDeDescuentoToolStripMenuItem.Enabled = true;
 
@@ -96,8 +93,10 @@ namespace RRHH
                 if (índiceToolStripMenuItem.Text == p.nombre)
                     índiceToolStripMenuItem.Enabled = true;
 
-                //if (buscarToolStripMenuItem.Text == p.nombre)
-                //    buscarToolStripMenuItem.Enabled = true;
+               
+
+             
+                
             }
             
         }
@@ -231,6 +230,20 @@ namespace RRHH
         {
             Sueldos sueldo = new Sueldos();
             sueldo.Show();
+        }
+
+        private void otorgarVacacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RRHH.Presentacion.OtorgarVacacion vacacion = new RRHH.Presentacion.OtorgarVacacion();
+            vacacion.Show();
+    
+
+        }
+
+        private void descuentosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {   
+            Presentacion.Descuento des = new Presentacion.Descuento();
+            des.Show();
         }
 
  

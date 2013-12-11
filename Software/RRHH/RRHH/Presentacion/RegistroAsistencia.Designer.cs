@@ -46,16 +46,18 @@
             this.checkBoxEntrada = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.empleados_NombreCompletoTableAdapter = new RRHH.RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 38);
+            this.label1.Location = new System.Drawing.Point(31, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
@@ -80,21 +82,27 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(75, 268);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::RRHH.Properties.Resources.aceptar_este_hecho_tan_bien_verde_con_exito_icono_8880_96;
+            this.button1.Location = new System.Drawing.Point(63, 248);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(109, 86);
             this.button1.TabIndex = 6;
             this.button1.Text = "Aceptar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(228, 268);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::RRHH.Properties.Resources.cancelar_icono_4824_96;
+            this.button2.Location = new System.Drawing.Point(190, 248);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(111, 86);
             this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -136,7 +144,7 @@
             this.comboBox1.DataSource = this.empleadosNombreCompletoBindingSource;
             this.comboBox1.DisplayMember = "NombreCompleto";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 35);
+            this.comboBox1.Location = new System.Drawing.Point(98, 55);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
             this.comboBox1.TabIndex = 18;
@@ -198,7 +206,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(306, 35);
+            this.button3.Location = new System.Drawing.Point(306, 55);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 43);
             this.button3.TabIndex = 23;
@@ -210,11 +218,22 @@
             // 
             this.empleados_NombreCompletoTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RRHH.Properties.Resources.Copia_de_logo_rifolgad_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // RegistroAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 310);
+            this.ClientSize = new System.Drawing.Size(377, 346);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBoxSalida);
             this.Controls.Add(this.checkBoxEntrada);
@@ -229,6 +248,8 @@
             this.Controls.Add(this.dateTimePickerFechaReg);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(393, 385);
+            this.MinimumSize = new System.Drawing.Size(393, 385);
             this.Name = "RegistroAsistencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlHorario";
@@ -237,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosNombreCompletoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recursosHumanosDataSetFinalVsitas2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +283,6 @@
         private RecursosHumanosDataSetFinalVsitas2 recursosHumanosDataSetFinalVsitas2;
         private System.Windows.Forms.BindingSource empleadosNombreCompletoBindingSource;
         private RecursosHumanosDataSetFinalVsitas2TableAdapters.Empleados_NombreCompletoTableAdapter empleados_NombreCompletoTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
